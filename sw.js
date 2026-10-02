@@ -1,7 +1,7 @@
 // Soccer Coach offline support.
 // IMPORTANT: change the version below every time you upload new app files,
 // so phones know to download the new version.
-const CACHE = 'soccer-coach-v3';
+const CACHE = 'soccer-coach-v9';
 
 const FILES = [
   './',

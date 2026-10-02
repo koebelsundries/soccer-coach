@@ -457,6 +457,64 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
 .pick-row .nm { flex: 1; font-weight: 600; }
 .pick-row .dt { color: var(--muted); font-size: 14px; text-align: right; }
 .pick-row.empty-opt .nm { color: var(--muted); }
+
+/* ---------- Version 3: lineups, subs, practice ---------- */
+.seg.two { grid-template-columns: repeat(2, 1fr); }
+.seg.three { grid-template-columns: repeat(3, 1fr); }
+.quarters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 10px; }
+.quarters .blk { min-height: 44px; font: 800 18px/1 var(--cond); font-stretch: condensed; }
+.lineup-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 10px; }
+.lineup-bar .lb-name { font-weight: 700; overflow-wrap: anywhere; }
+.lineup-bar .lb-form { color: var(--muted); font-size: 14px; }
+.btn-sub { flex: 1 1 100%; min-height: 56px; font-size: 19px; }
+.hq1 { display: inline-block; width: 22px; height: 22px; border: 2px solid var(--rule); border-radius: 6px; background: transparent; padding: 0; vertical-align: middle; }
+.hq1.on { background: var(--turf); border-color: var(--turf); }
+button.hq1 { width: 30px; height: 30px; cursor: pointer; }
+button.hq1.fixed { outline: 2px dashed var(--focus); outline-offset: 1px; }
+.lines-edit { display: grid; gap: 10px; margin-bottom: 14px; }
+.line-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.line-row .stepper b { min-width: 22px; text-align: center; font: 800 22px/1 var(--cond); font-stretch: condensed; }
+.list-row { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; padding: 10px 14px; border: 0; border-top: 1px solid var(--rule); background: none; text-align: left; }
+.roster li:first-child .list-row { border-top: 0; }
+.list-row .main { flex: 1; min-width: 0; }
+.list-row .title { font-weight: 700; font-size: 17px; overflow-wrap: anywhere; }
+.list-row .sub { color: var(--muted); font-size: 14px; }
+.tpill { flex: none; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .2px; }
+.tpill.drill { background: #DCEBFF; color: #12386E; }
+.tpill.game { background: #FFE7C2; color: #5A3300; }
+.tpill.setplay { background: #E6DDF7; color: #3A1F6B; }
+.tpill.break { background: #DDF1E3; color: #0F3D22; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.fchip { min-height: 36px; padding: 0 12px; border: 2px solid var(--rule); border-radius: 999px; background: var(--surface); color: var(--ink); font-weight: 700; font-size: 14px; }
+.fchip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--wash); }
+.search { width: 100%; padding: 10px 12px; margin-bottom: 10px; border: 2px solid var(--rule); border-radius: 10px; background: var(--surface); color: var(--ink); font: inherit; font-size: 16px; }
+.detail h3 { margin: 16px 0 4px; font-size: 15px; color: var(--muted); }
+.detail p { margin: 0; white-space: pre-wrap; }
+.item-row { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; padding: 10px 14px; border-top: 1px solid var(--rule); align-items: center; }
+.item-row:first-child { border-top: 0; }
+.item-row .nm { font-weight: 700; overflow-wrap: anywhere; }
+.item-row .ctrls { grid-column: 1 / 3; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.item-row .ctrls input { width: 64px; padding: 6px 8px; border: 2px solid var(--rule); border-radius: 8px; background: var(--wash); color: var(--ink); font: inherit; font-size: 16px; text-align: center; }
+.mini { min-width: 38px; height: 38px; padding: 0 10px; border: 2px solid var(--rule); border-radius: 8px; background: var(--surface); color: var(--ink); font-weight: 800; }
+.mini.danger { color: var(--danger); }
+.totline { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; font-weight: 700; }
+.totline .over { color: var(--danger); }
+.check-row { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 6px 14px; border-top: 1px solid var(--rule); }
+.check-row:first-child { border-top: 0; }
+.check-row input { flex: none; width: 24px; height: 24px; accent-color: var(--turf); }
+.run-head { padding: 16px; margin: 14px 0; border-radius: 14px; background: var(--turf); color: #fff; text-align: center; }
+.run-head .clock { font-size: 72px; }
+.run-step { font-weight: 700; opacity: .9; }
+.run-name { margin: 4px 0 0; font: 800 28px/1.1 var(--cond); font-stretch: condensed; }
+.next-up { color: var(--muted); font-size: 15px; margin: 0 0 12px; }
+
+/* Diagram editor */
+.dg-tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 8px 0; }
+.dg-tool { min-height: 44px; padding: 0 4px; border: 2px solid var(--rule); border-radius: 10px; background: var(--surface); color: var(--ink); font-weight: 700; font-size: 13px; }
+.dg-tool[aria-pressed="true"] { background: var(--turf); border-color: var(--turf); color: #fff; }
+.pitch.edit { touch-action: none; cursor: crosshair; }
+.dg-hint { min-height: 1.4em; margin: 6px 0; color: var(--muted); font-size: 14px; text-align: center; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 6px 0 0; color: var(--muted); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -494,6 +552,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <input type="file" id="importInput" accept=".json,application/json" hidden>
+<input type="file" id="libImport" accept=".json,application/json" hidden>
 
 <dialog id="playerDialog" aria-labelledby="playerTitle">
   <form class="sheet" id="playerForm" novalidate>
@@ -527,15 +586,20 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
       <input name="name" type="text" autocomplete="off" maxlength="40">
     </label>
     <label class="field"><span>Age group</span>
-      <select name="ageGroup">
-        <option>6U</option><option>7U</option><option>8U</option><option>10U</option>
-        <option>12U</option><option>14U</option><option>16U</option><option>19U</option>
-      </select>
+      <select name="ageGroup" id="teamAge"></select>
     </label>
+    <label class="field"><span>Game format</span>
+      <select name="format" id="teamFormat"></select>
+    </label>
+    <label class="field"><span>Quarter length (minutes)</span>
+      <input name="quarterMin" type="number" inputmode="decimal" min="1" max="45" step="0.5">
+    </label>
+    <div class="radio-row" style="margin-bottom:14px"><label><input type="checkbox" name="buildOut"> Show the build-out line on the field</label></div>
     <fieldset class="swatches field" id="colorSwatches">
       <legend>Jersey color</legend>
     </fieldset>
-    <p class="hint">The details below fill in your lineup card once game day is built.</p>
+    <p class="hint" id="teamCardRule"></p>
+    <p class="hint">The details below fill in your lineup card.</p>
     <div class="pair-even">
       <label class="field"><span>Region</span><input name="region" type="text" autocomplete="off" maxlength="20"></label>
       <label class="field"><span>Team #</span><input name="teamNumber" type="text" autocomplete="off" maxlength="20"></label>
@@ -567,7 +631,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   'use strict';
 
   var KEY = 'soccerCoach.data';
-  var APP_VERSION = '2.1';
+  var APP_VERSION = '3.5';
 
   var COLORS = {
     blue:   { bg: '#2463B8', fg: '#FFFFFF', label: 'Blue' },
@@ -580,31 +644,142 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     black:  { bg: '#23262A', fg: '#FFFFFF', label: 'Black' },
     white:  { bg: '#FFFFFF', fg: '#1A1A1A', label: 'White' }
   };
-  var AGE_GROUPS = ['6U', '7U', '8U', '10U', '12U', '14U', '16U', '19U'];
+  var AGE_GROUPS = ['5U', '6U', '8U', '10U', '12U', '15U'];  // From the region's player-on-field chart
 
-  // Formats and formations. Positions are [key, x, y]; y = 0 is the end you attack.
+  // Formats: how many on the field and whether one of them is a keeper.
   var FORMATS = {
-    '4v4': { size: 4, keeper: false, label: '4v4, no keeper', formations: {
-      '2-2':   [['LD', .30, .74], ['RD', .70, .74], ['LF', .30, .36], ['RF', .70, .36]],
-      '1-2-1': [['D', .50, .80], ['LM', .20, .56], ['RM', .80, .56], ['F', .50, .30]] } },
-    '5v5open': { size: 5, keeper: false, label: '5v5, no keeper', formations: {
-      '2-1-2': [['LD', .30, .76], ['RD', .70, .76], ['CM', .50, .55], ['LF', .30, .33], ['RF', .70, .33]],
-      '1-3-1': [['D', .50, .80], ['LM', .17, .55], ['CM', .50, .58], ['RM', .83, .55], ['F', .50, .30]] } },
-    '5v5': { size: 5, keeper: true, label: '5v5 (4 + keeper)', formations: {
-      '2-2':   [['GK', .50, .91], ['LD', .30, .70], ['RD', .70, .70], ['LF', .30, .38], ['RF', .70, .38]],
-      '1-2-1': [['GK', .50, .91], ['D', .50, .74], ['LM', .20, .55], ['RM', .80, .55], ['F', .50, .30]] } },
-    '7v7': { size: 7, keeper: true, label: '7v7 (6 + keeper)', formations: {
-      '2-3-1': [['GK', .50, .91], ['LB', .30, .76], ['RB', .70, .76], ['LM', .17, .53], ['CM', .50, .57], ['RM', .83, .53], ['ST', .50, .28]],
-      '3-2-1': [['GK', .50, .91], ['LB', .20, .73], ['CB', .50, .78], ['RB', .80, .73], ['LM', .32, .52], ['RM', .68, .52], ['ST', .50, .28]] } }
+    '3v3':     { size: 3, keeper: false, label: '3v3, no keeper',   def: [1, 1, 1] },
+    '4v4':     { size: 4, keeper: false, label: '4v4, no keeper',   def: [2, 0, 2] },
+    '5v5open': { size: 5, keeper: false, label: '5v5, no keeper',   def: [2, 1, 2] },
+    '5v5':     { size: 5, keeper: true,  label: '5v5 (4 + keeper)', def: [2, 0, 2] },
+    '7v7':     { size: 7, keeper: true,  label: '7v7 (6 + keeper)', def: [2, 3, 1] },
+    '9v9':     { size: 9, keeper: true,  label: '9v9 (8 + keeper)', def: [3, 3, 2] },
+    '11v11':   { size: 11, keeper: true, label: '11v11 (10 + keeper)', def: [4, 4, 2] }
   };
+  // From the region's charts: [format, quarter minutes, total event minutes, ball size, warm-up on the field?]
+  // Every division: 2-minute water breaks after Q1 and Q3, 5-minute halftime, 10-minute warm-up.
+  var AGE_DEFAULTS = {
+    '5U':  ['3v3', 5, 39, 3, true],
+    '6U':  ['4v4', 6, 43, 3, true],
+    '8U':  ['5v5open', 10, 49, 3, false],
+    '10U': ['7v7', 12.5, 59, 4, false],
+    '12U': ['9v9', 15, 69, 4, false],
+    '15U': ['11v11', 17.5, 79, 5, false]
+  };
+  // Quarter lengths used before the region's game-time chart, so saved teams can be updated.
+  var OLD_QUARTERS = { '5U': 5, '6U': 5, '15U': 20 };
+  // Older saves may use age groups that aren't on the chart.
+  var AGE_MAP = { '7U': '8U', '14U': '15U', '16U': '15U', '19U': '15U' };
+  var COMMON_FORMS = {
+    '7v7': ['2-3-1', '3-2-1', '2-2-2', '3-1-2', '2-1-3'],
+    '9v9': ['3-3-2', '3-2-3', '2-4-2', '3-4-1', '4-3-1', '2-3-3'],
+    '11v11': ['4-4-2', '4-3-3', '3-5-2', '4-5-1', '3-4-3', '5-3-2', '4-2-4']
+  };
+  var LINE_LABELS = {
+    D: { 1: ['D'], 2: ['LD', 'RD'], 3: ['LD', 'CD', 'RD'], 4: ['LD', 'LCD', 'RCD', 'RD'], 5: ['LWB', 'LCD', 'CD', 'RCD', 'RWB'] },
+    M: { 1: ['CM'], 2: ['LM', 'RM'], 3: ['LM', 'CM', 'RM'], 4: ['LM', 'LCM', 'RCM', 'RM'], 5: ['LM', 'LCM', 'CM', 'RCM', 'RM'] },
+    F: { 1: ['ST'], 2: ['LF', 'RF'], 3: ['LF', 'CF', 'RF'], 4: ['LF', 'LCF', 'RCF', 'RF'] }
+  };
+  var LINE_X = { 1: [.5], 2: [.3, .7], 3: [.17, .5, .83], 4: [.12, .37, .63, .88], 5: [.1, .3, .5, .7, .9] };
   var POS_NAMES = {
-    GK: 'Keeper', LD: 'Left defender', RD: 'Right defender', D: 'Defender', LF: 'Left forward', RF: 'Right forward',
-    F: 'Forward', LM: 'Left midfielder', RM: 'Right midfielder', CM: 'Center midfielder', LB: 'Left back',
-    RB: 'Right back', CB: 'Center back', ST: 'Striker'
+    GK: 'Keeper', D: 'Defender', LD: 'Left defender', CD: 'Center defender', RD: 'Right defender',
+    LCD: 'Left-center defender', RCD: 'Right-center defender', LWB: 'Left wing-back', RWB: 'Right wing-back',
+    CM: 'Center midfielder', LM: 'Left midfielder', RM: 'Right midfielder',
+    LCM: 'Left-center midfielder', RCM: 'Right-center midfielder',
+    ST: 'Striker', LF: 'Left forward', RF: 'Right forward', CF: 'Center forward',
+    LCF: 'Left-center forward', RCF: 'Right-center forward'
   };
   var ABSENT_REASONS = ['Sick', 'Injured', 'Family', 'No-show', 'Other'];
-  var BLOCK_NAMES = ['Q1 first half', 'Q1 second half', 'Q2 first half', 'Q2 second half',
-                     'Q3 first half', 'Q3 second half', 'Q4 first half', 'Q4 second half'];
+  var WATER_BREAK = 120, HALFTIME = 300;  // Seconds, from the region's game-time chart
+  function breakLeft(L) { return L.breakAt ? L.breakLen - (Date.now() - L.breakAt) / 1000 : 0; }
+  function breakName(L) { return L.breakLen >= HALFTIME ? 'Halftime' : 'Water break'; }
+  var ENTRY_TYPES = { drill: 'Drill', game: 'Fun game', setplay: 'Set play' };
+
+  // Short-handed formats use keys like "c6k" (6 on the field including a keeper) or "c4" (no keeper).
+  var SHORT_LINES = { 1: [1, 0, 0], 2: [1, 0, 1], 3: [1, 1, 1], 4: [2, 0, 2], 5: [2, 1, 2], 6: [2, 3, 1], 7: [3, 3, 1], 8: [3, 3, 2], 9: [3, 4, 2], 10: [4, 4, 2] };
+  function isFmt(key) {
+    if (FORMATS[key]) return true;
+    var m = /^c(\d{1,2})(k?)$/.exec(key || '');
+    return !!m && +m[1] >= 3 && +m[1] <= 11;
+  }
+  function FMT(key) {
+    if (FORMATS[key]) return FORMATS[key];
+    var m = /^c(\d{1,2})(k?)$/.exec(key || '');
+    if (!m) return FORMATS['5v5open'];
+    var n = +m[1], k = !!m[2];
+    return { size: n, keeper: k, short: true, def: SHORT_LINES[n - (k ? 1 : 0)].slice(),
+             label: n + 'v' + n + (k ? ' (' + (n - 1) + ' + keeper)' : ', no keeper') + ', short-handed' };
+  }
+  function shortKey(full, n) {
+    var F = FORMATS[full];
+    if (n >= F.size) return full;
+    var same = Object.keys(FORMATS).find(function (k) { return FORMATS[k].size === n && FORMATS[k].keeper === F.keeper; });
+    return same || 'c' + n + (F.keeper ? 'k' : '');
+  }
+  function fullFor(fmt) {
+    if (FORMATS[fmt]) return fmt;
+    var f = FMT(fmt);
+    return Object.keys(FORMATS).filter(function (k) { return FORMATS[k].keeper === f.keeper && FORMATS[k].size >= f.size; })
+      .sort(function (a, b) { return FORMATS[a].size - FORMATS[b].size; })[0] || '11v11';
+  }
+  function fieldCount(fmt) { return FMT(fmt).size - (FMT(fmt).keeper ? 1 : 0); }
+  function validLines(fmt, lines) {
+    return Array.isArray(lines) && lines.length === 3 &&
+      lines.every(function (n) { return n === (n | 0) && n >= 0 && n <= 5; }) && lines[2] <= 4 &&
+      lines[0] >= 1 && lines[0] + lines[1] + lines[2] === fieldCount(fmt);
+  }
+  function fixLines(fmt, lines) { return validLines(fmt, lines) ? lines.slice() : FMT(fmt).def.slice(); }
+  function allFormations(fmt) {
+    var out = [], n = fieldCount(fmt);
+    for (var d = 1; d <= 5; d++) for (var m = 5; m >= 0; m--) {
+      var f = n - d - m;
+      if (f >= 0 && f <= 4) out.push([d, m, f]);
+    }
+    // Common formations for this size come first.
+    var common = COMMON_FORMS[fmt] || [];
+    var rank = function (l) { var i = common.indexOf(l.filter(function (x) { return x > 0; }).join('-')); return i < 0 ? 99 : i; };
+    return out.map(function (l, i) { return { l: l, r: rank(l), i: i }; })
+      .sort(function (a, b) { return a.r - b.r || a.i - b.i; }).map(function (o) { return o.l; });
+  }
+  function formName(fmt, lines) {
+    var s = lines.filter(function (x) { return x > 0; }).join('-');
+    return (FMT(fmt).keeper ? 'Keeper + ' : '') + s;
+  }
+  function formDetail(lines) {
+    var parts = [];
+    if (lines[0]) parts.push(lines[0] + (lines[0] === 1 ? ' defender' : ' defenders'));
+    if (lines[1]) parts.push(lines[1] + (lines[1] === 1 ? ' midfielder' : ' midfielders'));
+    if (lines[2]) parts.push(lines[2] + (lines[2] === 1 ? ' forward' : ' forwards'));
+    return parts.join(', ');
+  }
+  // Positions placed inside your own half: forwards near the center line, keeper at the bottom.
+  function positionsFor(fmt, lines) {
+    var keeper = FMT(fmt).keeper, res = [];
+    var present = [['F', lines[2]], ['M', lines[1]], ['D', lines[0]]].filter(function (l) { return l[1] > 0; });
+    var top = .1, bottom = keeper ? .62 : .74;
+    present.forEach(function (l, i) {
+      var y = present.length === 1 ? (top + bottom) / 2 : top + (bottom - top) * i / (present.length - 1);
+      for (var j = 0; j < l[1]; j++) res.push({ key: l[0] + (j + 1), label: LINE_LABELS[l[0]][l[1]][j], x: LINE_X[l[1]][j], y: y });
+    });
+    if (keeper) res.push({ key: 'GK', label: 'GK', x: .5, y: .88 });
+    return res;
+  }
+  function labelFor(fmt, lines, key) {
+    var p = positionsFor(fmt, lines).find(function (x) { return x.key === key; });
+    return p ? p.label : key;
+  }
+  // When the formation changes, players keep their spot if it still exists, otherwise fill open spots.
+  function remapSlots(fmt, lines, slots) {
+    var keys = positionsFor(fmt, lines).map(function (p) { return p.key; });
+    var out = {}, leftover = [];
+    Object.keys(slots).forEach(function (k) {
+      if (!slots[k]) return;
+      if (keys.indexOf(k) >= 0) out[k] = slots[k]; else leftover.push(slots[k]);
+    });
+    keys.forEach(function (k) { if (!out[k] && leftover.length && k !== 'GK') out[k] = leftover.shift(); });
+    keys.forEach(function (k) { if (!out[k] && leftover.length) out[k] = leftover.shift(); });
+    return out;
+  }
 
   // ---------- Data ----------
 
@@ -616,61 +791,167 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
   }
   function newTeam(name, ageGroup, color, id) {
-    return { id: id || uid('t'), name: name, ageGroup: ageGroup, color: color,
-             region: '', teamNumber: '', coach: '', asstCoach: '', players: [], games: [] };
+    var d = defaultsFor(ageGroup);
+    return { id: id || uid('t'), name: name, ageGroup: ageGroup, color: color, format: d.format, quarterMin: d.quarterMin, buildOut: d.buildOut, qv: 2,
+             region: '', teamNumber: '', coach: '', asstCoach: '', players: [], games: [], lineups: [], practices: [] };
   }
   function defaultData() {
     return {
-      app: 'soccer-coach', version: 2,
-      activeTeamId: 't-u8',
+      app: 'soccer-coach', version: 3,
+      activeTeamId: null,
       lastBackupAt: null, lastChangedAt: null,
-      settings: { halfRule: 'played' },
-      teams: [newTeam('U8 team', '8U', 'blue', 't-u8'), newTeam('U10 team', '10U', 'gold', 't-u10')]
+      library: [],
+      teams: []
     };
   }
   function str(v, max) { return (typeof v === 'string' ? v : (v == null ? '' : String(v))).slice(0, max || 1000); }
   function obj(v) { return v && typeof v === 'object' && !Array.isArray(v) ? v : {}; }
   function num(v, lo, hi, dflt) { v = Number(v); return isFinite(v) && v >= lo && v <= hi ? v : dflt; }
+  function cleanSlots(s) {
+    var out = {};
+    Object.keys(obj(s)).forEach(function (k) { if (/^(GK|[DMF][1-5])$/.test(k) && typeof s[k] === 'string') out[k] = s[k].slice(0, 60); });
+    return out;
+  }
 
   function defaultsFor(age) {
-    if (age === '6U') return { format: '4v4', formation: '2-2', quarterMin: 5 };
-    if (age === '7U') return { format: '4v4', formation: '2-2', quarterMin: 10 };
-    if (age === '8U') return { format: '5v5open', formation: '2-1-2', quarterMin: 10 };
-    if (age === '10U') return { format: '7v7', formation: '2-3-1', quarterMin: 12.5 };
-    return { format: '7v7', formation: '2-3-1', quarterMin: 15 };
+    var d = AGE_DEFAULTS[age] || AGE_DEFAULTS['10U'];
+    return { format: d[0], quarterMin: d[1], buildOut: d[0] === '7v7', total: d[2], ball: d[3], warmOnField: d[4] };
   }
-  function emptyPlan() { var a = []; for (var i = 0; i < 8; i++) a.push({}); return a; }
+  function ageLabel(age) { return age; }
+  function cardRule(age) {
+    var d = defaultsFor(age), f = FMT(d.format);
+    return age + ': ' + f.size + 'v' + f.size + (f.keeper ? ' with a keeper' : ', no keeper') + ', size ' + d.ball + ' ball, ' + d.quarterMin +
+      '-minute quarters, 2-minute water breaks, 5-minute halftime, ' + d.total + ' minutes total. ' +
+      (d.warmOnField ? 'The 10-minute warm-up is part of the on-field block.' : 'Finish the 10-minute warm-up before the official start time.');
+  }
+  // Team settings for new games, falling back to the age group's defaults.
+  function teamSettings(team) {
+    var d = defaultsFor(team.ageGroup);
+    return { format: FORMATS[team.format] ? team.format : d.format, quarterMin: team.quarterMin || d.quarterMin };
+  }
+  function emptyQuarter(lines) { return { name: '', lines: lines.slice(), slots: {} }; }
 
-  function normalizeLive(L) {
+  // Version 2 used fixed formations and half-quarter blocks. This converts those games.
+  var OLD_FORMS = {
+    '4v4': { '2-2': [['LD', 'RD', 'LF', 'RF'], [2, 0, 2], ['D1', 'D2', 'F1', 'F2']],
+             '1-2-1': [['D', 'LM', 'RM', 'F'], [1, 2, 1], ['D1', 'M1', 'M2', 'F1']] },
+    '5v5open': { '2-1-2': [['LD', 'RD', 'CM', 'LF', 'RF'], [2, 1, 2], ['D1', 'D2', 'M1', 'F1', 'F2']],
+                 '1-3-1': [['D', 'LM', 'CM', 'RM', 'F'], [1, 3, 1], ['D1', 'M1', 'M2', 'M3', 'F1']] },
+    '5v5': { '2-2': [['GK', 'LD', 'RD', 'LF', 'RF'], [2, 0, 2], ['GK', 'D1', 'D2', 'F1', 'F2']],
+             '1-2-1': [['GK', 'D', 'LM', 'RM', 'F'], [1, 2, 1], ['GK', 'D1', 'M1', 'M2', 'F1']] },
+    '7v7': { '2-3-1': [['GK', 'LB', 'RB', 'LM', 'CM', 'RM', 'ST'], [2, 3, 1], ['GK', 'D1', 'D2', 'M1', 'M2', 'M3', 'F1']],
+             '3-2-1': [['GK', 'LB', 'CB', 'RB', 'LM', 'RM', 'ST'], [3, 2, 1], ['GK', 'D1', 'D2', 'D3', 'M1', 'M2', 'F1']] }
+  };
+  function convertOld(map, o) {
+    var out = {};
+    Object.keys(obj(map)).forEach(function (k) { var i = o[0].indexOf(k); if (i >= 0 && typeof map[k] === 'string') out[o[2][i]] = map[k]; });
+    return out;
+  }
+
+  function normalizeLive(L, fmt, lines, old) {
     L = obj(L);
+    var onField = old ? convertOld(L.onField, old) : cleanSlots(L.onField);
     return {
       q: num(L.q, 0, 4, 0), running: !!L.running, startedAt: typeof L.startedAt === 'number' ? L.startedAt : null,
       elapsedBefore: num(L.elapsedBefore, 0, 36000, 0), qStarted: !!L.qStarted,
-      onField: obj(L.onField),
+      lines: old ? lines.slice() : fixLines(fmt, L.lines || lines),
+      onField: onField,
       stints: (Array.isArray(L.stints) ? L.stints : []).filter(function (s) { return s && typeof s === 'object' && s.pid; }).map(function (s) {
         return { pid: str(s.pid, 60), pos: str(s.pos, 4), q: num(s.q, 0, 3, 0), from: num(s.from, 0, 36000, 0), to: s.to == null ? null : num(s.to, 0, 36000, 0) };
       }),
-      qDur: Array.isArray(L.qDur) ? L.qDur.map(function (x) { return x == null ? null : num(x, 0, 36000, null); }) : [],
-      history: Array.isArray(L.history) ? L.history.filter(function (h) { return typeof h === 'string'; }).slice(-10) : [],
-      ended: !!L.ended
+      qDur: Array.isArray(L.qDur) ? L.qDur.slice(0, 4).map(function (x) { return x == null ? null : num(x, 0, 36000, null); }) : [],
+      history: old ? [] : (Array.isArray(L.history) ? L.history.filter(function (h) { return typeof h === 'string'; }).slice(-10) : []),
+      ended: !!L.ended,
+      breakAt: typeof L.breakAt === 'number' ? L.breakAt : null,
+      breakLen: num(L.breakLen, 0, 1800, WATER_BREAK)
     };
   }
   function normalizeGame(g) {
-    var fmt = FORMATS[g.format] ? g.format : '4v4';
-    var fkeys = Object.keys(FORMATS[fmt].formations);
-    var plan = Array.isArray(g.plan) ? g.plan.slice(0, 8).map(obj) : [];
-    while (plan.length < 8) plan.push({});
+    var fmt = isFmt(g.format) ? g.format : '4v4';
+    var old = !Array.isArray(g.lines) && g.formation && OLD_FORMS[fmt] ? OLD_FORMS[fmt][g.formation] : null;
+    var lines = old ? old[1].slice() : fixLines(fmt, g.lines);
+    var plan;
+    if (old) {
+      var src = Array.isArray(g.plan) ? g.plan : [];
+      plan = [0, 1, 2, 3].map(function (q) { return { name: '', lines: lines.slice(), slots: convertOld(src[q * 2], old) }; });
+    } else {
+      plan = (Array.isArray(g.plan) ? g.plan : []).slice(0, 4).map(function (p) {
+        p = obj(p);
+        var l = fixLines(fmt, p.lines || lines);
+        return { name: str(p.name, 40), lines: l, slots: cleanSlots(p.slots) };
+      });
+      while (plan.length < 4) plan.push(emptyQuarter(lines));
+    }
+    var qo = {};
+    Object.keys(obj(g.qOverrides)).forEach(function (pid) {
+      var o = obj(g.qOverrides[pid]), c = {};
+      Object.keys(o).forEach(function (q) { if (+q >= 0 && +q < 4) c[q] = !!o[q]; });
+      qo[pid] = c;
+    });
     return {
       id: str(g.id, 60) || uid('g'),
       date: /^\d{4}-\d{2}-\d{2}$/.test(g.date) ? g.date : today(),
       opponent: str(g.opponent, 60),
-      format: fmt,
-      formation: fkeys.indexOf(g.formation) >= 0 ? g.formation : fkeys[0],
+      format: fmt, full: FORMATS[g.full] && FORMATS[g.full].keeper === FMT(fmt).keeper ? g.full : fullFor(fmt), lines: lines,
       quarterMin: num(g.quarterMin, 1, 45, 10),
       attendance: obj(g.attendance), absentReason: obj(g.absentReason),
-      plan: plan, goals: obj(g.goals), overrides: obj(g.overrides),
-      live: g.live ? normalizeLive(g.live) : null,
+      plan: plan, goals: obj(g.goals), qOverrides: qo,
+      live: g.live ? normalizeLive(g.live, fmt, lines, old) : null,
       status: ['planned', 'live', 'finished'].indexOf(g.status) >= 0 ? g.status : 'planned'
+    };
+  }
+  function normalizeLineup(l) {
+    var fmt = FORMATS[l.format] ? l.format : '5v5open';
+    return { id: str(l.id, 60) || uid('l'), name: str(l.name, 40) || 'Lineup', format: fmt, lines: fixLines(fmt, l.lines), slots: cleanSlots(l.slots) };
+  }
+  function normalizeDiagram(d) {
+    if (!d || typeof d !== 'object') return null;
+    var clamp = function (v, hi) { return num(v, 0, hi, hi / 2); };
+    return {
+      view: d.view === 'attack' ? 'attack' : 'defend',
+      line: !!d.line,
+      items: (Array.isArray(d.items) ? d.items : []).slice(0, 60).filter(function (i) { return i && ['us', 'them', 'ball', 'cone'].indexOf(i.kind) >= 0; }).map(function (i) {
+        return { id: str(i.id, 30) || uid('i'), kind: i.kind, x: clamp(i.x, 100), y: clamp(i.y, 100), label: str(i.label, 3) };
+      }),
+      arrows: (Array.isArray(d.arrows) ? d.arrows : []).slice(0, 40).filter(function (a) { return a && (a.kind === 'pass' || a.kind === 'run'); }).map(function (a) {
+        return { id: str(a.id, 30) || uid('a'), kind: a.kind, x1: clamp(a.x1, 100), y1: clamp(a.y1, 100), x2: clamp(a.x2, 100), y2: clamp(a.y2, 100) };
+      })
+    };
+  }
+  function normalizeEntry(e) {
+    e = obj(e);
+    var dg = normalizeDiagram(e.diagram);
+    if (dg && !dg.items.length && !dg.arrows.length) dg = null;
+    return {
+      id: str(e.id, 60) || uid('e'),
+      type: ENTRY_TYPES[e.type] ? e.type : 'drill',
+      name: str(e.name, 80) || 'Untitled',
+      focus: str(e.focus, 80),
+      ages: (Array.isArray(e.ages) ? e.ages : []).filter(function (a) { return AGE_GROUPS.indexOf(a) >= 0; }),
+      minutes: e.minutes == null || e.minutes === '' ? null : num(e.minutes, 1, 120, null),
+      players: str(e.players, 80), equipment: str(e.equipment, 300),
+      setup: str(e.setup, 2000), how: str(e.how, 4000), points: str(e.points, 3000),
+      video: /^https?:\/\//i.test(str(e.video)) ? str(e.video, 300) : '',
+      source: str(e.source, 120),
+      diagram: dg
+    };
+  }
+  function normalizePractice(p) {
+    p = obj(p);
+    var R = obj(p.run);
+    return {
+      id: str(p.id, 60) || uid('pr'),
+      date: /^\d{4}-\d{2}-\d{2}$/.test(p.date) ? p.date : today(),
+      title: str(p.title, 60),
+      length: num(p.length, 10, 240, 60),
+      items: (Array.isArray(p.items) ? p.items : []).slice(0, 40).map(function (it) {
+        it = obj(it);
+        return { id: str(it.id, 30) || uid('it'), kind: it.kind === 'break' ? 'break' : 'entry', entryId: str(it.entryId, 60),
+                 minutes: num(it.minutes, 1, 120, 10), note: str(it.note, 300) };
+      }),
+      attendance: obj(p.attendance), notes: str(p.notes, 3000),
+      run: p.run ? { idx: num(R.idx, 0, 39, 0), running: !!R.running, startedAt: typeof R.startedAt === 'number' ? R.startedAt : null,
+                     elapsedBefore: num(R.elapsedBefore, 0, 36000, 0) } : null
     };
   }
 
@@ -678,26 +959,34 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   function normalize(d) {
     if (!d || typeof d !== 'object' || !Array.isArray(d.teams)) throw new Error('Not a Soccer Coach data file');
     var teams = d.teams.filter(function (t) { return t && typeof t === 'object'; }).map(function (t) {
+      var age = AGE_MAP[t.ageGroup] || t.ageGroup;
+      age = AGE_GROUPS.indexOf(age) >= 0 ? age : '8U';
+      var dfl = defaultsFor(age);
       return {
         id: str(t.id, 60) || uid('t'),
         name: str(t.name, 40) || 'Team',
-        ageGroup: AGE_GROUPS.indexOf(t.ageGroup) >= 0 ? t.ageGroup : '8U',
+        ageGroup: age,
         color: COLORS[t.color] ? t.color : 'blue',
+        format: FORMATS[t.format] ? t.format : dfl.format,
+        // Teams saved with the old default quarter length move to the region chart's length.
+        quarterMin: !t.qv && num(t.quarterMin, 1, 45, 0) === OLD_QUARTERS[age] ? dfl.quarterMin : num(t.quarterMin, 1, 45, dfl.quarterMin),
+        qv: 2,
+        buildOut: typeof t.buildOut === 'boolean' ? t.buildOut : dfl.buildOut,
         region: str(t.region, 20), teamNumber: str(t.teamNumber, 20),
         coach: str(t.coach, 60), asstCoach: str(t.asstCoach, 60),
         players: (Array.isArray(t.players) ? t.players : []).filter(function (p) { return p && typeof p === 'object'; }).map(function (p) {
           return { id: str(p.id, 60) || uid('p'), number: str(p.number, 2).replace(/\D/g, ''),
                    name: str(p.name, 60) || 'Player', notes: str(p.notes, 1000) };
         }),
-        games: (Array.isArray(t.games) ? t.games : []).filter(function (g) { return g && typeof g === 'object'; }).map(normalizeGame)
+        games: (Array.isArray(t.games) ? t.games : []).filter(function (g) { return g && typeof g === 'object'; }).map(normalizeGame),
+        lineups: (Array.isArray(t.lineups) ? t.lineups : []).filter(function (l) { return l && typeof l === 'object'; }).map(normalizeLineup),
+        practices: (Array.isArray(t.practices) ? t.practices : []).filter(function (p) { return p && typeof p === 'object'; }).map(normalizePractice)
       };
     });
-    if (!teams.length) throw new Error('The file has no teams');
-    var active = teams.some(function (t) { return t.id === d.activeTeamId; }) ? d.activeTeamId : teams[0].id;
-    var s = obj(d.settings);
-    return { app: 'soccer-coach', version: 2, activeTeamId: active,
+    var active = teams.some(function (t) { return t.id === d.activeTeamId; }) ? d.activeTeamId : (teams[0] ? teams[0].id : null);
+    return { app: 'soccer-coach', version: 3, activeTeamId: active,
              lastBackupAt: d.lastBackupAt || null, lastChangedAt: d.lastChangedAt || null,
-             settings: { halfRule: s.halfRule === 'notPlayed' ? 'notPlayed' : 'played' },
+             library: (Array.isArray(d.library) ? d.library : []).filter(function (e) { return e && typeof e === 'object'; }).map(normalizeEntry),
              teams: teams };
   }
 
@@ -706,8 +995,12 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     var raw = null;
     try { raw = localStorage.getItem(KEY); } catch (e) { storageOk = false; return defaultData(); }
     if (!raw) return defaultData();
-    try { return normalize(JSON.parse(raw)); }
-    catch (e) {
+    try {
+      var parsed = JSON.parse(raw);
+      // Keep a copy of the old version's data the first time this version runs.
+      if (parsed && parsed.version !== 3) { try { localStorage.setItem(KEY + '.before-v3', raw); } catch (e1) {} }
+      return normalize(parsed);
+    } catch (e) {
       try { localStorage.setItem(KEY + '.unreadable-' + Date.now(), raw); } catch (e2) {}
       return defaultData();
     }
@@ -727,13 +1020,19 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   }
 
   var data = load();
+  persist();
+
+  // Screen state
   var view = 'roster';
-  var gameId = null;
-  var gameTab = 'setup';
-  var planBlock = 0;
+  var gamePage = 'list';      // list | lineups | lineup
+  var gameId = null, gameTab = 'setup', planQ = 0, lineupId = null, lineupDraft = null;
+  var practiceTab = 'plans';  // plans | library
+  var practiceId = null, practiceRun = false;
+  var entryId = null, entryDraft = null, entryEditing = false;
+  var libFilter = 'all', libSearch = '';
 
   function activeTeam() {
-    return data.teams.find(function (t) { return t.id === data.activeTeamId; }) || data.teams[0];
+    return data.teams.find(function (t) { return t.id === data.activeTeamId; }) || data.teams[0] || null;
   }
   function sortedPlayers(team) {
     return team.players.slice().sort(function (a, b) {
@@ -795,11 +1094,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     sec = Math.max(0, Math.floor(sec));
     return Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0');
   }
-  function qtrs(blocks) {
-    var whole = Math.floor(blocks / 2), half = blocks % 2;
-    if (!whole && !half) return '0';
-    return (whole ? String(whole) : '') + (half ? '½' : '');
-  }
+  function plural(n, word) { return n + ' ' + word + (n === 1 ? '' : 's'); }
   function firstName(n) { var f = n.split(' ')[0]; return f.length > 9 ? f.slice(0, 8) + '.' : f; }
   function jerseyText(p) { return p && p.number !== '' ? '#' + p.number + ' ' : ''; }
   function jmini(p) { return '<span class="jmini">' + (p && p.number !== '' ? esc(p.number) : '?') + '</span>'; }
@@ -812,18 +1107,17 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
       return ((t ^ t >>> 14) >>> 0) / 4294967296;
     };
   }
+  function keyOf(map, pid) { return Object.keys(map).find(function (k) { return map[k] === pid; }) || null; }
 
   // ---------- Game logic ----------
 
   function findGame(team, id) { return team.games.find(function (g) { return g.id === id; }) || null; }
-  function positions(g) {
-    var f = FORMATS[g.format];
-    return f.formations[g.formation].map(function (a) { return { key: a[0], x: a[1], y: a[2] }; });
-  }
   function newGame(team) {
-    var d = defaultsFor(team.ageGroup);
-    var g = { id: uid('g'), date: today(), opponent: '', format: d.format, formation: d.formation, quarterMin: d.quarterMin,
-              attendance: {}, absentReason: {}, plan: emptyPlan(), goals: {}, overrides: {}, live: null, status: 'planned' };
+    var d = teamSettings(team);
+    var lines = FMT(d.format).def.slice();
+    var g = { id: uid('g'), date: today(), opponent: '', format: d.format, full: d.format, lines: lines, quarterMin: d.quarterMin,
+              attendance: {}, absentReason: {}, plan: [0, 1, 2, 3].map(function () { return emptyQuarter(lines); }),
+              goals: {}, qOverrides: {}, live: null, status: 'planned' };
     team.players.forEach(function (p) { g.attendance[p.id] = 'playing'; });
     return g;
   }
@@ -832,30 +1126,28 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   function listedPlayers(team, g) { return sortedPlayers(team).filter(function (p) { return att(g, p.id) !== 'none'; }); }
   function playingPlayers(team, g) { return sortedPlayers(team).filter(function (p) { return att(g, p.id) === 'playing'; }); }
 
-  // Removes anyone from the plan who isn't available, and any positions not in the formation.
-  function cleanPlan(team, g) {
-    var keys = positions(g).map(function (p) { return p.key; });
-    g.plan = g.plan.map(function (blk) {
-      var out = {};
-      keys.forEach(function (k) {
-        var pid = blk[k];
-        if (pid && playerById(team, pid) && att(g, pid) === 'playing') out[k] = pid;
-      });
-      return out;
+  // Keeps only available players in valid spots.
+  function usableSlots(team, g, fmt, lines, slots) {
+    var keys = positionsFor(fmt, lines).map(function (p) { return p.key; });
+    var out = {}, seen = {};
+    keys.forEach(function (k) {
+      var pid = slots[k];
+      if (pid && !seen[pid] && playerById(team, pid) && att(g, pid) === 'playing') { out[k] = pid; seen[pid] = 1; }
     });
+    return out;
+  }
+  function cleanPlan(team, g) {
+    g.plan.forEach(function (q) { q.slots = usableSlots(team, g, g.format, q.lines, q.slots); });
   }
   function plannedCounts(team, g) {
     var c = {};
     playingPlayers(team, g).forEach(function (p) { c[p.id] = 0; });
-    g.plan.forEach(function (blk) { Object.keys(blk).forEach(function (k) { if (c[blk[k]] != null) c[blk[k]]++; }); });
+    g.plan.forEach(function (q) { Object.keys(q.slots).forEach(function (k) { if (c[q.slots[k]] != null) c[q.slots[k]]++; }); });
     return c;
   }
-  function keyOf(map, pid) { return Object.keys(map).find(function (k) { return map[k] === pid; }) || null; }
-
   function elapsed(L) { return L.elapsedBefore + (L.running && L.startedAt ? (Date.now() - L.startedAt) / 1000 : 0); }
   function hasLiveData(g) { return !!(g.live && g.live.stints.length); }
 
-  // Seconds each player has been on the field.
   function minutesFor(team, g) {
     var m = {};
     listedPlayers(team, g).forEach(function (p) { m[p.id] = 0; });
@@ -867,51 +1159,41 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
         m[s.pid] += Math.max(0, to - s.from);
       });
     } else {
-      var half = g.quarterMin * 30;
-      var c = plannedCounts(team, g);
-      Object.keys(c).forEach(function (pid) { m[pid] = c[pid] * half; });
+      var Q = g.quarterMin * 60, c = plannedCounts(team, g);
+      Object.keys(c).forEach(function (pid) { m[pid] = c[pid] * Q; });
     }
     return m;
   }
 
-  // Which half-quarter blocks each player played: from live tracking if used, otherwise from the plan,
+  // Quarters played: from live tracking (on the field for at least half the quarter), otherwise the plan,
   // then any boxes the coach fixed by hand.
   function credits(team, g, skipOverrides) {
     var res = {};
-    listedPlayers(team, g).forEach(function (p) { res[p.id] = [false, false, false, false, false, false, false, false]; });
+    listedPlayers(team, g).forEach(function (p) { res[p.id] = [false, false, false, false]; });
     if (hasLiveData(g)) {
-      var L = g.live, Q = g.quarterMin * 60, now = elapsed(L);
-      var acc = {};
+      var L = g.live, Q = g.quarterMin * 60, now = elapsed(L), acc = {};
       L.stints.forEach(function (s) {
         if (!res[s.pid]) return;
-        var D = L.qDur[s.q] != null ? L.qDur[s.q] : Q;
-        var h = D / 2;
         var to = s.to == null ? (s.q === L.q ? now : s.from) : s.to;
-        var a = Math.max(0, Math.min(to, h) - Math.max(s.from, 0));
-        var b = Math.max(0, Math.min(to, D) - Math.max(s.from, h));
-        acc[s.pid] = acc[s.pid] || [0, 0, 0, 0, 0, 0, 0, 0];
-        acc[s.pid][s.q * 2] += a;
-        acc[s.pid][s.q * 2 + 1] += b;
+        acc[s.pid] = acc[s.pid] || [0, 0, 0, 0];
+        acc[s.pid][s.q] += Math.max(0, to - s.from);
       });
       Object.keys(acc).forEach(function (pid) {
-        for (var blk = 0; blk < 8; blk++) {
-          var q = Math.floor(blk / 2);
+        for (var q = 0; q < 4; q++) {
           var D = L.qDur[q] != null ? L.qDur[q] : Q;
-          var len = blk % 2 ? D - D / 2 : D / 2;
-          // Counts as played if on the field for at least half of that half-quarter.
-          if (len > 0 && acc[pid][blk] >= len / 2) res[pid][blk] = true;
+          if (D > 0 && acc[pid][q] >= D / 2) res[pid][q] = true;
         }
       });
     } else {
-      g.plan.forEach(function (blk, i) {
-        Object.keys(blk).forEach(function (k) { if (res[blk[k]] && att(g, blk[k]) === 'playing') res[blk[k]][i] = true; });
+      g.plan.forEach(function (pq, q) {
+        Object.keys(pq.slots).forEach(function (k) { var pid = pq.slots[k]; if (res[pid] && att(g, pid) === 'playing') res[pid][q] = true; });
       });
     }
     if (!skipOverrides) {
-      Object.keys(g.overrides).forEach(function (pid) {
+      Object.keys(g.qOverrides).forEach(function (pid) {
         if (!res[pid]) return;
-        var o = obj(g.overrides[pid]);
-        Object.keys(o).forEach(function (b) { if (+b >= 0 && +b < 8) res[pid][+b] = !!o[b]; });
+        var o = g.qOverrides[pid];
+        Object.keys(o).forEach(function (q) { res[pid][+q] = !!o[q]; });
       });
     }
     return res;
@@ -919,43 +1201,42 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
 
   function seasonStats(team, excludeId) {
     var st = {};
-    team.players.forEach(function (p) { st[p.id] = { games: 0, blocks: 0, secs: 0, keeper: 0 }; });
+    team.players.forEach(function (p) { st[p.id] = { games: 0, quarters: 0, secs: 0, keeper: 0 }; });
     team.games.forEach(function (g) {
       if (g.status !== 'finished' || g.id === excludeId) return;
       var cr = credits(team, g), mins = minutesFor(team, g);
       Object.keys(cr).forEach(function (pid) {
         if (!st[pid] || att(g, pid) !== 'playing') return;
         st[pid].games++;
-        st[pid].blocks += cr[pid].filter(Boolean).length;
+        st[pid].quarters += cr[pid].filter(Boolean).length;
         st[pid].secs += mins[pid] || 0;
       });
-      g.plan.forEach(function (blk) { if (blk.GK && st[blk.GK]) st[blk.GK].keeper++; });
+      g.plan.forEach(function (q) { if (q.slots.GK && st[q.slots.GK]) st[q.slots.GK].keeper++; });
     });
     return st;
   }
 
-  // Builds a fair rotation: equal half-quarters for everyone, extra blocks to kids with the least
-  // season time, keeps kids on through a quarter when possible, rotates positions, keeper by quarter.
+  // Fair rotation in whole quarters. Extra quarters go to kids with the least season time,
+  // keepers rotate by quarter, and kids try different spots.
   function suggestPlan(team, g, attempt) {
-    var pos = positions(g), F = pos.length;
+    var lines = g.lines.slice();
+    var pos = positionsFor(g.format, lines), F = pos.length;
     var ps = playingPlayers(team, g), n = ps.length;
     var rnd = rng(hash(g.id) + attempt * 7919);
-    var plan = emptyPlan();
+    var plan = [0, 1, 2, 3].map(function () { return emptyQuarter(lines); });
     if (!n) return plan;
     var season = seasonStats(team, g.id);
     var target = {};
-    if (n <= F) ps.forEach(function (p) { target[p.id] = 8; });
+    if (n <= F) ps.forEach(function (p) { target[p.id] = 4; });
     else {
-      var total = F * 8, base = Math.floor(total / n), extra = total % n;
-      ps.map(function (p) { return { id: p.id, s: season[p.id] ? season[p.id].blocks : 0, r: rnd() }; })
+      var total = F * 4, base = Math.floor(total / n), extra = total % n;
+      ps.map(function (p) { return { id: p.id, s: season[p.id] ? season[p.id].secs : 0, r: rnd() }; })
         .sort(function (a, b) { return a.s - b.s || a.r - b.r; })
         .forEach(function (o, i) { target[o.id] = base + (i < extra ? 1 : 0); });
     }
-    var remaining = Object.assign({}, target);
-    var picks = [];
-    for (var b = 0; b < 8; b++) {
-      var left = 8 - b;
-      var prev = b ? picks[b - 1] : [];
+    var remaining = Object.assign({}, target), picks = [];
+    for (var q = 0; q < 4; q++) {
+      var left = 4 - q, prev = q ? picks[q - 1] : [];
       var cands = ps.filter(function (p) { return remaining[p.id] > 0; }).map(function (p) { return { id: p.id, r: rnd() }; });
       var chosen;
       if (cands.length <= F) chosen = cands;
@@ -963,10 +1244,6 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
         var must = cands.filter(function (c) { return remaining[c.id] >= left; });
         var rest = cands.filter(function (c) { return remaining[c.id] < left; });
         rest.sort(function (x, y) {
-          if (b % 2 === 1) {
-            var cx = prev.indexOf(x.id) >= 0 ? 0 : 1, cy = prev.indexOf(y.id) >= 0 ? 0 : 1;
-            if (cx !== cy) return cx - cy;
-          }
           var rx = remaining[x.id] / left, ry = remaining[y.id] / left;
           if (rx !== ry) return ry - rx;
           var sx = prev.indexOf(x.id) >= 0 ? 1 : 0, sy = prev.indexOf(y.id) >= 0 ? 1 : 0;
@@ -978,70 +1255,61 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
       chosen.forEach(function (c) { remaining[c.id]--; });
       picks.push(chosen.map(function (c) { return c.id; }));
     }
-
     var posCount = {}, keeperCount = {};
     ps.forEach(function (p) { posCount[p.id] = {}; keeperCount[p.id] = season[p.id] ? season[p.id].keeper : 0; });
-    var hasGK = pos.some(function (p) { return p.key === 'GK'; });
+    var hasGK = FMT(g.format).keeper;
     var fieldKeys = pos.filter(function (p) { return p.key !== 'GK'; }).map(function (p) { return p.key; });
-    function pickKeeper(pool) {
-      if (!pool.length) return null;
-      return pool.map(function (id) { return { id: id, k: keeperCount[id], r: rnd() }; })
-        .sort(function (a, b) { return a.k - b.k || a.r - b.r; })[0].id;
-    }
-    for (var q = 0; q < 4; q++) {
-      var gk1 = null, gk2 = null;
-      if (hasGK) {
-        var both = picks[2 * q].filter(function (id) { return picks[2 * q + 1].indexOf(id) >= 0; });
-        gk1 = pickKeeper(both.length ? both : picks[2 * q]);
-        gk2 = picks[2 * q + 1].indexOf(gk1) >= 0 ? gk1 : pickKeeper(picks[2 * q + 1]);
-        if (gk1) keeperCount[gk1] += 1;
-        if (gk2 && gk2 !== gk1) keeperCount[gk2] += 1;
+    picks.forEach(function (ids, q) {
+      var slots = {};
+      var others = ids.slice();
+      if (hasGK && ids.length) {
+        var gk = ids.map(function (id) { return { id: id, k: keeperCount[id], r: rnd() }; })
+          .sort(function (a, b) { return a.k - b.k || a.r - b.r; })[0].id;
+        slots.GK = gk; keeperCount[gk]++;
+        others = ids.filter(function (id) { return id !== gk; });
       }
-      [2 * q, 2 * q + 1].forEach(function (blk) {
-        var gk = blk % 2 ? gk2 : gk1;
-        var assign = {};
-        if (gk) assign.GK = gk;
-        var others = picks[blk].filter(function (id) { return id !== gk; });
-        var free = fieldKeys.slice();
-        if (blk % 2 === 1) {
-          others = others.filter(function (id) {
-            var k = keyOf(plan[blk - 1], id);
-            if (k && k !== 'GK' && free.indexOf(k) >= 0) { assign[k] = id; free.splice(free.indexOf(k), 1); return false; }
-            return true;
-          });
-        }
-        others.map(function (id) { return { id: id, r: rnd() }; }).sort(function (a, b) { return a.r - b.r; }).forEach(function (o) {
-          if (!free.length) return;
-          free.sort(function (x, y) { return (posCount[o.id][x] || 0) - (posCount[o.id][y] || 0) || (rnd() - .5); });
-          var k = free.shift();
-          assign[k] = o.id;
-        });
-        Object.keys(assign).forEach(function (k) { posCount[assign[k]][k] = (posCount[assign[k]][k] || 0) + 1; });
-        plan[blk] = assign;
+      var free = fieldKeys.slice();
+      others.map(function (id) { return { id: id, r: rnd() }; }).sort(function (a, b) { return a.r - b.r; }).forEach(function (o) {
+        if (!free.length) return;
+        free.sort(function (x, y) { return (posCount[o.id][x[0]] || 0) - (posCount[o.id][y[0]] || 0) || (rnd() - .5); });
+        var k = free.shift();
+        slots[k] = o.id;
+        posCount[o.id][k[0]] = (posCount[o.id][k[0]] || 0) + 1;
       });
-    }
+      plan[q].slots = slots;
+    });
     return plan;
   }
 
   function planWarnings(team, g) {
     var out = [];
-    var pos = positions(g), F = pos.length;
+    var F = FMT(g.format).size;
     var ps = playingPlayers(team, g), n = ps.length;
     if (!n) return [{ bad: true, text: 'No players are marked as playing. Set attendance on the Setup tab.' }];
     if (n < F) out.push({ bad: true, text: 'Only ' + n + ' players are available for ' + F + ' spots on the field.' });
-    g.plan.forEach(function (blk, i) {
-      var filled = Object.keys(blk).length;
-      if (filled < Math.min(F, n)) out.push({ bad: false, text: BLOCK_NAMES[i] + ' has ' + (F - filled) + ' empty ' + (F - filled === 1 ? 'spot.' : 'spots.') });
+    g.plan.forEach(function (pq, q) {
+      var gap = Math.min(F, n) - Object.keys(pq.slots).length;
+      if (gap > 0) out.push({ bad: false, text: 'Quarter ' + (q + 1) + ' has ' + plural(gap, 'empty spot') + '.' });
     });
     if (n > F) {
       var c = plannedCounts(team, g);
-      var share = F * 8 / n, lo = Math.floor(share), hi = Math.ceil(share);
+      var share = F * 4 / n, lo = Math.floor(share), hi = Math.ceil(share);
       ps.forEach(function (p) {
         var k = c[p.id];
-        if (k < 4) out.push({ bad: true, text: p.name + ' is planned for ' + qtrs(k) + ' quarters, under half the game.' });
-        else if (k < lo) out.push({ bad: false, text: p.name + ' is planned for ' + qtrs(k) + ' quarters, below a fair share.' });
-        else if (k > hi) out.push({ bad: false, text: p.name + ' is planned for ' + qtrs(k) + ' quarters, above a fair share.' });
+        if (k < 2) out.push({ bad: true, text: p.name + ' is planned for ' + plural(k, 'quarter') + ', under half the game.' });
+        else if (k < lo) out.push({ bad: false, text: p.name + ' is planned for ' + plural(k, 'quarter') + ', below a fair share.' });
+        else if (k > hi) out.push({ bad: false, text: p.name + ' is planned for ' + plural(k, 'quarter') + ', above a fair share.' });
       });
+      if (share !== lo) {
+        var low = ps.filter(function (p) { return c[p.id] === lo; }), high = ps.filter(function (p) { return c[p.id] === hi; });
+        if (low.length && high.length && low.length + high.length === n) {
+          var names = function (arr) { return arr.map(function (p) { return firstName(p.name); }).join(', '); };
+          out.push({ bad: false, text: 'Quarters can\'t split evenly with ' + n + ' players and ' + F + ' spots. ' +
+            (high.length <= low.length
+              ? names(high) + (high.length === 1 ? ' gets' : ' get') + ' an extra quarter. To even out minutes, sub ' + (high.length === 1 ? names(high) : 'them') + ' off for part of a quarter.'
+              : names(low) + (low.length === 1 ? ' is' : ' are') + ' a quarter short. To even out minutes, sub ' + (low.length === 1 ? names(low) : 'them') + ' in for part of a quarter.') });
+        }
+      }
     }
     return out;
   }
@@ -1049,7 +1317,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   // ---------- Live game ----------
 
   function snapshot(L) {
-    L.history.push(JSON.stringify({ onField: L.onField, stints: L.stints }));
+    L.history.push(JSON.stringify({ onField: L.onField, stints: L.stints, lines: L.lines }));
     if (L.history.length > 10) L.history.shift();
   }
   function closeStint(L, pid, e) {
@@ -1058,7 +1326,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   function openStint(L, pid, pos, e) {
     if (L.qStarted && pid) L.stints.push({ pid: pid, pos: pos, q: L.q, from: e, to: null });
   }
-  // Put a player (or nobody) at a position. A player already on the field swaps spots.
+  // Put a player (or nobody) at a spot. A player already on the field swaps spots.
   function liveAssign(L, pos, pid) {
     var e = elapsed(L);
     var outPid = L.onField[pos] || null;
@@ -1075,36 +1343,679 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     }
     if (pid) { L.onField[pos] = pid; openStint(L, pid, pos, e); } else delete L.onField[pos];
   }
-  function liveApplyLineup(L, lineup) {
+  // Switch the whole field to a lineup. Kids who stay on keep earning time without a break.
+  function liveApplyLineup(L, lines, slots) {
     var e = elapsed(L);
     snapshot(L);
-    Object.keys(L.onField).forEach(function (k) {
-      if (L.onField[k] !== lineup[k] && L.qStarted) closeStint(L, L.onField[k], e);
-    });
-    Object.keys(lineup).forEach(function (k) {
-      if (L.onField[k] !== lineup[k]) openStint(L, lineup[k], k, e);
-    });
-    L.onField = Object.assign({}, lineup);
+    var stay = {};
+    Object.keys(slots).forEach(function (k) { stay[slots[k]] = 1; });
+    if (L.qStarted) {
+      Object.keys(L.onField).forEach(function (k) { if (!stay[L.onField[k]]) closeStint(L, L.onField[k], e); });
+      var already = {};
+      Object.keys(L.onField).forEach(function (k) { already[L.onField[k]] = 1; });
+      Object.keys(slots).forEach(function (k) { if (!already[slots[k]]) openStint(L, slots[k], k, e); });
+    }
+    L.lines = lines.slice();
+    L.onField = Object.assign({}, slots);
   }
-  function liveDiff(L, lineup) {
-    var changes = [];
-    var keys = {};
-    Object.keys(L.onField).concat(Object.keys(lineup)).forEach(function (k) { keys[k] = 1; });
-    Object.keys(keys).forEach(function (k) {
-      if ((L.onField[k] || null) !== (lineup[k] || null)) changes.push({ pos: k, out: L.onField[k] || null, inn: lineup[k] || null });
-    });
-    return changes;
-  }
-  function validLineup(team, g, blk) {
-    var out = {};
-    positions(g).forEach(function (p) {
-      var pid = blk[p.key];
-      if (pid && playerById(team, pid) && att(g, pid) === 'playing') out[p.key] = pid;
-    });
-    return out;
+  function sameLineup(a, b) {
+    var ka = Object.keys(a), kb = Object.keys(b);
+    return ka.length === kb.length && ka.every(function (k) { return a[k] === b[k]; });
   }
 
-  // ---------- Rendering: shared ----------
+  // ---------- Field drawings ----------
+
+  // Your half of the field. With goalAtTop it's flipped (for attacking set plays).
+  // The build-out line sits halfway between the top of the penalty area and the center line.
+  function halfPitch(goalAtTop, boxes, buildOut) {
+    var s = '<rect width="100" height="100" fill="#2F7D4B"/>';
+    for (var i = 0; i < 8; i += 2) s += '<rect x="0" y="' + (i * 100 / 8) + '" width="100" height="' + (100 / 8) + '" fill="#2B7446"/>';
+    s += '<g ' + (goalAtTop ? 'transform="translate(0 100) scale(1 -1)" ' : '') + 'fill="none" stroke="rgba(255,255,255,.9)" stroke-width=".7">' +
+         '<rect x="4" y="4" width="92" height="92"/><path d="M40 4 A10 10 0 0 0 60 4"/>' +
+         '<rect x="36" y="88" width="28" height="8"/>' + (boxes ? '<rect x="24" y="76" width="52" height="20"/>' : '') +
+         '<rect x="42" y="96" width="16" height="2.7"/><circle cx="50" cy="4" r=".9" fill="#fff" stroke="none"/>' +
+         (buildOut ? '<line x1="4" y1="40" x2="96" y2="40" stroke-dasharray="3 2"/>' : '') + '</g>';
+    return s;
+  }
+  function pitchSVG(team, fmt, lines, slots, action) {
+    var c = COLORS[team.color] || COLORS.blue;
+    var s = '<svg class="pitch" viewBox="0 0 100 100" role="img" aria-label="Field diagram, your half">' + halfPitch(false, FMT(fmt).keeper, team.buildOut);
+    var sc = FMT(fmt).size >= 9 ? ' scale(.82)' : '';
+    positionsFor(fmt, lines).forEach(function (p) {
+      var pid = slots[p.key], pl = pid ? playerById(team, pid) : null;
+      var tx = (4 + 92 * p.x).toFixed(1), ty = (4 + 92 * p.y).toFixed(1);
+      s += '<g class="mk" data-action="' + action + '" data-pos="' + p.key + '" transform="translate(' + tx + ' ' + ty + ')' + sc + '" role="button" aria-label="' +
+           esc(POS_NAMES[p.label] + (pl ? ': ' + pl.name : ': empty')) + '"><circle r="10" fill="transparent"/>';
+      if (pl) {
+        var isGK = p.key === 'GK';
+        var bg = isGK ? '#F2C230' : c.bg, fg = isGK ? '#1A1A1A' : c.fg;
+        s += '<text class="mk-pos" y="-7.9">' + p.label + '</text>';
+        s += '<circle r="6.6" fill="' + bg + '" stroke="#fff" stroke-width="1"/>';
+        s += '<text y="2.5" text-anchor="middle" font-size="7" font-weight="800" fill="' + fg + '">' + (pl.number !== '' ? esc(pl.number) : '?') + '</text>';
+        s += '<text class="mk-name" y="11.8">' + esc(firstName(pl.name)) + '</text>';
+      } else {
+        s += '<circle r="6.6" fill="rgba(255,255,255,.12)" stroke="#fff" stroke-width=".8" stroke-dasharray="2 1.4"/>';
+        s += '<text y="1.6" text-anchor="middle" font-size="4.2" font-weight="700" fill="#fff">' + p.label + '</text>';
+      }
+      s += '</g>';
+    });
+    return s + '</svg>' + (team.buildOut ? '<div class="legend"><span>Dashed line: build-out line</span></div>' : '');
+  }
+
+  // ---------- Saved lineups ----------
+
+  function teamFormat(team) { return teamSettings(team).format; }
+  function findLineup(team, id) { return team.lineups.find(function (l) { return l.id === id; }) || null; }
+  function lineupMissing(team, g, l) {
+    return Object.keys(l.slots).filter(function (k) { var pid = l.slots[k]; return !playerById(team, pid) || att(g, pid) !== 'playing'; }).length;
+  }
+  function lineupOptions(team, g) {
+    return team.lineups.filter(function (l) { return l.format === g.format; }).map(function (l) {
+      var miss = lineupMissing(team, g, l);
+      return { label: l.name, detail: formName(l.format, l.lines) + (miss ? ', ' + miss + ' not here' : ''), value: l.id };
+    });
+  }
+
+  function renderLineupList(t) {
+    var html = '<button class="back" data-action="lineups-back">‹ Games</button>';
+    html += '<div class="team-head"><div><h1>Saved lineups</h1><p>' + esc(t.name) + ', ' + plural(t.lineups.length, 'lineup') + '</p></div>' +
+            '<button class="btn btn-primary btn-small" data-action="lineup-new">New lineup</button></div>';
+    if (!t.lineups.length) {
+      return html + '<div class="empty"><p>Save lineups you like, such as your starters or a strong defense. Each lineup can use its own formation, and you can pick one for any quarter or switch to one mid-game.</p>' +
+             '<button class="btn btn-primary" data-action="lineup-new">New lineup</button></div>';
+    }
+    html += '<ul class="roster">' + t.lineups.map(function (l) {
+      var filled = Object.keys(l.slots).filter(function (k) { return playerById(t, l.slots[k]); }).length;
+      return '<li><button class="list-row" data-action="lineup-open" data-id="' + esc(l.id) + '"><span class="main"><div class="title">' + esc(l.name) + '</div>' +
+             '<div class="sub">' + esc(formName(l.format, l.lines)) + ', ' + FMT(l.format).label + ', ' + filled + ' of ' + FMT(l.format).size + ' filled</div></span></button></li>';
+    }).join('') + '</ul>';
+    return html;
+  }
+
+  function renderLineupEdit(t) {
+    var l = lineupDraft;
+    var fmtOpts = Object.keys(FORMATS).map(function (k) { return '<option value="' + k + '"' + (k === l.format ? ' selected' : '') + '>' + FORMATS[k].label + '</option>'; }).join('');
+    var html = '<button class="back" data-action="lineup-cancel">‹ Saved lineups</button>';
+    html += '<h1 class="game-title">' + (findLineup(t, l.id) ? 'Edit lineup' : 'New lineup') + '</h1>';
+    html += '<section class="panel"><label class="field"><span>Lineup name</span><input data-ld="name" type="text" maxlength="40" value="' + esc(l.name) + '" placeholder="For example: Starters"></label>' +
+            '<label class="field"><span>Format</span><select data-ld="format">' + fmtOpts + '</select></label>' +
+            '<div class="lineup-bar"><div><div class="lb-name">' + esc(formName(l.format, l.lines)) + '</div><div class="lb-form">' + esc(formDetail(l.lines)) + '</div></div>' +
+            '<button class="btn btn-quiet btn-small" data-action="ld-formation">Formation</button></div></section>';
+    html += '<p class="blk-caption">Tap a spot to choose a player.</p>';
+    html += pitchSVG(t, l.format, l.lines, l.slots, 'ld-pos');
+    html += '<div class="toolrow"><button class="btn btn-primary" data-action="lineup-save">Save lineup</button>' +
+            '<button class="btn btn-quiet" data-action="ld-clear">Clear players</button></div>';
+    if (findLineup(t, l.id)) {
+      html += '<div class="toolrow"><button class="btn btn-quiet" data-action="lineup-copy">Make a copy</button>' +
+              '<button class="btn btn-danger" data-action="lineup-delete">Delete lineup</button></div>';
+    }
+    return html;
+  }
+
+  // ---------- Rendering: games ----------
+
+  function renderGameList() {
+    var t = activeTeam();
+    var html = '<div class="team-head"><div><h1>Games</h1><p>' + esc(t.name) + ', ' +
+               (t.games.length ? plural(t.games.length, 'game') : 'no games yet') + '</p></div>' +
+               (t.players.length ? '<button class="btn btn-primary btn-small" data-action="new-game">New game</button>' : '') + '</div>';
+    if (!t.players.length) {
+      return html + '<div class="empty"><p>Add players to the roster before planning a game.</p>' +
+             '<button class="btn btn-primary" data-action="nav" data-view="roster">Go to roster</button></div>';
+    }
+    html += '<button class="list-row panel" style="margin-bottom:14px;border:1px solid var(--rule);border-radius:14px" data-action="lineups-open">' +
+            '<span class="main"><div class="title">Saved lineups</div><div class="sub">' + plural(t.lineups.length, 'lineup') + '. Build them once, use them any quarter.</div></span><span aria-hidden="true">›</span></button>';
+    if (!t.games.length) {
+      html += '<div class="empty"><p>Create a game to plan fair rotations, track playing time, and fill in your lineup card.</p>' +
+              '<button class="btn btn-primary" data-action="new-game">New game</button></div>';
+    } else {
+      var games = t.games.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
+      html += '<ul class="roster">' + games.map(function (g) {
+        var pill = g.status === 'finished' ? '<span class="pill done">Finished</span>'
+                 : g.status === 'live' ? '<span class="pill live">In progress</span>' : '<span class="pill">Planned</span>';
+        return '<li><button class="game-row" data-action="open-game" data-id="' + esc(g.id) + '">' +
+               '<span class="gdate">' + esc(fmtDate(g.date, { weekday: 'short' })) + '<b>' + esc(fmtDate(g.date, { month: 'short', day: 'numeric' })) + '</b></span>' +
+               '<span class="gname">vs ' + esc(g.opponent || 'Opponent not set') + '</span>' + pill + '</button></li>';
+      }).join('') + '</ul>';
+    }
+    html += renderSeason(t);
+    return html;
+  }
+
+  function renderSeason(t) {
+    var finished = t.games.filter(function (g) { return g.status === 'finished'; }).length;
+    var html = '<h2 class="section-title">Season playing time</h2>';
+    if (!finished) return html + '<p class="meta">Totals appear here once you finish a game. Only finished games count.</p>';
+    var st = seasonStats(t);
+    html += '<p class="meta">From ' + plural(finished, 'finished game') + '. The rotation planner gives extra time to kids with the lowest totals.</p>';
+    html += '<div class="tbl-wrap"><table class="grid"><thead><tr><th>#</th><th class="l">Player</th><th>Games</th><th>Quarters</th><th>Minutes</th></tr></thead><tbody>' +
+      sortedPlayers(t).map(function (p) {
+        var s = st[p.id];
+        return '<tr><td class="num">' + esc(p.number || '?') + '</td><td class="l">' + esc(p.name) + '</td><td>' + s.games + '</td><td>' + s.quarters +
+               '</td><td>' + Math.round(s.secs / 60) + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+    return html;
+  }
+
+  function renderGame(t, g) {
+    var html = '<button class="back" data-action="close-game">‹ All games</button>';
+    html += '<h1 class="game-title">vs ' + esc(g.opponent || 'Opponent not set') + '</h1>';
+    html += '<p class="game-sub">' + esc(fmtDate(g.date, { weekday: 'long', month: 'long', day: 'numeric' })) + ', ' + FMT(g.format).label + '</p>';
+    html += '<div class="seg" role="tablist">' + [['setup', 'Setup'], ['plan', 'Plan'], ['live', 'Live'], ['card', 'Card']].map(function (x) {
+      return '<button data-action="game-tab" data-tab="' + x[0] + '" aria-current="' + (gameTab === x[0]) + '">' + x[1] + '</button>';
+    }).join('') + '</div>';
+    if (gameTab === 'setup') html += renderSetup(t, g);
+    else if (gameTab === 'plan') html += renderPlan(t, g);
+    else if (gameTab === 'live') html += renderLive(t, g);
+    else html += renderCard(t, g);
+    return html;
+  }
+
+  function renderSetup(t, g) {
+    var locked = hasLiveData(g);
+    var fmtOpts = Object.keys(FORMATS).map(function (k) { return '<option value="' + k + '"' + (k === g.full ? ' selected' : '') + '>' + FORMATS[k].label + '</option>'; }).join('');
+    var FS = FORMATS[g.full], cur = FMT(g.format).size, minN = 3, nOpts = '';
+    for (var n = FS.size; n >= minN; n--) {
+      nOpts += '<option value="' + n + '"' + (n === cur ? ' selected' : '') + '>' + n + 'v' + n +
+               (FS.keeper ? ' (' + (n - 1) + ' + keeper)' : '') + (n === FS.size ? ', full side' : ', short-handed') + '</option>';
+    }
+    var html = '<section class="panel">' +
+      '<label class="field"><span>Opponent</span><input data-setup="opponent" type="text" maxlength="60" autocomplete="off" value="' + esc(g.opponent) + '" placeholder="Team name"></label>' +
+      '<label class="field"><span>Date</span><input data-setup="date" type="date" value="' + esc(g.date) + '"></label>' +
+      '<label class="field"><span>Format</span><select data-setup="format"' + (locked ? ' disabled' : '') + '>' + fmtOpts + '</select></label>' +
+      '<label class="field"><span>Players on the field</span><select data-setup="onfield"' + (locked ? ' disabled' : '') + '>' + nOpts + '</select></label>' +
+      (FMT(g.format).short ? '<p class="hint">Playing short-handed. Both teams should field the same number. Saved lineups only work at full side.</p>' : '') +
+      '<div class="lineup-bar"><div><div class="lb-name">Usual formation: ' + esc(formName(g.format, g.lines)) + '</div><div class="lb-form">' + esc(formDetail(g.lines)) + '. Used by Suggest rotation and empty quarters.</div></div>' +
+      '<button class="btn btn-quiet btn-small" data-action="game-formation">Change</button></div>' +
+      '<label class="field"><span>Quarter length (minutes)</span><input data-setup="quarterMin" type="number" inputmode="decimal" min="1" max="45" step="0.5" value="' + g.quarterMin + '"></label>' +
+      (locked ? '<p class="hint">Format is locked because live tracking has started.</p>' : '') +
+      '<p class="hint">' + esc(cardRule(t.ageGroup)) + (g.quarterMin > defaultsFor(t.ageGroup).quarterMin ? ' This game\'s quarters are longer than the chart.' : '') + '</p></section>';
+
+    var ps = listedPlayers(t, g);
+    var playing = ps.filter(function (p) { return att(g, p.id) === 'playing'; }).length;
+    html += '<h2 class="section-title">Attendance</h2><p class="meta">' + playing + ' of ' + ps.length + ' playing.</p>';
+    html += '<div class="panel" style="padding:0">' + ps.map(function (p) {
+      var a = att(g, p.id);
+      var sel = '<select data-att="' + esc(p.id) + '" aria-label="Attendance for ' + esc(p.name) + '">' +
+        [['playing', 'Playing'], ['absent', 'Absent'], ['sitout', 'Sat out by request']].map(function (o) {
+          return '<option value="' + o[0] + '"' + (a === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
+        }).join('') + '</select>';
+      var why = a === 'absent' ? '<select data-why="' + esc(p.id) + '" aria-label="Reason ' + esc(p.name) + ' is absent">' +
+        '<option value="">Reason</option>' + ABSENT_REASONS.map(function (r) { return '<option' + (g.absentReason[p.id] === r ? ' selected' : '') + '>' + r + '</option>'; }).join('') + '</select>' : '';
+      return '<div class="att-row">' + jmini(p) + '<div class="nm">' + esc(p.name) + '</div><div class="sel-pair">' + sel + why + '</div></div>';
+    }).join('') + '</div>';
+    html += '<p class="hint" style="margin-top:0">Kids who sit out by request stay on the bench with the team. They don\'t count against fair-time warnings.</p>';
+    html += '<section class="panel" style="margin-top:18px"><h2>Game options</h2><div class="row">' +
+      (g.live ? '<button class="btn btn-quiet" data-action="reset-live">Clear live tracking</button>' : '') +
+      '<button class="btn btn-danger" data-action="delete-game">Delete game</button></div></section>';
+    return html;
+  }
+
+  function renderPlan(t, g) {
+    cleanPlan(t, g);
+    var F = FMT(g.format).size;
+    var ps = playingPlayers(t, g), n = ps.length;
+    var counts = plannedCounts(t, g);
+    var pq = g.plan[planQ];
+    var empty = g.plan.every(function (q) { return !Object.keys(q.slots).length; });
+    var html = '<div class="toolrow"><button class="btn btn-primary" data-action="suggest">' + (empty ? 'Suggest a fair rotation' : 'Suggest a new rotation') + '</button></div>';
+    html += '<div class="quarters">' + [0, 1, 2, 3].map(function (q) {
+      var gap = Object.keys(g.plan[q].slots).length < Math.min(F, n);
+      return '<button class="blk' + (gap ? ' gap' : '') + '" data-action="plan-q" data-q="' + q + '" aria-current="' + (q === planQ) + '">Q' + (q + 1) + '</button>';
+    }).join('') + '</div>';
+    html += '<div class="lineup-bar"><div><div class="lb-name">Quarter ' + (planQ + 1) + (pq.name ? ': ' + esc(pq.name) : '') + '</div>' +
+            '<div class="lb-form">' + esc(formName(g.format, pq.lines)) + '</div></div>' +
+            '<button class="btn btn-quiet btn-small" data-action="plan-formation">Formation</button></div>';
+    html += '<div class="toolrow" style="margin-top:0"><button class="btn btn-quiet" data-action="plan-use-lineup">Use a saved lineup</button></div>';
+    html += pitchSVG(t, g.format, pq.lines, pq.slots, 'plan-pos');
+    html += '<p class="blk-caption">Tap a spot to choose a player.</p>';
+
+    var onQ = Object.keys(pq.slots).map(function (k) { return pq.slots[k]; });
+    var bench = ps.filter(function (p) { return onQ.indexOf(p.id) < 0; });
+    html += '<h2 class="section-title">Bench for quarter ' + (planQ + 1) + '</h2>';
+    html += bench.length ? '<div class="bench">' + bench.map(function (p) {
+      return '<button class="chip" data-action="bench-plan" data-id="' + esc(p.id) + '">' + jmini(p) + esc(firstName(p.name)) + ' <small>' + counts[p.id] + ' qtrs</small></button>';
+    }).join('') + '</div>' : '<p class="meta">Nobody on the bench.</p>';
+    html += '<div class="toolrow">' +
+      (planQ > 0 ? '<button class="btn btn-quiet" data-action="copy-prev">Copy Q' + planQ + '</button>' : '') +
+      '<button class="btn btn-quiet" data-action="save-as-lineup">Save as lineup</button>' +
+      '<button class="btn btn-quiet" data-action="clear-q">Clear</button></div>';
+
+    var warns = planWarnings(t, g);
+    html += '<h2 class="section-title">Fairness check</h2>';
+    if (n > F) html += '<p class="meta">Fair share: about ' + (F * 4 / n).toFixed(1) + ' quarters each (' + n + ' players, ' + F + ' spots).</p>';
+    html += warns.length ? '<ul class="warnlist">' + warns.map(function (w) { return '<li class="' + (w.bad ? 'bad' : '') + '">' + esc(w.text) + '</li>'; }).join('') + '</ul>'
+                         : '<div class="okline">Every spot is filled and playing time is even.</div>';
+    html += '<div class="tbl-wrap"><table class="grid"><thead><tr><th>#</th><th class="l">Player</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Total</th></tr></thead><tbody>' +
+      ps.map(function (p) {
+        var row = '<tr><td class="num">' + esc(p.number || '?') + '</td><td class="l">' + esc(p.name) + '</td>';
+        for (var q = 0; q < 4; q++) {
+          var k = keyOf(g.plan[q].slots, p.id);
+          row += '<td><span class="hq1' + (k ? ' on' : '') + '" title="' + (k ? labelFor(g.format, g.plan[q].lines, k) : 'Bench') + '"></span></td>';
+        }
+        return row + '<td><b>' + counts[p.id] + '</b></td></tr>';
+      }).join('') + '</tbody></table></div>';
+    return html;
+  }
+
+  function renderLive(t, g) {
+    var L = g.live;
+    if (!L) {
+      var planned = g.plan.some(function (q) { return Object.keys(q.slots).length; });
+      return '<section class="panel"><h2>Live tracking</h2><p>Run a game clock and log subs as they happen. The app times each player and marks which quarters they played.</p>' +
+        (planned ? '' : '<p class="warn">You haven\'t planned any quarters. You can still track live and fill the field by hand or from a saved lineup.</p>') +
+        '<p class="meta">Keep the app open during the game. If your phone locks, the clock keeps correct time anyway.</p>' +
+        '<button class="btn btn-primary" data-action="live-begin">Get ready for kickoff</button></section>';
+    }
+    if (L.ended) {
+      return '<section class="panel"><h2>Game finished</h2><p>Your record and lineup card are ready on the Card tab.</p>' +
+             '<div class="row"><button class="btn btn-primary" data-action="game-tab" data-tab="card">Open the card</button></div></section>' + renderTimes(t, g);
+    }
+    var e = elapsed(L), Q = g.quarterMin * 60;
+    var onBreak = !L.qStarted && L.breakAt, left = breakLeft(L);
+    var html;
+    if (onBreak) {
+      html = '<div class="clockbox"><div class="clock-q">' + breakName(L) + '</div>' +
+             '<div class="clock" id="liveClock">' + clock(Math.max(0, left)) + '</div>' +
+             '<div class="clock-meta' + (left <= 0 ? ' over' : '') + '" id="liveMeta">' + breakMeta(L) + '</div><div class="row">';
+    } else {
+      html = '<div class="clockbox"><div class="clock-q">Quarter ' + (L.q + 1) + (L.qStarted ? '' : ', ready to start') + '</div>' +
+             '<div class="clock" id="liveClock">' + clock(e) + '</div>' +
+             '<div class="clock-meta' + (e >= Q ? ' over' : '') + '" id="liveMeta">' + (e >= Q ? 'Time\'s up. End the quarter at the whistle.' : 'of ' + clock(Q)) + '</div><div class="row">';
+    }
+    if (!L.qStarted) {
+      html += '<button class="btn btn-chalk" data-action="live-start">Start quarter ' + (L.q + 1) + '</button>';
+      if (onBreak) html += '<button class="btn btn-outline-chalk" data-action="live-skip-break">End break</button>';
+    }
+    else {
+      html += L.running ? '<button class="btn btn-chalk" data-action="live-pause">Pause</button>' : '<button class="btn btn-chalk" data-action="live-resume">Resume</button>';
+      html += '<button class="btn btn-outline-chalk" data-action="live-end">End quarter ' + (L.q + 1) + '</button>';
+    }
+    html += '</div></div>';
+
+    var planned = usableSlots(t, g, g.format, g.plan[L.q].lines, g.plan[L.q].slots);
+    if (!L.qStarted && Object.keys(planned).length && !sameLineup(planned, L.onField)) {
+      html += '<div class="planned"><h3>Quarter ' + (L.q + 1) + ' plan</h3><p>The field doesn\'t match your plan for this quarter.</p>' +
+              '<button class="btn" data-action="live-use-plan">Use planned lineup</button></div>';
+    }
+    html += '<div class="toolrow" style="margin-top:0"><button class="btn btn-primary btn-sub" data-action="live-sub">Sub</button></div>';
+    html += '<div class="lineup-bar"><div><div class="lb-name">On the field</div><div class="lb-form">' + esc(formName(g.format, L.lines)) + '</div></div>' +
+            '<button class="btn btn-quiet btn-small" data-action="live-change-lineup">Change lineup</button></div>';
+    html += pitchSVG(t, g.format, L.lines, L.onField, 'live-pos');
+    html += '<p class="blk-caption">Tap a player to sub them off, or an empty spot to fill it.</p>';
+    html += '<div class="toolrow"><button class="btn btn-quiet" data-action="live-goal">+ Goal</button>' +
+            (L.history.length ? '<button class="btn btn-quiet" data-action="live-undo">Undo last change</button>' : '') + '</div>';
+    html += renderTimes(t, g);
+    return html;
+  }
+
+  function breakMeta(L) {
+    return breakLeft(L) > 0 ? 'Then quarter ' + (L.q + 1) + '. Good time to plan subs.' : 'Break\'s over. Start quarter ' + (L.q + 1) + ' at the whistle.';
+  }
+  function renderTimes(t, g) {
+    var L = g.live, mins = minutesFor(t, g);
+    var ps = playingPlayers(t, g);
+    var max = Math.max(60, Math.max.apply(null, ps.map(function (p) { return mins[p.id] || 0; })));
+    var avg = ps.length ? ps.reduce(function (s, p) { return s + (mins[p.id] || 0); }, 0) / ps.length : 0;
+    ps.sort(function (a, b) { return (mins[a.id] || 0) - (mins[b.id] || 0); });
+    return '<h2 class="section-title">Playing time</h2><p class="meta">Least time first. Red means under half the team average.</p>' +
+      '<div class="panel" style="padding:0">' + ps.map(function (p) {
+        var on = L && !L.ended && keyOf(L.onField, p.id);
+        var s = mins[p.id] || 0;
+        return '<div class="time-row">' + jmini(p) + '<div><div class="nm">' + esc(p.name) + '</div><div class="st' + (on ? ' on' : '') + '">' +
+               (on ? 'On field, ' + esc(POS_NAMES[labelFor(g.format, L.lines, on)]) : 'Bench') + '</div></div>' +
+               '<div class="t" data-min="' + esc(p.id) + '">' + clock(s) + '</div>' +
+               '<div class="bar"><i data-bar="' + esc(p.id) + '" class="' + (avg > 60 && s < avg / 2 ? 'low' : '') + '" style="width:' + Math.round(100 * s / max) + '%"></i></div></div>';
+      }).join('') + '</div>';
+  }
+
+  function renderCard(t, g) {
+    var cr = credits(t, g), base = credits(t, g, true);
+    var ps = listedPlayers(t, g);
+    var html = '<p class="lcard-note">Copy this onto the paper lineup card. The quarter boxes here show quarters NOT played, the same as the paper card.</p>';
+    html += '<div class="lcard"><h2>Official lineup card</h2><dl>' +
+      [['Region', t.region], ['Age group', t.ageGroup], ['Team #', t.teamNumber], ['Date', fmtDate(g.date, { month: 'numeric', day: 'numeric', year: 'numeric' })],
+       ['Team name', t.name], ['Opposing team', g.opponent], ['Coach', t.coach], ['Asst. coach', t.asstCoach]].map(function (f) {
+        return '<div><dt>' + f[0] + '</dt><dd>' + esc(f[1] || '') + '</dd></div>';
+      }).join('') + '</dl>';
+    html += '<table><thead><tr><th>No.</th><th>Player name</th><th>Goals</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead><tbody>' +
+      ps.map(function (p) {
+        var a = att(g, p.id);
+        var row = '<tr><td>' + esc(p.number) + '</td><td class="l">' + esc(p.name) + '</td><td>' + (g.goals[p.id] || '') + '</td>';
+        if (a === 'absent') return row + '<td colspan="4" class="why">Absent' + (g.absentReason[p.id] ? ': ' + esc(g.absentReason[p.id]) : '') + '</td></tr>';
+        for (var q = 0; q < 4; q++) row += '<td class="x">' + (a === 'sitout' || !cr[p.id][q] ? '✗' : '') + '</td>';
+        return row + '</tr>';
+      }).join('') + '</tbody></table>';
+    if (ps.some(function (p) { return att(g, p.id) === 'sitout'; })) html += '<p style="margin:8px 0 0;font-size:13px">✗ on every quarter means the player sat out by request.</p>';
+    html += '</div>';
+    if (!t.region || !t.coach) html += '<p class="lcard-note">Fill in region, team number, and coach names under Roster, then Edit team.</p>';
+
+    html += '<h2 class="section-title">Quarters played</h2><p class="meta">Filled boxes are quarters played. ' +
+      (hasLiveData(g) ? 'They come from live tracking: a player gets credit for being on the field for at least half of the quarter.' : 'They come from your plan.') +
+      ' Tap a box to fix it. Fixed boxes get a dotted outline.</p>';
+    html += '<div class="tbl-wrap"><table class="grid"><thead><tr><th>#</th><th class="l">Player</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Goals</th></tr></thead><tbody>' +
+      ps.filter(function (p) { return att(g, p.id) !== 'absent'; }).map(function (p) {
+        var row = '<tr><td class="num">' + esc(p.number || '?') + '</td><td class="l">' + esc(p.name) + (att(g, p.id) === 'sitout' ? ' <small>(sat out)</small>' : '') + '</td>';
+        for (var q = 0; q < 4; q++) {
+          row += '<td><button data-action="toggle-q" data-id="' + esc(p.id) + '" data-q="' + q + '" class="hq1' + (cr[p.id][q] ? ' on' : '') + (cr[p.id][q] !== base[p.id][q] ? ' fixed' : '') +
+                 '" aria-label="' + esc(p.name) + ', quarter ' + (q + 1) + ', ' + (cr[p.id][q] ? 'played' : 'not played') + '"></button></td>';
+        }
+        return row + '<td><span class="stepper"><button data-action="goal-minus" data-id="' + esc(p.id) + '" aria-label="Remove a goal">−</button>' +
+               (g.goals[p.id] || 0) + '<button data-action="goal-plus" data-id="' + esc(p.id) + '" aria-label="Add a goal">+</button></span></td></tr>';
+      }).join('') + '</tbody></table></div>';
+    html += '<div class="row" style="margin-top:14px">' + (g.status === 'finished'
+      ? '<button class="btn btn-quiet" data-action="reopen-game">Reopen game</button>'
+      : '<button class="btn btn-primary" data-action="finish-game">Mark game finished</button>') + '</div>' +
+      '<p class="meta">Only finished games count toward season playing time.</p>';
+    return html;
+  }
+
+  // ---------- Practice: library, diagrams, plans ----------
+
+  function findEntry(id) { return data.library.find(function (e) { return e.id === id; }) || null; }
+  function entryFits(e, age) { return !e.ages.length || e.ages.indexOf(age) >= 0; }
+  function typePill(type) { return '<span class="tpill ' + type + '">' + (type === 'break' ? 'Break' : ENTRY_TYPES[type]) + '</span>'; }
+  function teamAges() {
+    var a = [];
+    data.teams.forEach(function (t) { if (a.indexOf(t.ageGroup) < 0) a.push(t.ageGroup); });
+    return a.sort(function (x, y) { return AGE_GROUPS.indexOf(x) - AGE_GROUPS.indexOf(y); });
+  }
+
+  // Diagram drawing. Units: 100 wide, 100 tall (your half, or the attacking half when flipped).
+  function diagramSVG(dg, team, editable) {
+    var c = COLORS[team.color] || COLORS.blue;
+    var s = '<svg class="pitch' + (editable ? ' edit' : '') + '"' + (editable ? ' id="dgEdit"' : '') + ' viewBox="0 0 100 100" role="img" aria-label="Play diagram">' +
+      '<defs><marker id="ahP" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L6 3L0 6z" fill="#fff"/></marker>' +
+      '<marker id="ahR" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L6 3L0 6z" fill="#FFD54A"/></marker></defs>' +
+      halfPitch(dg.view === 'attack', true, !!dg.line);
+    dg.arrows.forEach(function (a) {
+      var sel = editable && dgSelected === a.id;
+      var col = a.kind === 'pass' ? '#fff' : '#FFD54A';
+      s += '<g class="dg-arrow" data-id="' + a.id + '">' +
+           '<line x1="' + a.x1 + '" y1="' + a.y1 + '" x2="' + a.x2 + '" y2="' + a.y2 + '" stroke="transparent" stroke-width="5"/>' +
+           '<line x1="' + a.x1 + '" y1="' + a.y1 + '" x2="' + a.x2 + '" y2="' + a.y2 + '" stroke="' + (sel ? '#F2B705' : col) + '" stroke-width="' + (sel ? 1.3 : .9) + '"' +
+           (a.kind === 'run' ? ' stroke-dasharray="2 1.4"' : '') + ' marker-end="url(#' + (a.kind === 'pass' ? 'ahP' : 'ahR') + ')"/></g>';
+    });
+    dg.items.forEach(function (i) {
+      s += '<g class="dg-item" data-id="' + i.id + '" transform="translate(' + i.x.toFixed(1) + ' ' + i.y.toFixed(1) + ')">';
+      if (editable) s += '<circle r="6" fill="transparent"/>';
+      if (editable && dgSelected === i.id) s += '<circle r="5.4" fill="none" stroke="#F2B705" stroke-width=".8" stroke-dasharray="1.6 1"/>';
+      if (i.kind === 'us') s += '<circle r="3.6" fill="' + c.bg + '" stroke="#fff" stroke-width=".6"/><text y="1.4" text-anchor="middle" font-size="3.8" font-weight="800" fill="' + c.fg + '">' + esc(i.label) + '</text>';
+      else if (i.kind === 'them') s += '<circle r="3.6" fill="#fff" stroke="#C62F2A" stroke-width=".9"/><text y="1.4" text-anchor="middle" font-size="3.8" font-weight="800" fill="#C62F2A">' + esc(i.label || 'X') + '</text>';
+      else if (i.kind === 'ball') s += '<circle r="1.7" fill="#fff" stroke="#111" stroke-width=".45"/>';
+      else s += '<path d="M0 -2.4 L2.1 1.7 L-2.1 1.7 Z" fill="#F28C28" stroke="#fff" stroke-width=".3"/>';
+      s += '</g>';
+    });
+    if (editable && dgPending) s += '<circle cx="' + dgPending.x + '" cy="' + dgPending.y + '" r="1.4" fill="#F2B705"/>';
+    return s + '</svg>';
+  }
+  var DG_TOOLS = [['move', 'Move'], ['us', 'Player'], ['them', 'Opponent'], ['ball', 'Ball'], ['cone', 'Cone'], ['pass', 'Pass'], ['run', 'Run']];
+  var dgTool = 'us', dgSelected = null, dgPending = null, dgDrag = null;
+  function dgHint() {
+    if (dgTool === 'move') return dgSelected ? 'Drag to move it, or tap Delete.' : 'Tap something to select it. Drag to move it.';
+    if (dgTool === 'pass' || dgTool === 'run') return dgPending ? 'Now tap where the arrow ends.' : 'Tap where the arrow starts.';
+    return 'Tap the field to place it.';
+  }
+  function renderDiagramEditor(t) {
+    var dg = entryDraft.diagram;
+    if (!dg) return '<button class="btn btn-quiet" data-action="dg-add">Add a diagram</button>';
+    return '<div class="dg-tools">' + DG_TOOLS.map(function (x) {
+        return '<button class="dg-tool" data-action="dg-tool" data-tool="' + x[0] + '" aria-pressed="' + (dgTool === x[0]) + '">' + x[1] + '</button>';
+      }).join('') + '<button class="dg-tool" data-action="dg-delete"' + (dgSelected ? '' : ' disabled') + '>Delete</button></div>' +
+      '<div id="dgWrap">' + diagramSVG(dg, t, true) + '</div><p class="dg-hint" id="dgHint">' + dgHint() + '</p>' +
+      '<div class="toolrow"><button class="btn btn-quiet" data-action="dg-view">' + (dg.view === 'attack' ? 'Show our goal' : 'Show their goal') + '</button>' +
+      '<button class="btn btn-quiet" data-action="dg-line">' + (dg.line ? 'Hide build-out line' : 'Show build-out line') + '</button>' +
+      '<button class="btn btn-quiet" data-action="dg-clear">Clear</button><button class="btn btn-danger" data-action="dg-remove">Remove diagram</button></div>';
+  }
+  function refreshDiagram() {
+    var w = $('dgWrap');
+    if (!w || !entryDraft || !entryDraft.diagram) return;
+    w.innerHTML = diagramSVG(entryDraft.diagram, activeTeam(), true);
+    $('dgHint').textContent = dgHint();
+    document.querySelectorAll('.dg-tool').forEach(function (b) {
+      if (b.dataset.tool) b.setAttribute('aria-pressed', String(dgTool === b.dataset.tool));
+      if (b.dataset.action === 'dg-delete') b.disabled = !dgSelected;
+    });
+  }
+  function svgPoint(svg, e) {
+    var pt = svg.createSVGPoint();
+    pt.x = e.clientX; pt.y = e.clientY;
+    var p = pt.matrixTransform(svg.getScreenCTM().inverse());
+    return { x: Math.round(Math.max(1, Math.min(99, p.x)) * 10) / 10, y: Math.round(Math.max(1, Math.min(99, p.y)) * 10) / 10 };
+  }
+  document.addEventListener('pointerdown', function (e) {
+    var svg = e.target.closest && e.target.closest('#dgEdit');
+    if (!svg || !entryDraft || !entryDraft.diagram) return;
+    e.preventDefault();
+    var dg = entryDraft.diagram, pt = svgPoint(svg, e);
+    if (dgTool === 'move') {
+      var it = e.target.closest('.dg-item'), ar = e.target.closest('.dg-arrow');
+      if (it) {
+        dgSelected = it.dataset.id;
+        dgDrag = { id: it.dataset.id, moved: false };
+        try { svg.setPointerCapture(e.pointerId); } catch (err) {}
+      } else dgSelected = ar ? ar.dataset.id : null;
+      refreshDiagram();
+      return;
+    }
+    if (dgTool === 'pass' || dgTool === 'run') {
+      if (!dgPending) dgPending = pt;
+      else {
+        if (Math.abs(pt.x - dgPending.x) + Math.abs(pt.y - dgPending.y) > 2) {
+          dg.arrows.push({ id: uid('a'), kind: dgTool, x1: dgPending.x, y1: dgPending.y, x2: pt.x, y2: pt.y });
+        }
+        dgPending = null;
+      }
+      refreshDiagram();
+      return;
+    }
+    if (dg.items.length >= 60) { toast('That\'s the most a diagram can hold.'); return; }
+    var label = '';
+    if (dgTool === 'us') label = String(dg.items.filter(function (i) { return i.kind === 'us'; }).length + 1);
+    dg.items.push({ id: uid('i'), kind: dgTool, x: pt.x, y: pt.y, label: label });
+    refreshDiagram();
+  });
+  document.addEventListener('pointermove', function (e) {
+    if (!dgDrag) return;
+    var svg = $('dgEdit');
+    if (!svg) return;
+    var it = entryDraft.diagram.items.find(function (i) { return i.id === dgDrag.id; });
+    if (!it) return;
+    var pt = svgPoint(svg, e);
+    it.x = pt.x; it.y = pt.y; dgDrag.moved = true;
+    var g = svg.querySelector('.dg-item[data-id="' + it.id + '"]');
+    if (g) g.setAttribute('transform', 'translate(' + it.x + ' ' + it.y + ')');
+  });
+  function endDrag() { if (dgDrag) { dgDrag = null; refreshDiagram(); } }
+  document.addEventListener('pointerup', endDrag);
+  document.addEventListener('pointercancel', endDrag);
+
+  // Library screens
+  function renderLibrary() {
+    var html = '<div class="team-head"><div><h1>Library</h1><p>' + plural(data.library.length, 'entry').replace('entrys', 'entries') + ', shared by all your teams</p></div>' +
+               '<button class="btn btn-primary btn-small" data-action="entry-new">New</button></div>';
+    html += '<div class="filters">' + [['all', 'All'], ['drill', 'Drills'], ['game', 'Fun games'], ['setplay', 'Set plays']].map(function (f) {
+      return '<button class="fchip" data-action="lib-filter" data-f="' + f[0] + '" aria-pressed="' + (libFilter === f[0]) + '">' + f[1] + '</button>';
+    }).join('') + '</div>';
+    html += '<input class="search" id="libSearch" type="search" placeholder="Search names and skills" value="' + esc(libSearch) + '" aria-label="Search the library">';
+    html += '<div id="libList">' + renderLibList() + '</div>';
+    html += '<section class="panel" style="margin-top:16px"><h2>Import a drill pack</h2><p>Load drills from a file on your phone, like the AYSO drill pack. Entries you already have are skipped.</p>' +
+            '<button class="btn btn-quiet" data-action="lib-import">Import from file</button></section>';
+    return html;
+  }
+  function renderLibList() {
+    var q = libSearch.trim().toLowerCase();
+    var list = data.library.filter(function (e) {
+      if (libFilter !== 'all' && e.type !== libFilter) return false;
+      return !q || (e.name + ' ' + e.focus).toLowerCase().indexOf(q) >= 0;
+    }).sort(function (a, b) { return a.name.localeCompare(b.name); });
+    if (!data.library.length) return '<div class="empty"><p>Your library is empty. Add your own drills, fun games, and set plays, or import a drill pack.</p>' +
+                                     '<button class="btn btn-primary" data-action="entry-new">New entry</button></div>';
+    if (!list.length) return '<p class="meta">Nothing matches.</p>';
+    return '<ul class="roster">' + list.map(function (e) {
+      var bits = [];
+      if (e.focus) bits.push(e.focus);
+      bits.push(e.ages.length ? e.ages.join(', ') : 'All ages');
+      if (e.minutes) bits.push(e.minutes + ' min');
+      return '<li><button class="list-row" data-action="entry-open" data-id="' + esc(e.id) + '"><span class="main"><div class="title">' + esc(e.name) + '</div>' +
+             '<div class="sub">' + esc(bits.join(', ')) + (e.diagram ? ', has diagram' : '') + '</div></span>' + typePill(e.type) + '</button></li>';
+    }).join('') + '</ul>';
+  }
+  function entryBody(e, t) {
+    var html = '';
+    var facts = [];
+    if (e.focus) facts.push(['Skill focus', e.focus]);
+    facts.push(['Ages', e.ages.length ? e.ages.join(', ') : 'All ages']);
+    if (e.minutes) facts.push(['Time', e.minutes + ' minutes']);
+    if (e.players) facts.push(['Players', e.players]);
+    if (e.equipment) facts.push(['Equipment', e.equipment]);
+    html += '<div class="detail">' + facts.map(function (f) { return '<h3>' + f[0] + '</h3><p>' + esc(f[1]) + '</p>'; }).join('');
+    if (e.diagram) html += '<h3>Diagram</h3>' + diagramSVG(e.diagram, t, false) +
+      '<div class="legend"><span>Solid arrow: pass</span><span>Dashed yellow arrow: run</span><span>Red: opponent</span>' + (e.diagram.line ? '<span>Dashed white line: build-out line</span>' : '') + '</div>';
+    if (e.setup) html += '<h3>Setup</h3><p>' + esc(e.setup) + '</p>';
+    if (e.how) html += '<h3>How it works</h3><p>' + esc(e.how) + '</p>';
+    if (e.points) html += '<h3>Coaching points</h3><p>' + esc(e.points) + '</p>';
+    if (e.video) html += '<h3>Video</h3><p><a href="' + esc(e.video) + '" target="_blank" rel="noopener">' + esc(e.video.replace(/^https?:\/\//, '')) + '</a></p>';
+    if (e.source) html += '<h3>Source</h3><p>' + esc(e.source) + '</p>';
+    return html + '</div>';
+  }
+  function renderEntryDetail(t) {
+    var e = findEntry(entryId);
+    if (!e) { entryId = null; return renderLibrary(); }
+    var html = '<button class="back" data-action="entry-back">‹ Library</button>';
+    html += '<div style="margin:8px 0 2px">' + typePill(e.type) + '</div><h1 class="game-title">' + esc(e.name) + '</h1>';
+    html += entryBody(e, t);
+    html += '<div class="toolrow" style="margin-top:18px"><button class="btn btn-primary" data-action="entry-edit">Edit</button>' +
+            '<button class="btn btn-quiet" data-action="entry-to-practice">Add to a practice</button></div>' +
+            '<div class="toolrow"><button class="btn btn-quiet" data-action="entry-copy">Make a copy</button>' +
+            '<button class="btn btn-danger" data-action="entry-delete">Delete</button></div>';
+    return html;
+  }
+  function renderEntryEdit(t) {
+    var e = entryDraft;
+    var ages = teamAges().concat(e.ages.filter(function (a) { return teamAges().indexOf(a) < 0; }));
+    var html = '<button class="back" data-action="entry-cancel">‹ Cancel</button>';
+    html += '<h1 class="game-title">' + (findEntry(e.id) ? 'Edit entry' : 'New entry') + '</h1>';
+    html += '<section class="panel">' +
+      '<label class="field"><span>Type</span><select data-ed="type">' + Object.keys(ENTRY_TYPES).map(function (k) {
+        return '<option value="' + k + '"' + (e.type === k ? ' selected' : '') + '>' + ENTRY_TYPES[k] + '</option>'; }).join('') + '</select></label>' +
+      '<label class="field"><span>Name</span><input data-ed="name" type="text" maxlength="80" value="' + esc(e.name) + '" placeholder="' +
+        (e.type === 'setplay' ? 'For example: Corner kick, near post' : 'For example: Sharks and Minnows') + '"></label>' +
+      '<label class="field"><span>Skill focus</span><input data-ed="focus" type="text" maxlength="80" value="' + esc(e.focus) + '" placeholder="Dribbling, passing, defending..."></label>' +
+      '<div class="field"><span>Ages (none picked means all ages)</span><div class="filters">' + ages.map(function (a) {
+        return '<button class="fchip" data-action="ed-age" data-age="' + a + '" aria-pressed="' + (e.ages.indexOf(a) >= 0) + '">' + a + '</button>'; }).join('') + '</div></div>' +
+      '<div class="pair-even"><label class="field"><span>Minutes</span><input data-ed="minutes" type="number" inputmode="numeric" min="1" max="120" value="' + (e.minutes || '') + '"></label>' +
+      '<label class="field"><span>Players</span><input data-ed="players" type="text" maxlength="80" value="' + esc(e.players) + '" placeholder="Whole team, pairs..."></label></div>' +
+      '<label class="field"><span>Equipment</span><input data-ed="equipment" type="text" maxlength="300" value="' + esc(e.equipment) + '" placeholder="Cones, pinnies, a ball each"></label>' +
+      '<label class="field"><span>Setup</span><textarea data-ed="setup" maxlength="2000" placeholder="Area size, where players start">' + esc(e.setup) + '</textarea></label>' +
+      '<label class="field"><span>' + (e.type === 'setplay' ? 'How the play works' : 'How it works') + '</span><textarea data-ed="how" maxlength="4000">' + esc(e.how) + '</textarea></label>' +
+      '<label class="field"><span>Coaching points</span><textarea data-ed="points" maxlength="3000" placeholder="What to watch for and praise">' + esc(e.points) + '</textarea></label>' +
+      '<label class="field"><span>Video link (optional)</span><input data-ed="video" type="url" inputmode="url" maxlength="300" value="' + esc(e.video) + '" placeholder="https://"></label>' +
+      '<label class="field"><span>Source (optional)</span><input data-ed="source" type="text" maxlength="120" value="' + esc(e.source) + '" placeholder="Where this came from"></label>' +
+      '</section>';
+    html += '<h2 class="section-title">Diagram</h2><p class="meta">Optional. Place players, the ball, and cones, then draw pass and run arrows. Especially useful for set plays.</p>';
+    html += renderDiagramEditor(t);
+    html += '<p class="error" id="entryError" role="alert"></p>';
+    html += '<div class="toolrow"><button class="btn btn-primary" data-action="entry-save">Save</button><button class="btn btn-quiet" data-action="entry-cancel">Cancel</button></div>';
+    return html;
+  }
+
+  // Practice plans
+  function findPractice(team, id) { return team.practices.find(function (p) { return p.id === id; }) || null; }
+  function itemName(it) {
+    if (it.kind === 'break') return 'Water break';
+    var e = findEntry(it.entryId);
+    return e ? e.name : 'Deleted entry';
+  }
+  function practiceTotal(p) { return p.items.reduce(function (s, it) { return s + it.minutes; }, 0); }
+
+  function renderPracticeList(t) {
+    var html = '<div class="team-head"><div><h1>Practices</h1><p>' + esc(t.name) + ', ' + plural(t.practices.length, 'practice') + '</p></div>' +
+               '<button class="btn btn-primary btn-small" data-action="practice-new">New practice</button></div>';
+    if (!t.practices.length) {
+      return html + '<div class="empty"><p>Plan a practice by stacking drills, fun games, and water breaks into a timed session. Then run it on the field with a countdown for each part.</p>' +
+             '<button class="btn btn-primary" data-action="practice-new">New practice</button></div>';
+    }
+    var list = t.practices.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
+    return html + '<ul class="roster">' + list.map(function (p) {
+      return '<li><button class="game-row" data-action="practice-open" data-id="' + esc(p.id) + '">' +
+             '<span class="gdate">' + esc(fmtDate(p.date, { weekday: 'short' })) + '<b>' + esc(fmtDate(p.date, { month: 'short', day: 'numeric' })) + '</b></span>' +
+             '<span class="gname">' + esc(p.title || 'Practice') + '<div class="sub" style="font-weight:400;color:var(--muted);font-size:14px">' +
+             plural(p.items.length, 'part') + ', ' + practiceTotal(p) + ' of ' + p.length + ' min</div></span></button></li>';
+    }).join('') + '</ul>';
+  }
+
+  function renderPracticeEdit(t, p) {
+    var total = practiceTotal(p);
+    var html = '<button class="back" data-action="practice-back">‹ All practices</button>';
+    html += '<h1 class="game-title">' + esc(p.title || 'Practice') + '</h1><p class="game-sub">' + esc(fmtDate(p.date, { weekday: 'long', month: 'long', day: 'numeric' })) + '</p>';
+    html += (p.items.length ? '<div class="toolrow" style="margin-top:0"><button class="btn btn-primary btn-sub" data-action="practice-run">' + (p.run ? 'Resume practice' : 'Run practice') + '</button></div>' : '');
+    html += '<section class="panel"><label class="field"><span>Title</span><input data-pr="title" type="text" maxlength="60" value="' + esc(p.title) + '" placeholder="For example: Dribbling day"></label>' +
+            '<div class="pair-even"><label class="field"><span>Date</span><input data-pr="date" type="date" value="' + esc(p.date) + '"></label>' +
+            '<label class="field"><span>Length (minutes)</span><input data-pr="length" type="number" inputmode="numeric" min="10" max="240" value="' + p.length + '"></label></div></section>';
+    html += '<h2 class="section-title">Plan</h2>';
+    html += '<div class="totline"><span>Total</span><span class="' + (total > p.length ? 'over' : '') + '">' + total + ' of ' + p.length + ' min' + (total > p.length ? ', ' + (total - p.length) + ' over' : '') + '</span></div>';
+    if (p.items.length) {
+      html += '<div class="panel" style="padding:0">' + p.items.map(function (it, i) {
+        var e = it.kind === 'entry' ? findEntry(it.entryId) : null;
+        return '<div class="item-row"><div class="nm">' + (i + 1) + '. ' + esc(itemName(it)) + '</div>' + typePill(it.kind === 'break' ? 'break' : (e ? e.type : 'drill')) +
+               '<div class="ctrls"><input type="number" inputmode="numeric" min="1" max="120" data-item-min="' + i + '" value="' + it.minutes + '" aria-label="Minutes for ' + esc(itemName(it)) + '"> min' +
+               '<span style="flex:1"></span><button class="mini" data-action="item-up" data-i="' + i + '" aria-label="Move up"' + (i ? '' : ' disabled') + '>↑</button>' +
+               '<button class="mini" data-action="item-down" data-i="' + i + '" aria-label="Move down"' + (i < p.items.length - 1 ? '' : ' disabled') + '>↓</button>' +
+               '<button class="mini danger" data-action="item-remove" data-i="' + i + '" aria-label="Remove">✕</button></div></div>';
+      }).join('') + '</div>';
+    } else html += '<p class="meta">Nothing planned yet.</p>';
+    html += '<div class="toolrow"><button class="btn btn-quiet" data-action="item-add">+ From library</button><button class="btn btn-quiet" data-action="item-break">+ Water break</button></div>';
+
+    var players = sortedPlayers(t);
+    var here = players.filter(function (pl) { return p.attendance[pl.id]; }).length;
+    html += '<h2 class="section-title">Attendance</h2><p class="meta">' + here + ' of ' + players.length + ' here.</p>';
+    html += players.length ? '<div class="panel" style="padding:0">' + players.map(function (pl) {
+      return '<label class="check-row"><input type="checkbox" data-pat="' + esc(pl.id) + '"' + (p.attendance[pl.id] ? ' checked' : '') + '>' + jmini(pl) + '<span>' + esc(pl.name) + '</span></label>';
+    }).join('') + '</div>' : '<p class="meta">Add players on the Roster tab.</p>';
+    html += '<h2 class="section-title">Notes</h2><label class="field"><textarea data-pr="notes" maxlength="3000" placeholder="What went well, what to repeat next time" style="width:100%;min-height:100px;padding:12px;border:2px solid var(--rule);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:17px">' + esc(p.notes) + '</textarea></label>';
+    html += '<div class="toolrow"><button class="btn btn-quiet" data-action="practice-copy">Copy to a new practice</button><button class="btn btn-danger" data-action="practice-delete">Delete practice</button></div>';
+    return html;
+  }
+
+  function runElapsed(R) { return R.elapsedBefore + (R.running && R.startedAt ? (Date.now() - R.startedAt) / 1000 : 0); }
+  function renderRun(t, p) {
+    if (!p.run) p.run = { idx: 0, running: false, startedAt: null, elapsedBefore: 0 };
+    var R = p.run, it = p.items[R.idx];
+    if (!it) { R.idx = 0; it = p.items[0]; }
+    var left = it.minutes * 60 - runElapsed(R);
+    var next = p.items[R.idx + 1];
+    var html = '<button class="back" data-action="run-exit">‹ Back to plan</button>';
+    html += '<div class="run-head"><div class="run-step">Part ' + (R.idx + 1) + ' of ' + p.items.length + '</div>' +
+            '<h2 class="run-name">' + esc(itemName(it)) + '</h2>' +
+            '<div class="clock" id="runClock">' + (left < 0 ? '+' + clock(-left) : clock(left)) + '</div>' +
+            '<div class="clock-meta' + (left < 0 ? ' over' : '') + '" id="runMeta">' + (left < 0 ? 'Time\'s up. Move on when ready.' : it.minutes + ' minutes') + '</div>' +
+            '<div class="row">' + (R.running ? '<button class="btn btn-chalk" data-action="run-pause">Pause</button>' : '<button class="btn btn-chalk" data-action="run-start">' + (runElapsed(R) ? 'Resume' : 'Start') + '</button>') +
+            '<button class="btn btn-outline-chalk" data-action="run-prev"' + (R.idx ? '' : ' disabled') + '>Back</button>' +
+            '<button class="btn btn-outline-chalk" data-action="run-next">' + (next ? 'Next' : 'Finish') + '</button></div></div>';
+    html += '<p class="next-up">' + (next ? 'Next up: ' + esc(itemName(next)) + ', ' + next.minutes + ' min' : 'This is the last part.') + '</p>';
+    if (it.kind === 'entry') {
+      var e = findEntry(it.entryId);
+      html += e ? entryBody(e, t) : '<p class="meta">This entry was deleted from the library.</p>';
+    } else html += '<p>Water, rest, and a quick word with the team.</p>';
+    return html;
+  }
+
+  function renderPractice() {
+    var t = activeTeam();
+    if (entryEditing) return renderEntryEdit(t);
+    if (entryId) return renderEntryDetail(t);
+    var p = practiceId ? findPractice(t, practiceId) : null;
+    if (practiceId && !p) practiceId = null;
+    if (p && practiceRun && p.items.length) return renderRun(t, p);
+    if (p) return renderPracticeEdit(t, p);
+    var html = '<div class="seg two" style="margin-top:16px">' + [['plans', 'Practices'], ['library', 'Library']].map(function (x) {
+      return '<button data-action="practice-tab" data-tab="' + x[0] + '" aria-current="' + (practiceTab === x[0]) + '">' + x[1] + '</button>';
+    }).join('') + '</div>';
+    return html + (practiceTab === 'library' ? renderLibrary() : renderPracticeList(t));
+  }
+
+  // ---------- Rendering: shared shell ----------
 
   function applyTeamColor() {
     var c = COLORS[activeTeam().color] || COLORS.blue;
@@ -1121,43 +2032,6 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     $('teamTabs').innerHTML = html;
   }
 
-  function pitchSVG(team, g, lineup, action) {
-    var pos = positions(g), keeper = FORMATS[g.format].keeper;
-    var c = COLORS[team.color] || COLORS.blue;
-    var W = 100, H = 130, X = function (x) { return 4 + 92 * x; }, Y = function (y) { return 4 + 122 * y; };
-    var s = '<svg class="pitch" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Field diagram">';
-    s += '<rect width="100" height="130" fill="#2F7D4B"/>';
-    for (var i = 0; i < 8; i += 2) s += '<rect x="0" y="' + (i * 130 / 8) + '" width="100" height="' + (130 / 8) + '" fill="#2B7446"/>';
-    s += '<g fill="none" stroke="rgba(255,255,255,.9)" stroke-width=".7">' +
-         '<rect x="4" y="4" width="92" height="122"/><line x1="4" y1="65" x2="96" y2="65"/><circle cx="50" cy="65" r="10"/>' +
-         '<rect x="36" y="4" width="28" height="8"/><rect x="36" y="118" width="28" height="8"/>' +
-         (keeper ? '<rect x="24" y="4" width="52" height="18"/><rect x="24" y="108" width="52" height="18"/>' : '') +
-         '<rect x="42" y="1.3" width="16" height="2.7"/><rect x="42" y="126" width="16" height="2.7"/></g>' +
-         '<circle cx="50" cy="65" r=".9" fill="#fff"/>';
-    pos.forEach(function (p) {
-      var pid = lineup[p.key], pl = pid ? playerById(team, pid) : null;
-      var tx = X(p.x).toFixed(1), ty = Y(p.y).toFixed(1);
-      s += '<g class="mk" data-action="' + action + '" data-pos="' + p.key + '" transform="translate(' + tx + ' ' + ty + ')" role="button" aria-label="' +
-           esc(POS_NAMES[p.key] + (pl ? ': ' + pl.name : ': empty')) + '">';
-      s += '<circle r="10" fill="transparent"/>';
-      if (pl) {
-        var isGK = p.key === 'GK';
-        var bg = isGK ? '#F2C230' : c.bg, fg = isGK ? '#1A1A1A' : c.fg;
-        s += '<text class="mk-pos" y="-8.6">' + p.key + '</text>';
-        s += '<circle r="6.6" fill="' + bg + '" stroke="#fff" stroke-width="1"/>';
-        s += '<text y="2.5" text-anchor="middle" font-size="7" font-weight="800" fill="' + fg + '">' + (pl.number !== '' ? esc(pl.number) : '?') + '</text>';
-        s += '<text class="mk-name" y="12.6">' + esc(firstName(pl.name)) + '</text>';
-      } else {
-        s += '<circle r="6.6" fill="rgba(255,255,255,.12)" stroke="#fff" stroke-width=".8" stroke-dasharray="2 1.4"/>';
-        s += '<text y="1.6" text-anchor="middle" font-size="4.4" font-weight="700" fill="#fff">' + p.key + '</text>';
-      }
-      s += '</g>';
-    });
-    return s + '</svg>';
-  }
-
-  // ---------- Rendering: roster ----------
-
   function renderRoster() {
     var t = activeTeam();
     var players = sortedPlayers(t);
@@ -1168,8 +2042,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
       html += '<div class="nudge"><span>You have changes that aren\'t backed up.</span>' +
               '<button class="btn" data-action="export">Back up now</button></div>';
     }
-    html += '<div class="team-head"><div><h1>' + esc(t.name) + '</h1><p>' + esc(t.ageGroup) + ', ' +
-            players.length + (players.length === 1 ? ' player' : ' players') + '</p></div>' +
+    html += '<div class="team-head"><div><h1>' + esc(t.name) + '</h1><p>' + esc(t.ageGroup) + ', ' + plural(players.length, 'player') + '</p></div>' +
             '<button class="btn btn-quiet btn-small" data-action="edit-team">Edit team</button></div>';
     if (!players.length) {
       html += '<div class="empty"><p>No players on this roster yet. Add your first player to start the ' + esc(t.name) + ' roster.</p>' +
@@ -1187,300 +2060,19 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     return html;
   }
 
-  // ---------- Rendering: games list ----------
-
-  function renderGameList() {
-    var t = activeTeam();
-    var html = '<div class="team-head"><div><h1>Games</h1><p>' + esc(t.name) + ', ' +
-               (t.games.length ? t.games.length + (t.games.length === 1 ? ' game' : ' games') : 'no games yet') + '</p></div>' +
-               (t.players.length ? '<button class="btn btn-primary btn-small" data-action="new-game">New game</button>' : '') + '</div>';
-    if (!t.players.length) {
-      return html + '<div class="empty"><p>Add players to the roster before planning a game.</p>' +
-             '<button class="btn btn-primary" data-action="nav" data-view="roster">Go to roster</button></div>';
-    }
-    if (!t.games.length) {
-      html += '<div class="empty"><p>Create a game to plan fair rotations, track playing time, and fill in your lineup card.</p>' +
-              '<button class="btn btn-primary" data-action="new-game">New game</button></div>';
-    } else {
-      var games = t.games.slice().sort(function (a, b) { return b.date.localeCompare(a.date); });
-      html += '<ul class="roster">' + games.map(function (g) {
-        var pill = g.status === 'finished' ? '<span class="pill done">Finished</span>'
-                 : g.status === 'live' ? '<span class="pill live">In progress</span>' : '<span class="pill">Planned</span>';
-        var parts = fmtDate(g.date).split(', ');
-        return '<li><button class="game-row" data-action="open-game" data-id="' + esc(g.id) + '">' +
-               '<span class="gdate">' + esc(fmtDate(g.date, { weekday: 'short' })) + '<b>' + esc(fmtDate(g.date, { month: 'short', day: 'numeric' })) + '</b></span>' +
-               '<span class="gname">vs ' + esc(g.opponent || 'Opponent not set') + '</span>' + pill + '</button></li>';
-      }).join('') + '</ul>';
-    }
-    html += renderSeason(t);
-    return html;
-  }
-
-  function renderSeason(t) {
-    var finished = t.games.filter(function (g) { return g.status === 'finished'; }).length;
-    var html = '<h2 class="section-title">Season playing time</h2>';
-    if (!finished) return html + '<p class="meta">Totals appear here once you finish a game. Only finished games count.</p>';
-    var st = seasonStats(t);
-    html += '<p class="meta">From ' + finished + (finished === 1 ? ' finished game.' : ' finished games.') + ' The rotation planner gives extra time to kids with the lowest totals.</p>';
-    html += '<div class="tbl-wrap"><table class="grid"><thead><tr><th>#</th><th class="l">Player</th><th>Games</th><th>Quarters</th><th>Minutes</th></tr></thead><tbody>' +
-      sortedPlayers(t).map(function (p) {
-        var s = st[p.id];
-        return '<tr><td class="num">' + esc(p.number || '?') + '</td><td class="l">' + esc(p.name) + '</td><td>' + s.games + '</td><td>' + qtrs(s.blocks) +
-               '</td><td>' + Math.round(s.secs / 60) + '</td></tr>';
-      }).join('') + '</tbody></table></div>';
-    return html;
-  }
-
-  // ---------- Rendering: one game ----------
-
-  function renderGame(t, g) {
-    var html = '<button class="back" data-action="close-game">‹ All games</button>';
-    html += '<h1 class="game-title">vs ' + esc(g.opponent || 'Opponent not set') + '</h1>';
-    html += '<p class="game-sub">' + esc(fmtDate(g.date, { weekday: 'long', month: 'long', day: 'numeric' })) + ', ' + FORMATS[g.format].label + '</p>';
-    html += '<div class="seg" role="tablist">' + [['setup', 'Setup'], ['plan', 'Plan'], ['live', 'Live'], ['card', 'Card']].map(function (x) {
-      return '<button data-action="game-tab" data-tab="' + x[0] + '" aria-current="' + (gameTab === x[0]) + '">' + x[1] + '</button>';
-    }).join('') + '</div>';
-    if (gameTab === 'setup') html += renderSetup(t, g);
-    else if (gameTab === 'plan') html += renderPlan(t, g);
-    else if (gameTab === 'live') html += renderLive(t, g);
-    else html += renderCard(t, g);
-    return html;
-  }
-
-  function renderSetup(t, g) {
-    var locked = hasLiveData(g);
-    var fmtOpts = Object.keys(FORMATS).map(function (k) { return '<option value="' + k + '"' + (k === g.format ? ' selected' : '') + '>' + FORMATS[k].label + '</option>'; }).join('');
-    var formOpts = Object.keys(FORMATS[g.format].formations).map(function (k) { return '<option value="' + k + '"' + (k === g.formation ? ' selected' : '') + '>' + (FORMATS[g.format].keeper ? 'Keeper + ' : '') + k + '</option>'; }).join('');
-    var html = '<section class="panel">' +
-      '<label class="field"><span>Opponent</span><input data-setup="opponent" type="text" maxlength="60" autocomplete="off" value="' + esc(g.opponent) + '" placeholder="Team name"></label>' +
-      '<label class="field"><span>Date</span><input data-setup="date" type="date" value="' + esc(g.date) + '"></label>' +
-      '<label class="field"><span>Format</span><select data-setup="format"' + (locked ? ' disabled' : '') + '>' + fmtOpts + '</select></label>' +
-      '<label class="field"><span>Formation</span><select data-setup="formation">' + formOpts + '</select></label>' +
-      '<label class="field"><span>Quarter length (minutes)</span><input data-setup="quarterMin" type="number" inputmode="decimal" min="1" max="45" step="0.5" value="' + g.quarterMin + '"></label>' +
-      (locked ? '<p class="hint">Format is locked because live tracking has started.</p>' : '') +
-      '<p class="hint">Your lineup card lists 8U halves as 20 minutes and 10U halves as 25 minutes at most.</p></section>';
-
-    var ps = listedPlayers(t, g);
-    var playing = ps.filter(function (p) { return att(g, p.id) === 'playing'; }).length;
-    html += '<h2 class="section-title">Attendance</h2><p class="meta">' + playing + ' of ' + ps.length + ' playing.</p>';
-    html += '<div class="panel" style="padding:0">' + ps.map(function (p) {
-      var a = att(g, p.id);
-      var sel = '<select data-att="' + esc(p.id) + '" aria-label="Attendance for ' + esc(p.name) + '">' +
-        [['playing', 'Playing'], ['absent', 'Absent'], ['sitout', 'Sat out by request']].map(function (o) {
-          return '<option value="' + o[0] + '"' + (a === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
-        }).join('') + '</select>';
-      var why = a === 'absent' ? '<select data-why="' + esc(p.id) + '" aria-label="Reason ' + esc(p.name) + ' is absent">' +
-        '<option value="">Reason</option>' + ABSENT_REASONS.map(function (r) { return '<option' + (g.absentReason[p.id] === r ? ' selected' : '') + '>' + r + '</option>'; }).join('') + '</select>' : '';
-      return '<div class="att-row">' + jmini(p) + '<div class="nm">' + esc(p.name) + '</div><div class="sel-pair">' + sel + why + '</div></div>';
-    }).join('') + '</div>';
-    html += '<p class="hint" style="margin-top:0">Kids who sit out by request stay on the bench with the team. They don\'t count against fair-time warnings.</p>';
-
-    html += '<section class="panel" style="margin-top:18px"><h2>Game options</h2><div class="row">' +
-      (g.live ? '<button class="btn btn-quiet" data-action="reset-live">Clear live tracking</button>' : '') +
-      '<button class="btn btn-danger" data-action="delete-game">Delete game</button></div></section>';
-    return html;
-  }
-
-  function renderPlan(t, g) {
-    cleanPlan(t, g);
-    var pos = positions(g), F = pos.length;
-    var ps = playingPlayers(t, g), n = ps.length;
-    var counts = plannedCounts(t, g);
-    var html = '';
-    var empty = g.plan.every(function (b) { return !Object.keys(b).length; });
-
-    html += '<div class="toolrow"><button class="btn btn-primary" data-action="suggest">' + (empty ? 'Suggest a fair rotation' : 'Suggest a new rotation') + '</button></div>';
-
-    html += '<div class="blocks">';
-    for (var q = 0; q < 4; q++) {
-      html += '<div class="qgroup"><span>Q' + (q + 1) + '</span><div class="halves">';
-      [0, 1].forEach(function (h) {
-        var b = q * 2 + h;
-        var gap = Object.keys(g.plan[b]).length < Math.min(F, n);
-        html += '<button class="blk' + (gap ? ' gap' : '') + '" data-action="plan-block" data-b="' + b + '" aria-current="' + (b === planBlock) + '" aria-label="' + BLOCK_NAMES[b] + '">' + (h ? '2nd' : '1st') + '</button>';
-      });
-      html += '</div></div>';
-    }
-    html += '</div>';
-    html += '<p class="blk-caption">' + BLOCK_NAMES[planBlock] + '. Tap a spot to choose a player.</p>';
-    html += pitchSVG(t, g, g.plan[planBlock], 'plan-pos');
-
-    var onBlock = Object.keys(g.plan[planBlock]).map(function (k) { return g.plan[planBlock][k]; });
-    var bench = ps.filter(function (p) { return onBlock.indexOf(p.id) < 0; });
-    html += '<h2 class="section-title">Bench for this half-quarter</h2>';
-    html += bench.length ? '<div class="bench">' + bench.map(function (p) {
-      return '<button class="chip" data-action="bench-plan" data-id="' + esc(p.id) + '">' + jmini(p) + esc(firstName(p.name)) + ' <small>' + qtrs(counts[p.id]) + ' qtrs</small></button>';
-    }).join('') + '</div>' : '<p class="meta">Nobody on the bench.</p>';
-
-    html += '<div class="toolrow">' +
-      (planBlock > 0 ? '<button class="btn btn-quiet" data-action="copy-prev">Copy previous half</button>' : '') +
-      '<button class="btn btn-quiet" data-action="clear-block">Clear this half</button></div>';
-
-    var warns = planWarnings(t, g);
-    html += '<h2 class="section-title">Fairness check</h2>';
-    if (n > F) html += '<p class="meta">Fair share: about ' + (F * 8 / n / 2).toFixed(1) + ' quarters each (' + n + ' players, ' + F + ' spots).</p>';
-    html += warns.length ? '<ul class="warnlist">' + warns.map(function (w) { return '<li class="' + (w.bad ? 'bad' : '') + '">' + esc(w.text) + '</li>'; }).join('') + '</ul>'
-                         : '<div class="okline">Every spot is filled and playing time is even.</div>';
-
-    html += '<div class="tbl-wrap"><table class="grid"><thead><tr><th>#</th><th class="l">Player</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Total</th></tr></thead><tbody>' +
-      ps.map(function (p) {
-        var row = '<tr><td class="num">' + esc(p.number || '?') + '</td><td class="l">' + esc(p.name) + '</td>';
-        for (var q = 0; q < 4; q++) {
-          row += '<td><span class="hq">' + [0, 1].map(function (h) {
-            var b = q * 2 + h, k = keyOf(g.plan[b], p.id);
-            return '<span class="' + (k ? 'on' : '') + '" title="' + (k || 'Bench') + '"></span>';
-          }).join('') + '</span></td>';
-        }
-        return row + '<td><b>' + qtrs(counts[p.id]) + '</b></td></tr>';
-      }).join('') + '</tbody></table></div>';
-    return html;
-  }
-
-  function renderLive(t, g) {
-    var L = g.live;
-    var html = '';
-    if (!L) {
-      var planned = g.plan.some(function (b) { return Object.keys(b).length; });
-      html += '<section class="panel"><h2>Live tracking</h2><p>Run a game clock and log subs as they happen. The app times each player and marks which half-quarters they played.</p>' +
-        (planned ? '' : '<p class="warn">You haven\'t made a rotation plan. You can still track live, but you\'ll place every player by hand.</p>') +
-        '<p class="meta">Keep the app open during the game. If your phone locks, the clock keeps correct time anyway.</p>' +
-        '<button class="btn btn-primary" data-action="live-begin">Get ready for kickoff</button></section>';
-      return html;
-    }
-    if (L.ended) {
-      return '<section class="panel"><h2>Game finished</h2><p>Your record and lineup card are ready on the Card tab.</p>' +
-             '<div class="row"><button class="btn btn-primary" data-action="game-tab" data-tab="card">Open the card</button></div></section>' + renderTimes(t, g);
-    }
-    var e = elapsed(L), Q = g.quarterMin * 60;
-    html += '<div class="clockbox"><div class="clock-q">Quarter ' + (L.q + 1) + (L.qStarted ? (e < Q / 2 ? ', first half' : ', second half') : ', ready') + '</div>' +
-            '<div class="clock" id="liveClock">' + clock(e) + '</div>' +
-            '<div class="clock-meta' + (e >= Q ? ' over' : '') + '" id="liveMeta">' + (e >= Q ? 'Time\'s up. End the quarter at the whistle.' : 'of ' + clock(Q)) + '</div><div class="row">';
-    if (!L.qStarted) html += '<button class="btn btn-chalk" data-action="live-start">Start quarter ' + (L.q + 1) + '</button>';
-    else {
-      html += L.running ? '<button class="btn btn-chalk" data-action="live-pause">Pause</button>' : '<button class="btn btn-chalk" data-action="live-resume">Resume</button>';
-      html += '<button class="btn btn-outline-chalk" data-action="live-end">End quarter ' + (L.q + 1) + '</button>';
-    }
-    html += '</div></div>';
-
-    // Planned changes: before kickoff of a quarter, the planned starting lineup; during, the mid-quarter subs.
-    var target = L.qStarted ? g.plan[L.q * 2 + 1] : g.plan[L.q * 2];
-    target = validLineup(t, g, target || {});
-    var diff = Object.keys(target).length ? liveDiff(L, target) : [];
-    if (diff.length) {
-      var ins = [], outs = [];
-      diff.forEach(function (d) {
-        if (d.inn && !keyOf(L.onField, d.inn)) ins.push(playerById(t, d.inn));
-        if (d.out && !keyOf(target, d.out)) outs.push(playerById(t, d.out));
-      });
-      html += '<div class="planned"><h3>' + (L.qStarted ? 'Planned mid-quarter subs' : 'Planned lineup for quarter ' + (L.q + 1)) + '</h3>' +
-        (L.qStarted ? '<p>Make these when your team has the ball.</p>' : '') + '<ul>' +
-        (ins.length ? '<li>On: ' + ins.map(function (p) { return esc(jerseyText(p) + p.name); }).join(', ') + '</li>' : '') +
-        (outs.length ? '<li>Off: ' + outs.map(function (p) { return esc(jerseyText(p) + p.name); }).join(', ') + '</li>' : '') +
-        (!ins.length && !outs.length ? '<li>Position changes only.</li>' : '') + '</ul>' +
-        '<button class="btn" data-action="live-apply">' + (L.qStarted ? 'Make these subs' : 'Use planned lineup') + '</button></div>';
-    }
-
-    html += '<p class="blk-caption">Tap a player to sub or move them.</p>';
-    html += pitchSVG(t, g, L.onField, 'live-pos');
-    html += '<div class="toolrow"><button class="btn btn-primary" data-action="live-goal">+ Goal</button>' +
-            (L.history.length ? '<button class="btn btn-quiet" data-action="live-undo">Undo last change</button>' : '') + '</div>';
-    html += renderTimes(t, g);
-    return html;
-  }
-
-  function renderTimes(t, g) {
-    var L = g.live, mins = minutesFor(t, g);
-    var ps = playingPlayers(t, g);
-    var max = Math.max(60, Math.max.apply(null, ps.map(function (p) { return mins[p.id] || 0; })));
-    var avg = ps.length ? ps.reduce(function (s, p) { return s + (mins[p.id] || 0); }, 0) / ps.length : 0;
-    ps.sort(function (a, b) { return (mins[a.id] || 0) - (mins[b.id] || 0); });
-    return '<h2 class="section-title">Playing time</h2><p class="meta">Least time first. Red means under half the team average.</p>' +
-      '<div class="panel" style="padding:0">' + ps.map(function (p) {
-        var on = L && !L.ended && keyOf(L.onField, p.id);
-        var s = mins[p.id] || 0;
-        return '<div class="time-row">' + jmini(p) + '<div><div class="nm">' + esc(p.name) + '</div><div class="st' + (on ? ' on' : '') + '">' +
-               (on ? 'On field, ' + esc(POS_NAMES[on]) : 'Bench') + '</div></div>' +
-               '<div class="t" data-min="' + esc(p.id) + '">' + clock(s) + '</div>' +
-               '<div class="bar"><i data-bar="' + esc(p.id) + '" class="' + (avg > 60 && s < avg / 2 ? 'low' : '') + '" style="width:' + Math.round(100 * s / max) + '%"></i></div></div>';
-      }).join('') + '</div>';
-  }
-
-  function renderCard(t, g) {
-    var cr = credits(t, g), base = credits(t, g, true);
-    var html = '';
-    var ps = listedPlayers(t, g);
-    var rule = data.settings.halfRule;
-    function notPlayed(pid, q) {
-      var a = cr[pid][q * 2], b = cr[pid][q * 2 + 1];
-      if (a && b) return false;
-      if (!a && !b) return true;
-      return rule !== 'played';
-    }
-    html += '<p class="lcard-note">Copy this onto the paper lineup card. The quarter boxes here show quarters NOT played, the same as the paper card.</p>';
-    html += '<div class="lcard"><h2>Official lineup card</h2><dl>' +
-      [['Region', t.region], ['Age group', t.ageGroup], ['Team #', t.teamNumber], ['Date', fmtDate(g.date, { month: 'numeric', day: 'numeric', year: 'numeric' })],
-       ['Team name', t.name], ['Opposing team', g.opponent], ['Coach', t.coach], ['Asst. coach', t.asstCoach]].map(function (f) {
-        return '<div><dt>' + f[0] + '</dt><dd>' + esc(f[1] || '') + '</dd></div>';
-      }).join('') + '</dl>';
-    html += '<table><thead><tr><th>No.</th><th>Player name</th><th>Goals</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead><tbody>' +
-      ps.map(function (p) {
-        var a = att(g, p.id);
-        var row = '<tr><td>' + esc(p.number) + '</td><td class="l">' + esc(p.name) + '</td><td>' + (g.goals[p.id] || '') + '</td>';
-        if (a === 'absent') return row + '<td colspan="4" class="why">Absent' + (g.absentReason[p.id] ? ': ' + esc(g.absentReason[p.id]) : '') + '</td></tr>';
-        for (var q = 0; q < 4; q++) row += '<td class="x">' + (a === 'sitout' || notPlayed(p.id, q) ? '✗' : '') + '</td>';
-        return row + '</tr>';
-      }).join('') + '</tbody></table>';
-    if (ps.some(function (p) { return att(g, p.id) === 'sitout'; })) html += '<p style="margin:8px 0 0;font-size:13px">✗ on every quarter means the player sat out by request.</p>';
-    html += '</div>';
-    if (!t.region || !t.coach) html += '<p class="lcard-note">Fill in region, team number, and coach names under Roster, then Edit team.</p>';
-
-    html += '<h2 class="section-title">Half-quarters played</h2><p class="meta">Filled boxes are half-quarters played. ' +
-      (hasLiveData(g) ? 'They come from live tracking: a player gets credit for being on for at least half of that half-quarter.' : 'They come from your rotation plan.') +
-      ' Tap a box to fix it. Fixed boxes get a dotted outline.</p>';
-    html += '<div class="tbl-wrap"><table class="grid"><thead><tr><th>#</th><th class="l">Player</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Total</th><th>Goals</th></tr></thead><tbody>' +
-      ps.filter(function (p) { return att(g, p.id) !== 'absent'; }).map(function (p) {
-        var row = '<tr><td class="num">' + esc(p.number || '?') + '</td><td class="l">' + esc(p.name) + (att(g, p.id) === 'sitout' ? ' <small>(sat out)</small>' : '') + '</td>';
-        for (var q = 0; q < 4; q++) {
-          row += '<td><span class="hq">' + [0, 1].map(function (h) {
-            var b = q * 2 + h;
-            return '<button data-action="toggle-hq" data-id="' + esc(p.id) + '" data-b="' + b + '" class="' + (cr[p.id][b] ? 'on' : '') + (cr[p.id][b] !== base[p.id][b] ? ' fixed' : '') +
-                   '" aria-label="' + esc(p.name) + ', ' + BLOCK_NAMES[b] + ', ' + (cr[p.id][b] ? 'played' : 'not played') + '"></button>';
-          }).join('') + '</span></td>';
-        }
-        var total = cr[p.id].filter(Boolean).length;
-        return row + '<td><b>' + qtrs(total) + '</b></td><td><span class="stepper"><button data-action="goal-minus" data-id="' + esc(p.id) + '" aria-label="Remove a goal">−</button>' +
-               (g.goals[p.id] || 0) + '<button data-action="goal-plus" data-id="' + esc(p.id) + '" aria-label="Add a goal">+</button></span></td></tr>';
-      }).join('') + '</tbody></table></div>';
-
-    html += '<section class="panel" style="margin-top:14px"><h2>Partly played quarters</h2><p>When a player plays only half of a quarter, the card should show that quarter as:</p>' +
-      '<div class="radio-row"><label><input type="radio" name="halfRule" value="played"' + (rule === 'played' ? ' checked' : '') + '> Played (no ✗)</label>' +
-      '<label><input type="radio" name="halfRule" value="notPlayed"' + (rule === 'notPlayed' ? ' checked' : '') + '> Not played (✗)</label></div>' +
-      '<p class="meta" style="margin-top:8px">Ask your region coordinator which is correct. This applies to all games.</p></section>';
-
-    html += '<div class="row" style="margin-top:6px">' + (g.status === 'finished'
-      ? '<button class="btn btn-quiet" data-action="reopen-game">Reopen game</button>'
-      : '<button class="btn btn-primary" data-action="finish-game">Mark game finished</button>') + '</div>' +
-      '<p class="meta">Only finished games count toward season playing time.</p>';
-    return html;
-  }
-
-  // ---------- Rendering: other pages ----------
-
   function renderSoon(title, phase, text) {
     return '<div class="soon"><h1 class="page-title">' + title + '</h1><span class="phase">Coming in phase ' + phase + '</span><p>' + text + '</p></div>';
   }
-
   function renderMore() {
     var html = '<h1 class="page-title">More</h1>';
     html += '<section class="panel"><h2>Backup</h2>' +
-            '<p>Your rosters and games are stored only on this device. Save a backup file after you make changes, and keep it somewhere safe, like the Files app, Google Drive, or an email to yourself.</p>' +
+            '<p>Your rosters, games, lineups, practices, and library are stored only on this device. Save a backup file after you make changes, and keep it somewhere safe, like the Files app, Google Drive, or an email to yourself.</p>' +
             '<p class="meta">Last backup: ' + lastBackupText() + '</p>' +
             '<div class="row"><button class="btn btn-primary" data-action="export">Save backup file</button>' +
             '<button class="btn btn-quiet" data-action="import">Restore from backup</button></div></section>';
     html += '<section class="panel"><h2>Install on your phone</h2>';
-    if (isInstalled()) {
-      html += '<p>Installed. You are using the home screen app, and it works without a signal.</p>';
-    } else {
+    if (isInstalled()) html += '<p>Installed. You are using the home screen app, and it works without a signal.</p>';
+    else {
       html += '<p>Install the app so it opens from your home screen and works at fields with no signal.</p>';
       if (isIOS()) html += '<p class="warn">On iPhone, the home screen app keeps its own separate data from Safari. Install first, then enter your rosters in the installed app.</p>';
       html += '<h3>iPhone (Safari)</h3><ol><li>Tap the Share button (the square with an arrow).</li>' +
@@ -1491,7 +2083,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     html += '</section>';
     html += '<section class="panel"><h2>Storage</h2><p id="persistStatus" class="meta">' +
             (storageOk ? 'Checking...' : 'This browser is blocking storage, so nothing will be saved. Private browsing mode is the usual cause.') + '</p></section>';
-    html += '<p class="version">Soccer Coach ' + APP_VERSION + ', phase 2</p>';
+    html += '<p class="version">Soccer Coach ' + APP_VERSION + ', phase 3</p>';
     return html;
   }
   function updatePersistStatus() {
@@ -1508,18 +2100,52 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     }).catch(function () {});
   }
 
-  function currentGame() { return gameId ? findGame(activeTeam(), gameId) : null; }
+  function currentGame() { return gameId && activeTeam() ? findGame(activeTeam(), gameId) : null; }
+  function currentPractice() { return practiceId && activeTeam() ? findPractice(activeTeam(), practiceId) : null; }
+
+  var welcomePick = [];
+  function renderWelcome() {
+    var html = '<div style="padding-top:20px"><h1 class="page-title" style="margin-bottom:6px">Welcome, coach</h1>' +
+      '<p class="meta" style="margin-top:0">Which age groups are you coaching? Pick one or more. Each one becomes a team with the right game size and formation, and you can change any of it later.</p></div>';
+    html += '<div class="panel" style="padding:0">' + AGE_GROUPS.map(function (a) {
+      var d = defaultsFor(a), on = welcomePick.indexOf(a) >= 0;
+      return '<label class="check-row"><input type="checkbox" data-welcome="' + a + '"' + (on ? ' checked' : '') + '>' +
+             '<span><b style="font:800 20px/1 var(--cond);font-stretch:condensed">' + ageLabel(a) + '</b><br><span class="meta">' + FMT(d.format).label + ', ' +
+             formName(d.format, FMT(d.format).def) + '. ' + d.quarterMin + '-minute quarters, size ' + d.ball + ' ball.</span></span></label>';
+    }).join('') + '</div>';
+    html += '<div class="toolrow"><button class="btn btn-primary btn-sub" data-action="welcome-go"' + (welcomePick.length ? '' : ' disabled') + '>' +
+            (welcomePick.length ? 'Create ' + plural(welcomePick.length, 'team') : 'Pick at least one age group') + '</button></div>';
+    html += '<p class="meta">Moving from another phone? <button class="back" style="margin:0;padding:0" data-action="import">Restore a backup file</button></p>';
+    html += '<p class="meta">Age groups, players on the field, ball sizes, and quarter lengths follow your region\'s charts. Adjust anything later under Roster, then Edit team.</p>';
+    return html;
+  }
 
   function render() {
+    if (!data.teams.length) {
+      $('main').innerHTML = renderWelcome();
+      $('teamTabs').style.display = 'none';
+      $('fab').hidden = true;
+      document.querySelector('.tabbar').hidden = true;
+      return;
+    }
+    document.querySelector('.tabbar').hidden = false;
     applyTeamColor();
     renderTabs();
     var t = activeTeam();
     var g = view === 'game' ? currentGame() : null;
     if (view === 'game' && gameId && !g) gameId = null;
-    var html;
-    if (view === 'roster') html = renderRoster();
-    else if (view === 'game') html = g ? renderGame(t, g) : renderGameList();
-    else if (view === 'practice') html = renderSoon('Practice', 3, 'Build a drill library, stack drills into timed practice plans, and take attendance.');
+    var html, showTabs = false;
+    if (view === 'roster') { html = renderRoster(); showTabs = true; }
+    else if (view === 'game') {
+      if (g) html = renderGame(t, g);
+      else if (gamePage === 'lineup' && lineupDraft) html = renderLineupEdit(t);
+      else if (gamePage === 'lineups') { html = renderLineupList(t); showTabs = true; }
+      else { html = renderGameList(); showTabs = true; }
+    }
+    else if (view === 'practice') {
+      html = renderPractice();
+      showTabs = !entryEditing && !entryId && !practiceId && practiceTab === 'plans';
+    }
     else if (view === 'rules') html = renderSoon('Rules', 4, 'Plain-language rules of the game, your region\'s small-sided rules, positions explained, and your own saved manuals.');
     else html = renderMore();
     $('main').innerHTML = html;
@@ -1527,20 +2153,42 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     document.querySelectorAll('.tab').forEach(function (b) {
       if (b.dataset.view === view) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
     });
-    $('teamTabs').style.display = (view === 'roster' || (view === 'game' && !g)) ? '' : 'none';
+    $('teamTabs').style.display = showTabs ? '' : 'none';
     if (view === 'more') updatePersistStatus();
     manageWakeLock();
   }
 
-  // ---------- Live clock ticking and screen wake ----------
+  // ---------- Clocks and screen wake ----------
 
   function tick() {
+    var t = activeTeam();
+    if (!t) return;
+    if (view === 'practice' && practiceRun) {
+      var p = currentPractice();
+      if (!p || !p.run || !p.items[p.run.idx]) return;
+      var left = p.items[p.run.idx].minutes * 60 - runElapsed(p.run);
+      var rc = $('runClock'), rm = $('runMeta');
+      if (rc) rc.textContent = left < 0 ? '+' + clock(-left) : clock(left);
+      if (rm) { rm.textContent = left < 0 ? 'Time\'s up. Move on when ready.' : p.items[p.run.idx].minutes + ' minutes'; rm.classList.toggle('over', left < 0); }
+      return;
+    }
     if (view !== 'game' || gameTab !== 'live') return;
-    var t = activeTeam(), g = currentGame();
+    var g = currentGame();
     if (!g || !g.live || g.live.ended) return;
     var L = g.live, e = elapsed(L), Q = g.quarterMin * 60;
-    var c = $('liveClock'); if (c) c.textContent = clock(e);
-    var m = $('liveMeta');
+    var c = $('liveClock'), m = $('liveMeta');
+    if (!L.qStarted && L.breakAt) {
+      var left = breakLeft(L);
+      if (c) c.textContent = clock(Math.max(0, left));
+      if (m) { m.textContent = breakMeta(L); m.classList.toggle('over', left <= 0); }
+      if (left <= 0 && breakAlerted !== L.breakAt) {
+        breakAlerted = L.breakAt;
+        if (navigator.vibrate) navigator.vibrate([300, 150, 300]);
+        toast(breakName(L) + ' is over. Start quarter ' + (L.q + 1) + ' at the whistle.');
+      }
+      return;
+    }
+    if (c) c.textContent = clock(e);
     if (m) { m.textContent = e >= Q ? 'Time\'s up. End the quarter at the whistle.' : 'of ' + clock(Q); m.classList.toggle('over', e >= Q); }
     if (!L.running) return;
     var mins = minutesFor(t, g);
@@ -1553,12 +2201,14 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
       if (bar) { bar.style.width = Math.round(100 * (mins[p.id] || 0) / max) + '%'; bar.classList.toggle('low', avg > 60 && (mins[p.id] || 0) < avg / 2); }
     });
   }
+  var breakAlerted = null;
   setInterval(tick, 1000);
 
   var wakeLock = null;
   function manageWakeLock() {
+    if (!activeTeam()) return;
     var g = view === 'game' && gameTab === 'live' ? currentGame() : null;
-    var want = !!(g && g.live && !g.live.ended);
+    var want = !!(g && g.live && !g.live.ended) || (view === 'practice' && practiceRun);
     if (want && !wakeLock && navigator.wakeLock && document.visibilityState === 'visible') {
       navigator.wakeLock.request('screen').then(function (l) {
         wakeLock = l;
@@ -1570,7 +2220,10 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     }
   }
   document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'visible') { manageWakeLock(); if (view === 'game') render(); }
+    if (document.visibilityState === 'visible') {
+      manageWakeLock();
+      if ((view === 'game' && gameTab === 'live') || (view === 'practice' && practiceRun)) render();
+    }
   });
 
   // ---------- Picker sheet ----------
@@ -1581,48 +2234,34 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     $('pickTitle').textContent = title;
     $('pickSub').textContent = sub || '';
     $('pickSub').hidden = !sub;
-    $('pickList').innerHTML = options.map(function (o, i) {
+    $('pickList').innerHTML = options.length ? options.map(function (o, i) {
       return '<button class="pick-row' + (o.muted ? ' empty-opt' : '') + '" data-action="pick" data-i="' + i + '">' +
              (o.player !== undefined ? (o.player ? jmini(o.player) : '<span class="jmini" style="background:transparent;color:var(--muted)">–</span>') : '') +
+             (o.pill ? typePill(o.pill) : '') +
              '<span class="nm">' + esc(o.label) + '</span>' + (o.detail ? '<span class="dt">' + esc(o.detail) + '</span>' : '') + '</button>';
-    }).join('');
+    }).join('') : '<p class="meta" style="padding:14px;margin:0">Nothing to choose from yet.</p>';
     $('pickDialog').showModal();
   }
-
-  function pickForPlanPos(t, g, pos) {
-    var blk = g.plan[planBlock];
-    var counts = plannedCounts(t, g);
-    var current = blk[pos] ? playerById(t, blk[pos]) : null;
-    var ps = playingPlayers(t, g);
-    var bench = ps.filter(function (p) { return !keyOf(blk, p.id); }).sort(function (a, b) { return counts[a.id] - counts[b.id]; });
-    var onField = ps.filter(function (p) { var k = keyOf(blk, p.id); return k && k !== pos; });
-    var opts = bench.map(function (p) { return { label: p.name, detail: qtrs(counts[p.id]) + ' qtrs planned', player: p, value: p.id }; })
-      .concat(onField.map(function (p) { return { label: p.name, detail: 'Swap from ' + keyOf(blk, p.id), player: p, value: p.id }; }));
-    if (current) opts.push({ label: 'Leave this spot empty', player: null, value: null, muted: true });
-    openPicker(POS_NAMES[pos], BLOCK_NAMES[planBlock] + (current ? '. Now: ' + current.name : ''), opts, function (pid) {
-      var from = pid ? keyOf(blk, pid) : null;
-      var old = blk[pos] || null;
-      if (from) { if (old) blk[from] = old; else delete blk[from]; }
-      if (pid) blk[pos] = pid; else delete blk[pos];
-      commit(); render();
-    });
+  function pickFormation(fmt, current, cb) {
+    openPicker('Formation', FMT(fmt).label + '. Pick how many players in each line.', allFormations(fmt).map(function (l) {
+      var same = l.join() === current.join();
+      return { label: formName(fmt, l) + (same ? ' (current)' : ''), detail: formDetail(l), value: l };
+    }), cb);
   }
-
-  function pickForLivePos(t, g, pos) {
-    var L = g.live;
-    var mins = minutesFor(t, g);
-    var current = L.onField[pos] ? playerById(t, L.onField[pos]) : null;
-    var ps = playingPlayers(t, g);
-    var bench = ps.filter(function (p) { return !keyOf(L.onField, p.id); }).sort(function (a, b) { return (mins[a.id] || 0) - (mins[b.id] || 0); });
-    var onField = ps.filter(function (p) { var k = keyOf(L.onField, p.id); return k && k !== pos; });
-    var opts = bench.map(function (p) { return { label: p.name, detail: clock(mins[p.id] || 0) + ' played', player: p, value: p.id }; })
-      .concat(onField.map(function (p) { return { label: p.name, detail: 'Swap from ' + keyOf(L.onField, p.id), player: p, value: p.id }; }));
-    if (current) opts.push({ label: 'Take off with no replacement', player: null, value: null, muted: true });
-    var title = current ? 'Sub for ' + jerseyText(current) + current.name : 'Fill ' + POS_NAMES[pos];
-    openPicker(title, POS_NAMES[pos] + (L.qStarted ? '. Remember: mid-quarter subs only when your team has the ball.' : ''), opts, function (pid) {
-      liveAssign(L, pos, pid);
-      commit(); render();
-    });
+  // Choose a player for a spot: bench first (least time first), then on-field players to swap.
+  function pickForSpot(team, title, sub, slots, pos, players, detailFn, emptyLabel, cb) {
+    var current = slots[pos] ? playerById(team, slots[pos]) : null;
+    var bench = players.filter(function (p) { return !keyOf(slots, p.id); });
+    var onField = players.filter(function (p) { var k = keyOf(slots, p.id); return k && k !== pos; });
+    var opts = bench.map(function (p) { return { label: p.name, detail: detailFn(p, null), player: p, value: p.id }; })
+      .concat(onField.map(function (p) { return { label: p.name, detail: detailFn(p, keyOf(slots, p.id)), player: p, value: p.id }; }));
+    if (current) opts.push({ label: emptyLabel, player: null, value: null, muted: true });
+    openPicker(title, sub, opts, cb);
+  }
+  function setSpot(slots, pos, pid) {
+    var from = pid ? keyOf(slots, pid) : null, old = slots[pos] || null;
+    if (from) { if (old) slots[from] = old; else delete slots[from]; }
+    if (pid) slots[pos] = pid; else delete slots[pos];
   }
 
   // ---------- Player dialog ----------
@@ -1658,7 +2297,6 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     } else {
       var np = { id: uid('p'), number: number, name: name, notes: f.notes.value.trim() };
       t.players.push(np);
-      // New players join any game that hasn't been played yet.
       t.games.forEach(function (g) { if (g.status === 'planned') g.attendance[np.id] = 'playing'; });
     }
     commit();
@@ -1682,6 +2320,14 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   // ---------- Team dialog ----------
 
   var editingTeamId = null;
+  $('teamAge').innerHTML = AGE_GROUPS.map(function (a) { return '<option value="' + a + '">' + ageLabel(a) + '</option>'; }).join('');
+  $('teamFormat').innerHTML = Object.keys(FORMATS).map(function (k) { return '<option value="' + k + '">' + FORMATS[k].label + '</option>'; }).join('');
+  function fillTeamDefaults(age) {
+    var f = $('teamForm'), d = defaultsFor(age);
+    f.format.value = d.format; f.quarterMin.value = d.quarterMin; f.buildOut.checked = d.buildOut;
+    $('teamCardRule').textContent = cardRule(age);
+  }
+  $('teamAge').addEventListener('change', function (e) { fillTeamDefaults(e.target.value); });
   $('colorSwatches').insertAdjacentHTML('beforeend', Object.keys(COLORS).map(function (k) {
     return '<label class="swatch" title="' + COLORS[k].label + '"><input type="radio" name="color" value="' + k + '" aria-label="' + COLORS[k].label + '">' +
            '<span style="background:' + COLORS[k].bg + '"></span></label>';
@@ -1693,6 +2339,8 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     $('teamTitle').textContent = t ? 'Edit team' : 'Add team';
     f.name.value = t ? t.name : '';
     f.ageGroup.value = t ? t.ageGroup : '8U';
+    if (t) { var ts = teamSettings(t); f.format.value = ts.format; f.quarterMin.value = ts.quarterMin; f.buildOut.checked = !!t.buildOut; $('teamCardRule').textContent = cardRule(t.ageGroup); }
+    else fillTeamDefaults('8U');
     f.region.value = t ? t.region : '';
     f.teamNumber.value = t ? t.teamNumber : '';
     f.coach.value = t ? t.coach : (data.teams[0] ? data.teams[0].coach : '');
@@ -1700,7 +2348,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     var color = t ? t.color : 'green';
     f.querySelectorAll('input[name="color"]').forEach(function (r) { r.checked = r.value === color; });
     $('teamError').textContent = '';
-    $('deleteTeamRow').hidden = !t || data.teams.length < 2;
+    $('deleteTeamRow').hidden = !t;
     $('teamDialog').showModal();
   }
   $('teamForm').addEventListener('submit', function (e) {
@@ -1711,6 +2359,9 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     var picked = f.querySelector('input[name="color"]:checked');
     var fields = {
       name: name, ageGroup: f.ageGroup.value, color: picked ? picked.value : 'blue',
+      format: FORMATS[f.format.value] ? f.format.value : defaultsFor(f.ageGroup.value).format,
+      quarterMin: num(f.quarterMin.value, 1, 45, defaultsFor(f.ageGroup.value).quarterMin),
+      buildOut: f.buildOut.checked,
       region: f.region.value.trim(), teamNumber: f.teamNumber.value.trim(),
       coach: f.coach.value.trim(), asstCoach: f.asstCoach.value.trim()
     };
@@ -1729,32 +2380,28 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
   });
   $('deleteTeamBtn').addEventListener('click', function () {
     var t = activeTeam(), n = t.players.length;
-    var msg = 'Delete ' + t.name + (n ? ' and its ' + n + (n === 1 ? ' player' : ' players') : '') + ' and all its games? This can\'t be undone unless you have a backup.';
+    var msg = 'Delete ' + t.name + (n ? ' and its ' + plural(n, 'player') : '') + ', games, lineups, and practices? This can\'t be undone unless you have a backup.' +
+      (data.teams.length === 1 ? ' This is your only team, so you\'ll go back to the welcome screen.' : '');
     if (!confirm(msg)) return;
     data.teams = data.teams.filter(function (x) { return x.id !== t.id; });
-    data.activeTeamId = data.teams[0].id;
-    gameId = null;
+    data.activeTeamId = data.teams[0] ? data.teams[0].id : null;
+    gameId = null; practiceId = null; gamePage = 'list';
     commit();
     $('teamDialog').close();
     render();
     toast('Deleted ' + t.name);
   });
-
   document.querySelectorAll('dialog').forEach(function (d) {
     d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
     d.querySelectorAll('[data-close]').forEach(function (b) { b.addEventListener('click', function () { d.close(); }); });
   });
 
-  // ---------- Backup and restore ----------
+  // ---------- Backup, restore, and drill packs ----------
 
-  function dateStamp() { return today(); }
-  function markBackedUp() {
-    data.lastBackupAt = new Date().toISOString();
-    persist(); render(); toast('Backup saved');
-  }
+  function markBackedUp() { data.lastBackupAt = new Date().toISOString(); persist(); render(); toast('Backup saved'); }
   function exportBackup() {
     var json = JSON.stringify({ app: 'soccer-coach', kind: 'backup', exportedAt: new Date().toISOString(), data: data }, null, 2);
-    var name = 'soccer-coach-backup-' + dateStamp() + '.json';
+    var name = 'soccer-coach-backup-' + today() + '.json';
     var file;
     try { file = new File([json], name, { type: 'application/json' }); } catch (e) { file = null; }
     var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
@@ -1774,68 +2421,130 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
     setTimeout(function () { URL.revokeObjectURL(url); }, 10000);
     markBackedUp();
   }
-  $('importInput').addEventListener('change', function (e) {
-    var file = e.target.files && e.target.files[0];
-    e.target.value = '';
+  function readJsonFile(input, cb) {
+    var file = input.files && input.files[0];
+    input.value = '';
     if (!file) return;
     var reader = new FileReader();
     reader.onload = function () {
-      var parsed, restored;
+      var parsed = null;
+      try { parsed = JSON.parse(reader.result); } catch (e) { parsed = null; }
+      cb(parsed);
+    };
+    reader.onerror = function () { alert('Could not read that file. Try picking it again.'); };
+    reader.readAsText(file);
+  }
+  $('importInput').addEventListener('change', function (e) {
+    readJsonFile(e.target, function (parsed) {
+      var restored;
       try {
-        parsed = JSON.parse(reader.result);
-        if (!parsed || parsed.app !== 'soccer-coach') throw new Error('wrong app');
+        if (!parsed || parsed.app !== 'soccer-coach' || parsed.kind === 'library') throw new Error('wrong');
         restored = normalize(parsed.data);
       } catch (err) {
-        alert('That file isn\'t a Soccer Coach backup. Pick a file named like soccer-coach-backup-2026-09-27.json.');
+        alert('That file isn\'t a Soccer Coach backup. Pick a file named like soccer-coach-backup-2026-09-27.json. (Drill packs go in Practice, then Library.)');
         return;
       }
       var players = restored.teams.reduce(function (n, t) { return n + t.players.length; }, 0);
       var games = restored.teams.reduce(function (n, t) { return n + t.games.length; }, 0);
       var when = parsed.exportedAt ? new Date(parsed.exportedAt).toLocaleString() : 'an unknown date';
-      if (!confirm('Restore the backup from ' + when + '? It has ' + restored.teams.length + ' teams, ' + players +
-                   ' players, and ' + games + ' games, and it replaces everything currently on this device.')) return;
+      if (!confirm('Restore the backup from ' + when + '? It has ' + plural(restored.teams.length, 'team') + ', ' + plural(players, 'player') +
+                   ', and ' + plural(games, 'game') + ', and it replaces everything currently on this device.')) return;
       restored.lastBackupAt = parsed.exportedAt || new Date().toISOString();
       restored.lastChangedAt = restored.lastBackupAt;
       data = restored;
       persist();
-      view = 'roster'; gameId = null;
+      view = 'roster'; gameId = null; gamePage = 'list'; practiceId = null; entryId = null; entryEditing = false;
       render();
       toast('Backup restored');
-    };
-    reader.onerror = function () { alert('Could not read that file. Try picking it again.'); };
-    reader.readAsText(file);
+    });
+  });
+  $('libImport').addEventListener('change', function (e) {
+    readJsonFile(e.target, function (parsed) {
+      if (!parsed || parsed.app !== 'soccer-coach' || parsed.kind !== 'library' || !Array.isArray(parsed.entries)) {
+        alert('That file isn\'t a Soccer Coach drill pack.');
+        return;
+      }
+      var added = 0, skipped = 0;
+      parsed.entries.slice(0, 500).forEach(function (raw) {
+        var en = normalizeEntry(raw);
+        var dup = data.library.some(function (x) { return x.name.toLowerCase() === en.name.toLowerCase() && x.source === en.source; });
+        if (dup) { skipped++; return; }
+        en.id = uid('e');
+        data.library.push(en); added++;
+      });
+      commit(); render();
+      toast('Added ' + plural(added, 'entry').replace('entrys', 'entries') + (skipped ? ', skipped ' + skipped + ' you already had' : ''));
+    });
   });
 
-  // ---------- Game setup changes ----------
+  // ---------- Typing and selects ----------
+
+  document.addEventListener('input', function (e) {
+    var el = e.target;
+    if (el.id === 'libSearch') { libSearch = el.value; var l = $('libList'); if (l) l.innerHTML = renderLibList(); return; }
+    if (el.dataset.ed && entryDraft) {
+      var k = el.dataset.ed;
+      if (k === 'type') return;
+      entryDraft[k] = k === 'minutes' ? (el.value === '' ? null : num(el.value, 1, 120, null)) : el.value;
+      return;
+    }
+    if (el.dataset.ld === 'name' && lineupDraft) lineupDraft.name = el.value;
+  });
 
   document.addEventListener('change', function (e) {
     var el = e.target;
-    var t = activeTeam(), g = currentGame();
-    if (el.name === 'halfRule') { data.settings.halfRule = el.value; commit(); render(); return; }
+    if (el.dataset.welcome) {
+      var wi = welcomePick.indexOf(el.dataset.welcome);
+      if (el.checked && wi < 0) welcomePick.push(el.dataset.welcome);
+      if (!el.checked && wi >= 0) welcomePick.splice(wi, 1);
+      render(); return;
+    }
+    if (!data.teams.length) return;
+    var t = activeTeam();
+    if (el.dataset.ed === 'type' && entryDraft) { entryDraft.type = el.value; render(); return; }
+    if (el.dataset.ld === 'format' && lineupDraft) {
+      lineupDraft.format = el.value;
+      lineupDraft.lines = FMT(el.value).def.slice();
+      lineupDraft.slots = remapSlots(el.value, lineupDraft.lines, lineupDraft.slots);
+      render(); return;
+    }
+    var p = view === 'practice' ? currentPractice() : null;
+    if (p) {
+      if (el.dataset.pr) {
+        var k = el.dataset.pr;
+        if (k === 'title') p.title = el.value.trim().slice(0, 60);
+        else if (k === 'date') { if (/^\d{4}-\d{2}-\d{2}$/.test(el.value)) p.date = el.value; }
+        else if (k === 'length') p.length = num(el.value, 10, 240, p.length);
+        else if (k === 'notes') { p.notes = el.value.slice(0, 3000); commit(); return; }
+        commit(); render(); return;
+      }
+      if (el.dataset.itemMin != null) { var it = p.items[+el.dataset.itemMin]; if (it) it.minutes = num(el.value, 1, 120, it.minutes); commit(); render(); return; }
+      if (el.dataset.pat) { p.attendance[el.dataset.pat] = el.checked; commit(); render(); return; }
+    }
+    var g = currentGame();
     if (!g) return;
     if (el.dataset.setup) {
-      var k = el.dataset.setup;
-      if (k === 'opponent') g.opponent = el.value.trim().slice(0, 60);
-      else if (k === 'date') { if (/^\d{4}-\d{2}-\d{2}$/.test(el.value)) g.date = el.value; }
-      else if (k === 'quarterMin') g.quarterMin = num(el.value, 1, 45, g.quarterMin);
-      else if (k === 'format') {
-        var hasPlan = g.plan.some(function (b) { return Object.keys(b).length; });
-        if (hasPlan && !confirm('Changing the format clears your rotation plan. Continue?')) { render(); return; }
-        g.format = el.value;
-        g.formation = Object.keys(FORMATS[g.format].formations)[0];
-        g.plan = emptyPlan();
-        if (g.live) g.live.onField = {};
-      } else if (k === 'formation') {
-        // Keep the same kids in the same slot order when switching formations.
-        var oldKeys = positions(g).map(function (p) { return p.key; });
-        g.formation = el.value;
-        var newKeys = positions(g).map(function (p) { return p.key; });
-        function remap(m) { var o = {}; oldKeys.forEach(function (ok, i) { if (m[ok]) o[newKeys[i]] = m[ok]; }); return o; }
-        g.plan = g.plan.map(remap);
-        if (g.live) {
-          g.live.onField = remap(g.live.onField);
-          g.live.stints.forEach(function (s) { var i = oldKeys.indexOf(s.pos); if (i >= 0) s.pos = newKeys[i]; });
-        }
+      var key = el.dataset.setup;
+      if (key === 'opponent') g.opponent = el.value.trim().slice(0, 60);
+      else if (key === 'date') { if (/^\d{4}-\d{2}-\d{2}$/.test(el.value)) g.date = el.value; }
+      else if (key === 'quarterMin') g.quarterMin = num(el.value, 1, 45, g.quarterMin);
+      else if (key === 'onfield') {
+        var nk = shortKey(g.full, +el.value);
+        if (nk === g.format) { render(); return; }
+        var hp = g.plan.some(function (q) { return Object.keys(q.slots).length; });
+        if (hp && !confirm('Changing how many play clears your plan for this game. Continue?')) { render(); return; }
+        g.format = nk;
+        g.lines = FMT(nk).def.slice();
+        g.plan = [0, 1, 2, 3].map(function () { return emptyQuarter(g.lines); });
+        if (g.live) { g.live.onField = {}; g.live.lines = g.lines.slice(); }
+      }
+      else if (key === 'format') {
+        var hasPlan = g.plan.some(function (q) { return Object.keys(q.slots).length; });
+        if (hasPlan && !confirm('Changing the format clears your plan for this game. Continue?')) { render(); return; }
+        g.format = el.value; g.full = el.value;
+        g.lines = FMT(g.format).def.slice();
+        g.plan = [0, 1, 2, 3].map(function () { return emptyQuarter(g.lines); });
+        if (g.live) { g.live.onField = {}; g.live.lines = g.lines.slice(); }
       }
       commit(); render(); return;
     }
@@ -1848,149 +2557,420 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
       }
       commit(); render(); return;
     }
-    if (el.dataset.why) { g.absentReason[el.dataset.why] = el.value; commit(); return; }
+    if (el.dataset.why) { g.absentReason[el.dataset.why] = el.value; commit(); }
   });
 
   // ---------- Taps ----------
 
   var suggestAttempt = 0;
+  function startSub(t, g) {
+    var L = g.live, mins = minutesFor(t, g);
+    var bench = playingPlayers(t, g).filter(function (p) { return !keyOf(L.onField, p.id); })
+      .sort(function (a, b) { return (mins[a.id] || 0) - (mins[b.id] || 0); });
+    if (!bench.length) { toast('Nobody is on the bench.'); return; }
+    openPicker('Who\'s coming in?', 'Bench, least playing time first.', bench.map(function (p) {
+      return { label: p.name, detail: clock(mins[p.id] || 0) + ' played', player: p, value: p.id };
+    }), function (inPid) {
+      var inP = playerById(t, inPid);
+      var positions = positionsFor(g.format, L.lines);
+      var opts = positions.map(function (pos) {
+        var pid = L.onField[pos.key], p = pid ? playerById(t, pid) : null;
+        return p ? { label: p.name, detail: pos.label + ', ' + clock(mins[pid] || 0), player: p, value: pos.key }
+                 : { label: 'Empty spot', detail: pos.label, player: null, value: pos.key, muted: true };
+      });
+      setTimeout(function () {
+        openPicker('Who\'s coming off for ' + firstName(inP.name) + '?', L.qStarted ? 'Mid-quarter subs only when your team has the ball.' : null, opts, function (posKey) {
+          var outPid = L.onField[posKey];
+          liveAssign(L, posKey, inPid);
+          commit(); render();
+          toast(firstName(inP.name) + ' in' + (outPid ? ', ' + firstName(playerById(t, outPid).name) + ' out' : ''));
+        });
+      }, 60);
+    });
+  }
+
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-action]');
     if (!el) return;
     var a = el.dataset.action;
-    var t = activeTeam(), g = currentGame();
+    if (a === 'welcome-go' && welcomePick.length) {
+      var palette = ['blue', 'gold', 'green', 'red', 'purple', 'orange', 'sky', 'black', 'white'];
+      AGE_GROUPS.filter(function (x) { return welcomePick.indexOf(x) >= 0; }).forEach(function (age, i) {
+        data.teams.push(newTeam(ageLabel(age) + ' team', age, palette[i % palette.length]));
+      });
+      data.activeTeamId = data.teams[0].id; welcomePick = []; view = 'roster';
+      commit(); render(); toast('Teams created. Add your players next.'); return;
+    }
+    if (!data.teams.length) { if (a === 'import') $('importInput').click(); return; }
+    var t = activeTeam(), g = currentGame(), p = currentPractice();
 
-    if (a === 'nav') { view = el.dataset.view; if (view !== 'game') gameId = null; else if (el.closest('.tabbar')) gameId = null; render(); window.scrollTo(0, 0); }
-    else if (a === 'switch-team') { data.activeTeamId = el.dataset.id; gameId = null; persist(); render(); }
-    else if (a === 'add-team') openTeam(true);
-    else if (a === 'edit-team') openTeam(false);
-    else if (a === 'add-player') openPlayer(null);
-    else if (a === 'edit-player') openPlayer(el.dataset.id);
-    else if (a === 'export') exportBackup();
-    else if (a === 'import') $('importInput').click();
-    else if (a === 'apply-update') applyUpdate();
-    else if (a === 'pick') {
+    // General
+    if (a === 'nav') {
+      view = el.dataset.view;
+      if (el.closest('.tabbar')) { gameId = null; gamePage = 'list'; lineupDraft = null; practiceId = null; practiceRun = false; entryId = null; entryEditing = false; entryDraft = null; }
+      render(); window.scrollTo(0, 0); return;
+    }
+    if (a === 'switch-team') { data.activeTeamId = el.dataset.id; gameId = null; practiceId = null; practiceRun = false; persist(); render(); return; }
+    if (a === 'add-team') return openTeam(true);
+    if (a === 'edit-team') return openTeam(false);
+    if (a === 'add-player') return openPlayer(null);
+    if (a === 'edit-player') return openPlayer(el.dataset.id);
+    if (a === 'export') return exportBackup();
+    if (a === 'import') return $('importInput').click();
+    if (a === 'apply-update') return applyUpdate();
+    if (a === 'pick') {
       var opt = pickOptions[+el.dataset.i], cb = pickCallback;
       $('pickDialog').close();
       if (opt && cb) cb(opt.value);
+      return;
     }
-    else if (a === 'new-game') {
+
+    // Games list and saved lineups
+    if (a === 'new-game') {
       var ng = newGame(t);
       t.games.push(ng);
-      gameId = ng.id; gameTab = 'setup'; planBlock = 0;
-      commit(); render(); window.scrollTo(0, 0);
+      gameId = ng.id; gameTab = 'setup'; planQ = 0;
+      commit(); render(); window.scrollTo(0, 0); return;
     }
-    else if (a === 'open-game') {
-      gameId = el.dataset.id; planBlock = 0;
+    if (a === 'open-game') {
+      gameId = el.dataset.id; planQ = 0;
       var og = currentGame();
       gameTab = og && og.status === 'live' ? 'live' : og && og.status === 'finished' ? 'card' : 'setup';
-      render(); window.scrollTo(0, 0);
+      render(); window.scrollTo(0, 0); return;
     }
-    else if (a === 'close-game') { gameId = null; render(); window.scrollTo(0, 0); }
-    else if (!g) return;
-    else if (a === 'game-tab') { gameTab = el.dataset.tab; render(); window.scrollTo(0, 0); }
-    else if (a === 'delete-game') {
+    if (a === 'close-game') { gameId = null; render(); window.scrollTo(0, 0); return; }
+    if (a === 'lineups-open') { gamePage = 'lineups'; render(); window.scrollTo(0, 0); return; }
+    if (a === 'lineups-back') { gamePage = 'list'; render(); window.scrollTo(0, 0); return; }
+    if (a === 'lineup-new') {
+      var fmt = teamFormat(t);
+      lineupDraft = { id: uid('l'), name: '', format: fmt, lines: FMT(fmt).def.slice(), slots: {} };
+      gamePage = 'lineup'; render(); window.scrollTo(0, 0); return;
+    }
+    if (a === 'lineup-open') {
+      var lo = findLineup(t, el.dataset.id);
+      if (lo) { lineupDraft = JSON.parse(JSON.stringify(lo)); gamePage = 'lineup'; render(); window.scrollTo(0, 0); }
+      return;
+    }
+    if (a === 'lineup-cancel') { lineupDraft = null; gamePage = 'lineups'; render(); return; }
+    if (lineupDraft && gamePage === 'lineup') {
+      if (a === 'ld-formation') {
+        return pickFormation(lineupDraft.format, lineupDraft.lines, function (lines) {
+          lineupDraft.lines = lines; lineupDraft.slots = remapSlots(lineupDraft.format, lines, lineupDraft.slots); render();
+        });
+      }
+      if (a === 'ld-pos') {
+        var pos = el.dataset.pos;
+        return pickForSpot(t, POS_NAMES[labelFor(lineupDraft.format, lineupDraft.lines, pos)], lineupDraft.name || 'New lineup', lineupDraft.slots, pos, sortedPlayers(t),
+          function (pl, at) { return at ? 'Swap from ' + labelFor(lineupDraft.format, lineupDraft.lines, at) : ''; }, 'Leave this spot empty',
+          function (pid) { setSpot(lineupDraft.slots, pos, pid); render(); });
+      }
+      if (a === 'ld-clear') { lineupDraft.slots = {}; render(); return; }
+      if (a === 'lineup-save') {
+        lineupDraft.name = (lineupDraft.name || '').trim();
+        if (!lineupDraft.name) { toast('Give the lineup a name first.'); var ni = document.querySelector('[data-ld="name"]'); if (ni) ni.focus(); return; }
+        var clean = normalizeLineup(lineupDraft);
+        var idx = t.lineups.findIndex(function (l) { return l.id === clean.id; });
+        if (idx >= 0) t.lineups[idx] = clean; else t.lineups.push(clean);
+        commit(); lineupDraft = null; gamePage = 'lineups'; render(); toast('Saved ' + clean.name); return;
+      }
+      if (a === 'lineup-copy') {
+        var cp = normalizeLineup(Object.assign({}, lineupDraft, { id: uid('l'), name: (lineupDraft.name + ' copy').slice(0, 40) }));
+        t.lineups.push(cp); commit(); lineupDraft = JSON.parse(JSON.stringify(cp)); render(); toast('Copy made. You\'re editing the copy.'); return;
+      }
+      if (a === 'lineup-delete') {
+        if (!confirm('Delete the lineup "' + lineupDraft.name + '"? Games that already used it keep their players.')) return;
+        t.lineups = t.lineups.filter(function (l) { return l.id !== lineupDraft.id; });
+        commit(); lineupDraft = null; gamePage = 'lineups'; render(); toast('Lineup deleted'); return;
+      }
+    }
+
+    // Practice and library
+    if (a === 'practice-tab') { practiceTab = el.dataset.tab; render(); return; }
+    if (a === 'practice-new') {
+      var np = normalizePractice({ date: today(), length: 60 });
+      t.practices.push(np); practiceId = np.id; practiceRun = false;
+      commit(); render(); window.scrollTo(0, 0); return;
+    }
+    if (a === 'practice-open') { practiceId = el.dataset.id; practiceRun = false; render(); window.scrollTo(0, 0); return; }
+    if (a === 'practice-back') { practiceId = null; render(); window.scrollTo(0, 0); return; }
+    if (a === 'lib-filter') { libFilter = el.dataset.f; render(); return; }
+    if (a === 'lib-import') return $('libImport').click();
+    if (a === 'entry-new') {
+      entryDraft = normalizeEntry({ type: libFilter === 'all' ? 'drill' : libFilter, name: '' });
+      entryDraft.name = ''; entryDraft.ages = [];
+      entryEditing = true; dgSelected = null; dgPending = null; dgTool = 'us';
+      render(); window.scrollTo(0, 0); return;
+    }
+    if (a === 'entry-open') { entryId = el.dataset.id; render(); window.scrollTo(0, 0); return; }
+    if (a === 'entry-back') { entryId = null; render(); return; }
+    if (a === 'entry-edit') {
+      var ee = findEntry(entryId);
+      if (ee) { entryDraft = JSON.parse(JSON.stringify(ee)); entryEditing = true; dgSelected = null; dgPending = null; dgTool = 'move'; render(); window.scrollTo(0, 0); }
+      return;
+    }
+    if (a === 'entry-cancel') { entryEditing = false; entryDraft = null; render(); return; }
+    if (entryEditing && entryDraft) {
+      if (a === 'ed-age') {
+        var age = el.dataset.age, ai = entryDraft.ages.indexOf(age);
+        if (ai >= 0) entryDraft.ages.splice(ai, 1); else entryDraft.ages.push(age);
+        el.setAttribute('aria-pressed', String(ai < 0)); return;
+      }
+      if (a === 'dg-add') {
+        entryDraft.diagram = { view: entryDraft.type === 'setplay' ? 'attack' : 'defend', line: !!(t && t.buildOut), items: [], arrows: [] };
+        dgTool = 'us'; render(); return;
+      }
+      if (a === 'dg-tool') { dgTool = el.dataset.tool; dgPending = null; if (dgTool !== 'move') dgSelected = null; refreshDiagram(); return; }
+      if (a === 'dg-delete') {
+        var d = entryDraft.diagram;
+        d.items = d.items.filter(function (i) { return i.id !== dgSelected; });
+        d.arrows = d.arrows.filter(function (x) { return x.id !== dgSelected; });
+        dgSelected = null; refreshDiagram(); return;
+      }
+      if (a === 'dg-line') { entryDraft.diagram.line = !entryDraft.diagram.line; render(); return; }
+      if (a === 'dg-view') { entryDraft.diagram.view = entryDraft.diagram.view === 'attack' ? 'defend' : 'attack'; render(); return; }
+      if (a === 'dg-clear') { if (confirm('Clear everything from the diagram?')) { entryDraft.diagram.items = []; entryDraft.diagram.arrows = []; dgSelected = null; refreshDiagram(); } return; }
+      if (a === 'dg-remove') { if (confirm('Remove the diagram?')) { entryDraft.diagram = null; render(); } return; }
+      if (a === 'entry-save') {
+        if (!String(entryDraft.name || '').trim()) { $('entryError').textContent = 'Give it a name.'; var nm = document.querySelector('[data-ed="name"]'); if (nm) nm.focus(); return; }
+        var clean = normalizeEntry(entryDraft);
+        var ix = data.library.findIndex(function (x) { return x.id === clean.id; });
+        if (ix >= 0) data.library[ix] = clean; else data.library.push(clean);
+        commit(); entryEditing = false; entryDraft = null; entryId = clean.id; render(); window.scrollTo(0, 0); toast('Saved ' + clean.name); return;
+      }
+    }
+    if (entryId && !entryEditing) {
+      var en = findEntry(entryId);
+      if (a === 'entry-copy' && en) {
+        var c2 = normalizeEntry(JSON.parse(JSON.stringify(en)));
+        c2.id = uid('e'); c2.name = (en.name + ' copy').slice(0, 80);
+        data.library.push(c2); commit(); entryId = c2.id; render(); toast('Copy made'); return;
+      }
+      if (a === 'entry-delete' && en) {
+        if (!confirm('Delete "' + en.name + '" from the library? Practices that use it will show it as deleted.')) return;
+        data.library = data.library.filter(function (x) { return x.id !== en.id; });
+        commit(); entryId = null; render(); toast('Deleted'); return;
+      }
+      if (a === 'entry-to-practice' && en) {
+        var list = t.practices.slice().sort(function (x, y) { return y.date.localeCompare(x.date); });
+        var opts = [{ label: 'New practice', detail: t.name, value: '__new' }].concat(list.map(function (pr) {
+          return { label: pr.title || 'Practice', detail: fmtDate(pr.date) + ', ' + practiceTotal(pr) + ' min', value: pr.id };
+        }));
+        return openPicker('Add to which practice?', t.name, opts, function (pid) {
+          var target = pid === '__new' ? normalizePractice({ date: today(), length: 60 }) : findPractice(t, pid);
+          if (pid === '__new') t.practices.push(target);
+          target.items.push({ id: uid('it'), kind: 'entry', entryId: en.id, minutes: en.minutes || 10, note: '' });
+          commit(); toast('Added to ' + (target.title || 'practice on ' + fmtDate(target.date)));
+        });
+      }
+    }
+    if (p) {
+      if (a === 'practice-run') { if (!p.run) p.run = { idx: 0, running: false, startedAt: null, elapsedBefore: 0 }; practiceRun = true; commit(); render(); window.scrollTo(0, 0); return; }
+      if (a === 'run-exit') { practiceRun = false; render(); return; }
+      var R = p.run;
+      if (R && a === 'run-start') { R.running = true; R.startedAt = Date.now(); commit(); render(); return; }
+      if (R && a === 'run-pause') { R.elapsedBefore = runElapsed(R); R.running = false; R.startedAt = null; commit(); render(); return; }
+      if (R && (a === 'run-next' || a === 'run-prev')) {
+        var was = R.running;
+        if (a === 'run-next' && R.idx >= p.items.length - 1) {
+          p.run = null; practiceRun = false; commit(); render(); window.scrollTo(0, 0); toast('Practice finished. Add notes while they\'re fresh.'); return;
+        }
+        R.idx = Math.max(0, Math.min(p.items.length - 1, R.idx + (a === 'run-next' ? 1 : -1)));
+        R.elapsedBefore = 0; R.running = was; R.startedAt = was ? Date.now() : null;
+        commit(); render(); window.scrollTo(0, 0); return;
+      }
+      if (a === 'item-add') {
+        var fits = data.library.filter(function (x) { return entryFits(x, t.ageGroup); }).sort(function (x, y) { return x.type.localeCompare(y.type) || x.name.localeCompare(y.name); });
+        if (!data.library.length) { toast('Your library is empty. Add entries under Practice, then Library.'); return; }
+        return openPicker('Add from library', 'Showing entries for ' + t.ageGroup + '.', fits.map(function (x) {
+          return { label: x.name, detail: x.minutes ? x.minutes + ' min' : '', pill: x.type, value: x.id };
+        }), function (eid) {
+          var x = findEntry(eid);
+          p.items.push({ id: uid('it'), kind: 'entry', entryId: eid, minutes: (x && x.minutes) || 10, note: '' });
+          commit(); render();
+        });
+      }
+      if (a === 'item-break') { p.items.push({ id: uid('it'), kind: 'break', entryId: '', minutes: 3, note: '' }); commit(); render(); return; }
+      var i = +el.dataset.i;
+      if (a === 'item-up' && i > 0) { p.items.splice(i - 1, 0, p.items.splice(i, 1)[0]); commit(); render(); return; }
+      if (a === 'item-down' && i < p.items.length - 1) { p.items.splice(i + 1, 0, p.items.splice(i, 1)[0]); commit(); render(); return; }
+      if (a === 'item-remove') { p.items.splice(i, 1); if (p.run) p.run = null; commit(); render(); return; }
+      if (a === 'practice-copy') {
+        var cp2 = normalizePractice(JSON.parse(JSON.stringify(p)));
+        cp2.id = uid('pr'); cp2.date = today(); cp2.attendance = {}; cp2.notes = ''; cp2.run = null;
+        cp2.items.forEach(function (x) { x.id = uid('it'); });
+        t.practices.push(cp2); practiceId = cp2.id; commit(); render(); window.scrollTo(0, 0); toast('Copied. Set the new date.'); return;
+      }
+      if (a === 'practice-delete') {
+        if (!confirm('Delete this practice plan?')) return;
+        t.practices = t.practices.filter(function (x) { return x.id !== p.id; });
+        practiceId = null; commit(); render(); toast('Practice deleted'); return;
+      }
+    }
+
+    // Inside one game
+    if (!g) return;
+    if (a === 'game-tab') { gameTab = el.dataset.tab; render(); window.scrollTo(0, 0); return; }
+    if (a === 'delete-game') {
       if (!confirm('Delete the game vs ' + (g.opponent || 'opponent not set') + '? Its plan and playing-time record will be gone.')) return;
       t.games = t.games.filter(function (x) { return x.id !== g.id; });
-      gameId = null; commit(); render(); toast('Game deleted');
+      gameId = null; commit(); render(); toast('Game deleted'); return;
     }
-    else if (a === 'reset-live') {
-      if (!confirm('Clear the live clock, subs, and times for this game? Your rotation plan stays.')) return;
-      g.live = null; g.status = 'planned'; commit(); render();
+    if (a === 'reset-live') {
+      if (!confirm('Clear the live clock, subs, and times for this game? Your plan stays.')) return;
+      g.live = null; g.status = 'planned'; commit(); render(); return;
+    }
+    if (a === 'game-formation') {
+      return pickFormation(g.format, g.lines, function (lines) {
+        g.lines = lines;
+        g.plan.forEach(function (q) { if (!Object.keys(q.slots).length) q.lines = lines.slice(); });
+        commit(); render();
+      });
     }
     // Plan
-    else if (a === 'plan-block') { planBlock = +el.dataset.b; render(); }
-    else if (a === 'plan-pos') pickForPlanPos(t, g, el.dataset.pos);
-    else if (a === 'bench-plan') {
-      var p = playerById(t, el.dataset.id), blk = g.plan[planBlock];
-      var opts = positions(g).map(function (ps) {
-        var cur = blk[ps.key] ? playerById(t, blk[ps.key]) : null;
-        return { label: POS_NAMES[ps.key], detail: cur ? 'Replaces ' + firstName(cur.name) : 'Empty', value: ps.key };
-      });
-      openPicker('Put ' + p.name + ' in', BLOCK_NAMES[planBlock], opts, function (key) {
-        blk[key] = p.id; commit(); render();
+    var pq = g.plan[planQ];
+    if (a === 'plan-q') { planQ = +el.dataset.q; render(); return; }
+    if (a === 'plan-formation') {
+      return pickFormation(g.format, pq.lines, function (lines) {
+        pq.lines = lines; pq.slots = remapSlots(g.format, lines, pq.slots); pq.name = ''; commit(); render();
       });
     }
-    else if (a === 'suggest') {
-      var has = g.plan.some(function (b) { return Object.keys(b).length; });
-      if (has && !confirm('Replace your current rotation plan with a new suggestion?')) return;
+    if (a === 'plan-use-lineup') {
+      var lopts = lineupOptions(t, g);
+      if (!lopts.length) { toast('No saved lineups for ' + FMT(g.format).label + ' yet. Make one under Games, then Saved lineups.'); return; }
+      return openPicker('Use a saved lineup', 'For quarter ' + (planQ + 1) + '. Kids not here today leave an empty spot.', lopts, function (lid) {
+        var l = findLineup(t, lid);
+        pq.lines = l.lines.slice(); pq.name = l.name; pq.slots = usableSlots(t, g, g.format, l.lines, l.slots);
+        commit(); render();
+        var gap = FMT(g.format).size - Object.keys(pq.slots).length;
+        toast('Using ' + l.name + (gap > 0 ? '. ' + plural(gap, 'spot') + ' to fill.' : ''));
+      });
+    }
+    if (a === 'plan-pos') {
+      var counts = plannedCounts(t, g), ppos = el.dataset.pos;
+      return pickForSpot(t, POS_NAMES[labelFor(g.format, pq.lines, ppos)], 'Quarter ' + (planQ + 1), pq.slots, ppos, playingPlayers(t, g).sort(function (x, y) { return counts[x.id] - counts[y.id]; }),
+        function (pl, at) { return at ? 'Swap from ' + labelFor(g.format, pq.lines, at) : plural(counts[pl.id], 'quarter') + ' planned'; }, 'Leave this spot empty',
+        function (pid) { setSpot(pq.slots, ppos, pid); pq.name = ''; commit(); render(); });
+    }
+    if (a === 'bench-plan') {
+      var bp = playerById(t, el.dataset.id);
+      return openPicker('Put ' + bp.name + ' in', 'Quarter ' + (planQ + 1), positionsFor(g.format, pq.lines).map(function (ps) {
+        var cur = pq.slots[ps.key] ? playerById(t, pq.slots[ps.key]) : null;
+        return { label: POS_NAMES[ps.label], detail: cur ? 'Replaces ' + firstName(cur.name) : 'Empty', value: ps.key };
+      }), function (key) { pq.slots[key] = bp.id; pq.name = ''; commit(); render(); });
+    }
+    if (a === 'suggest') {
+      var has = g.plan.some(function (q) { return Object.keys(q.slots).length; });
+      if (has && !confirm('Replace your plan for all four quarters with a new suggestion?')) return;
       suggestAttempt++;
       g.plan = suggestPlan(t, g, suggestAttempt);
-      planBlock = 0;
-      commit(); render(); toast('Rotation suggested. Adjust positions as you like.');
+      planQ = 0; commit(); render(); toast('Rotation suggested. Adjust it however you like.'); return;
     }
-    else if (a === 'copy-prev') { g.plan[planBlock] = Object.assign({}, g.plan[planBlock - 1]); commit(); render(); }
-    else if (a === 'clear-block') { g.plan[planBlock] = {}; commit(); render(); }
+    if (a === 'copy-prev') { var pr = g.plan[planQ - 1]; g.plan[planQ] = { name: pr.name, lines: pr.lines.slice(), slots: Object.assign({}, pr.slots) }; commit(); render(); return; }
+    if (a === 'clear-q') { g.plan[planQ] = emptyQuarter(pq.lines); commit(); render(); return; }
+    if (a === 'save-as-lineup') {
+      if (!Object.keys(pq.slots).length) { toast('Put some players on the field first.'); return; }
+      var lname = prompt('Name this lineup', pq.name || 'Lineup ' + (t.lineups.length + 1));
+      if (lname == null) return;
+      lname = lname.trim().slice(0, 40) || 'Lineup ' + (t.lineups.length + 1);
+      t.lineups.push(normalizeLineup({ name: lname, format: g.format, lines: pq.lines, slots: pq.slots }));
+      pq.name = lname; commit(); render(); toast('Saved lineup ' + lname); return;
+    }
+    var L = g.live;
+    // Card
+    if (a === 'toggle-q') {
+      var tp = el.dataset.id, q = +el.dataset.q;
+      var base = credits(t, g, true)[tp][q], curv = credits(t, g)[tp][q];
+      g.qOverrides[tp] = g.qOverrides[tp] || {};
+      if (!curv === base) delete g.qOverrides[tp][q]; else g.qOverrides[tp][q] = !curv;
+      commit(); render(); return;
+    }
+    if (a === 'goal-plus') { g.goals[el.dataset.id] = (g.goals[el.dataset.id] || 0) + 1; commit(); render(); return; }
+    if (a === 'goal-minus') { g.goals[el.dataset.id] = Math.max(0, (g.goals[el.dataset.id] || 0) - 1); commit(); render(); return; }
+    if (a === 'finish-game') {
+      if (L && !L.ended && L.qStarted && !confirm('Live tracking is still running. Finish the game anyway?')) return;
+      if (L && L.qStarted) {
+        var e3 = elapsed(L);
+        L.stints.forEach(function (s) { if (s.to == null) s.to = e3; });
+        L.qDur[L.q] = e3; L.running = false; L.qStarted = false;
+      }
+      if (L) L.ended = true;
+      g.status = 'finished'; commit(); render(); toast('Game finished'); return;
+    }
+    if (a === 'reopen-game') { g.status = L && !L.ended ? 'live' : 'planned'; commit(); render(); }
     // Live
-    else if (a === 'live-begin') {
-      g.live = normalizeLive({ onField: validLineup(t, g, g.plan[0]) });
-      g.status = 'live'; commit(); render();
+    if (a === 'live-begin') {
+      var first = g.plan[0];
+      g.live = normalizeLive({ lines: first.lines, onField: usableSlots(t, g, g.format, first.lines, first.slots) }, g.format, first.lines, null);
+      g.status = 'live'; commit(); render(); return;
     }
-    else if (a === 'live-start') {
-      var L = g.live; L.qStarted = true; L.running = true; L.startedAt = Date.now(); L.elapsedBefore = 0; L.history = [];
+    if (!L) return;
+    if (a === 'live-start') {
+      L.qStarted = true; L.running = true; L.startedAt = Date.now(); L.elapsedBefore = 0; L.history = []; L.breakAt = null;
       Object.keys(L.onField).forEach(function (k) { openStint(L, L.onField[k], k, 0); });
-      commit(); render();
+      commit(); render(); return;
     }
-    else if (a === 'live-pause') { g.live.elapsedBefore = elapsed(g.live); g.live.running = false; g.live.startedAt = null; commit(); render(); }
-    else if (a === 'live-resume') { g.live.running = true; g.live.startedAt = Date.now(); commit(); render(); }
-    else if (a === 'live-end') {
-      var L2 = g.live;
-      if (!confirm('End quarter ' + (L2.q + 1) + ' at ' + clock(elapsed(L2)) + '?')) return;
-      var e2 = elapsed(L2);
-      L2.stints.forEach(function (s) { if (s.q === L2.q && s.to == null) s.to = e2; });
-      L2.qDur[L2.q] = e2;
-      L2.running = false; L2.startedAt = null; L2.elapsedBefore = 0; L2.qStarted = false; L2.history = [];
-      if (L2.q >= 3) {
-        L2.ended = true; L2.q = 4; g.status = 'finished';
+    if (a === 'live-skip-break') { L.breakAt = null; commit(); render(); return; }
+    if (a === 'live-pause') { L.elapsedBefore = elapsed(L); L.running = false; L.startedAt = null; commit(); render(); return; }
+    if (a === 'live-resume') { L.running = true; L.startedAt = Date.now(); commit(); render(); return; }
+    if (a === 'live-end') {
+      if (!confirm('End quarter ' + (L.q + 1) + ' at ' + clock(elapsed(L)) + '?')) return;
+      var e2 = elapsed(L);
+      L.stints.forEach(function (s) { if (s.q === L.q && s.to == null) s.to = e2; });
+      L.qDur[L.q] = e2;
+      L.running = false; L.startedAt = null; L.elapsedBefore = 0; L.qStarted = false; L.history = [];
+      if (L.q >= 3) {
+        L.ended = true; L.q = 4; g.status = 'finished';
         commit(); gameTab = 'card'; render(); window.scrollTo(0, 0); toast('Game finished. Here is your lineup card.');
         return;
       }
-      L2.q++;
-      var next = validLineup(t, g, g.plan[L2.q * 2]);
-      if (Object.keys(next).length) L2.onField = next;
-      commit(); render(); window.scrollTo(0, 0);
+      L.q++;
+      L.breakAt = Date.now();
+      L.breakLen = L.q === 2 ? HALFTIME : WATER_BREAK;
+      var nq = g.plan[L.q], next = usableSlots(t, g, g.format, nq.lines, nq.slots);
+      if (Object.keys(next).length) { L.onField = next; L.lines = nq.lines.slice(); }
+      commit(); render(); window.scrollTo(0, 0); return;
     }
-    else if (a === 'live-apply') {
-      var L3 = g.live;
-      liveApplyLineup(L3, validLineup(t, g, L3.qStarted ? g.plan[L3.q * 2 + 1] : g.plan[L3.q * 2]));
-      commit(); render(); toast(L3.qStarted ? 'Subs made' : 'Planned lineup loaded');
+    if (a === 'live-use-plan') {
+      var cq = g.plan[L.q];
+      liveApplyLineup(L, cq.lines, usableSlots(t, g, g.format, cq.lines, cq.slots));
+      commit(); render(); toast('Planned lineup loaded'); return;
     }
-    else if (a === 'live-pos') pickForLivePos(t, g, el.dataset.pos);
-    else if (a === 'live-undo') {
-      var L4 = g.live, snap = L4.history.pop();
-      if (snap) { var s = JSON.parse(snap); L4.onField = s.onField; L4.stints = s.stints; commit(); render(); toast('Last change undone'); }
+    if (a === 'live-sub') return startSub(t, g);
+    if (a === 'live-change-lineup') {
+      var copts = lineupOptions(t, g);
+      var pl2 = g.plan[L.q];
+      if (Object.keys(pl2.slots).length) copts.unshift({ label: 'Quarter ' + (L.q + 1) + ' plan', detail: formName(g.format, pl2.lines), value: '__plan' });
+      if (!copts.length) { toast('No saved lineups for ' + FMT(g.format).label + ' yet.'); return; }
+      return openPicker('Change lineup', L.qStarted ? 'Every swap happens at once and minutes keep counting correctly.' : null, copts, function (lid) {
+        var src = lid === '__plan' ? pl2 : findLineup(t, lid);
+        var slots = usableSlots(t, g, g.format, src.lines, src.slots);
+        liveApplyLineup(L, src.lines, slots);
+        commit(); render();
+        var gap = FMT(g.format).size - Object.keys(slots).length;
+        toast((lid === '__plan' ? 'Planned lineup' : src.name) + ' is on' + (gap > 0 ? '. ' + plural(gap, 'spot') + ' to fill.' : ''));
+      });
     }
-    else if (a === 'live-goal') {
-      var L5 = g.live;
-      var on = playingPlayers(t, g).filter(function (p) { return keyOf(L5.onField, p.id); });
-      var off = playingPlayers(t, g).filter(function (p) { return !keyOf(L5.onField, p.id); });
-      openPicker('Who scored?', null, on.concat(off).map(function (p) {
-        return { label: p.name, detail: (g.goals[p.id] || 0) + ' so far', player: p, value: p.id };
+    if (a === 'live-pos') {
+      var lpos = el.dataset.pos, mins = minutesFor(t, g);
+      var cur = L.onField[lpos] ? playerById(t, L.onField[lpos]) : null;
+      return pickForSpot(t, cur ? 'Sub for ' + jerseyText(cur) + cur.name : 'Fill ' + POS_NAMES[labelFor(g.format, L.lines, lpos)],
+        POS_NAMES[labelFor(g.format, L.lines, lpos)] + (L.qStarted ? '. Mid-quarter subs only when your team has the ball.' : ''),
+        L.onField, lpos, playingPlayers(t, g).sort(function (x, y) { return (mins[x.id] || 0) - (mins[y.id] || 0); }),
+        function (pl, at) { return at ? 'Swap from ' + labelFor(g.format, L.lines, at) : clock(mins[pl.id] || 0) + ' played'; }, 'Take off with no replacement',
+        function (pid) { liveAssign(L, lpos, pid); commit(); render(); });
+    }
+    if (a === 'live-undo') {
+      var snap = L.history.pop();
+      if (snap) { var s = JSON.parse(snap); L.onField = s.onField; L.stints = s.stints; if (s.lines) L.lines = s.lines; commit(); render(); toast('Last change undone'); }
+      return;
+    }
+    if (a === 'live-goal') {
+      var on = playingPlayers(t, g).filter(function (x) { return keyOf(L.onField, x.id); });
+      var off = playingPlayers(t, g).filter(function (x) { return !keyOf(L.onField, x.id); });
+      return openPicker('Who scored?', null, on.concat(off).map(function (x) {
+        return { label: x.name, detail: (g.goals[x.id] || 0) + ' so far', player: x, value: x.id };
       }), function (pid) { g.goals[pid] = (g.goals[pid] || 0) + 1; commit(); render(); toast('Goal for ' + playerById(t, pid).name); });
     }
-    // Card
-    else if (a === 'toggle-hq') {
-      var pid = el.dataset.id, b = +el.dataset.b;
-      var base = credits(t, g, true)[pid][b], cur = credits(t, g)[pid][b];
-      var nv = !cur;
-      g.overrides[pid] = obj(g.overrides[pid]);
-      if (nv === base) delete g.overrides[pid][b]; else g.overrides[pid][b] = nv;
-      commit(); render();
-    }
-    else if (a === 'goal-plus') { g.goals[el.dataset.id] = (g.goals[el.dataset.id] || 0) + 1; commit(); render(); }
-    else if (a === 'goal-minus') { g.goals[el.dataset.id] = Math.max(0, (g.goals[el.dataset.id] || 0) - 1); commit(); render(); }
-    else if (a === 'finish-game') {
-      if (g.live && !g.live.ended && g.live.qStarted && !confirm('Live tracking is still running. Finish the game anyway?')) return;
-      if (g.live && g.live.qStarted) {
-        var e3 = elapsed(g.live);
-        g.live.stints.forEach(function (s) { if (s.to == null) s.to = e3; });
-        g.live.qDur[g.live.q] = e3;
-        g.live.running = false; g.live.qStarted = false;
-      }
-      if (g.live) g.live.ended = true;
-      g.status = 'finished'; commit(); render(); toast('Game finished');
-    }
-    else if (a === 'reopen-game') { g.status = g.live && !g.live.ended ? 'live' : 'planned'; commit(); render(); }
   });
 
   // ---------- Offline support and updates ----------
@@ -2022,6 +3002,7 @@ table.grid .num { font: 800 18px/1 var(--cond); font-stretch: condensed; }
 
   render();
 })();
+
 </script>
 </body>
 </html>
